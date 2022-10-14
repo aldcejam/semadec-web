@@ -1,5 +1,4 @@
 import { styled } from "@mui/material";
-
 export const StyledCardTitle = styled('div')`
     position: absolute;
     z-index: 10;
