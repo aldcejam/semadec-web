@@ -2,7 +2,6 @@ import { styled } from "@mui/material";
 import { useThemeContext } from "../../src/contexts/ThemeContext";
 
 const IllustrationEdicoesDaSemadec = () => {
-  const { mainColor } = useThemeContext();
 
   const StyledIllustrationEdicoesDaSemadec = styled("div")`
     position: absolute;
@@ -14,7 +13,9 @@ const IllustrationEdicoesDaSemadec = () => {
     justify-content: right;
 
     .svg {
-      
+      .assign-color{
+
+      }
       .cls-1 {
         fill: #263238;
       }
@@ -26,9 +27,6 @@ const IllustrationEdicoesDaSemadec = () => {
       }
       .cls-4 {
         fill: #37474f;
-      }
-      .cls-5 {
-        fill: ${mainColor};
       }
       .cls-6 {
         fill: #fff;
@@ -98,7 +96,7 @@ const IllustrationEdicoesDaSemadec = () => {
                   height="273.88"
                 />
                 <rect
-                  className="cls-5"
+                  className="cls-5 assign-color"
                   x="108"
                   y="24.13"
                   width="432.56"
@@ -131,7 +129,7 @@ const IllustrationEdicoesDaSemadec = () => {
                   height="1.95"
                 />
                 <rect
-                  className="cls-5"
+                  className="cls-5 assign-color"
                   x="383.72"
                   y="81.49"
                   width="18.88"
@@ -180,7 +178,7 @@ const IllustrationEdicoesDaSemadec = () => {
                   height="1.95"
                 />
                 <rect
-                  className="cls-5"
+                  className="cls-5 assign-color"
                   x="166.99"
                   y="99.88"
                   width="50.13"
@@ -208,7 +206,7 @@ const IllustrationEdicoesDaSemadec = () => {
                   height="1.95"
                 />
                 <rect
-                  className="cls-5"
+                  className="cls-5 assign-color"
                   x="157.31"
                   y="127.45"
                   width="217.37"
@@ -257,7 +255,7 @@ const IllustrationEdicoesDaSemadec = () => {
                   height="1.95"
                 />
                 <rect
-                  className="cls-5"
+                  className="cls-5 assign-color"
                   x="382.82"
                   y="145.83"
                   width="82"
@@ -285,14 +283,14 @@ const IllustrationEdicoesDaSemadec = () => {
                   height="1.95"
                 />
                 <rect
-                  className="cls-5"
+                  className="cls-5 assign-color"
                   x="406.7"
                   y="118.26"
                   width="101.3"
                   height="1.95"
                 />
                 <rect
-                  className="cls-5"
+                  className="cls-5 assign-color"
                   x="222.01"
                   y="109.07"
                   width="169.71"
@@ -362,21 +360,21 @@ const IllustrationEdicoesDaSemadec = () => {
                   height="1.94"
                 />
                 <rect
-                  className="cls-5"
+                  className="cls-5 assign-color"
                   x="166.99"
                   y="172.56"
                   width="50.13"
                   height="1.95"
                 />
                 <rect
-                  className="cls-5"
+                  className="cls-5 assign-color"
                   x="281.8"
                   y="209.33"
                   width="50.13"
                   height="1.95"
                 />
                 <rect
-                  className="cls-5"
+                  className="cls-5 assign-color"
                   x="166.99"
                   y="227.71"
                   width="50.13"
@@ -390,7 +388,7 @@ const IllustrationEdicoesDaSemadec = () => {
                   height="1.95"
                 />
                 <rect
-                  className="cls-5"
+                  className="cls-5 assign-color"
                   x="157.31"
                   y="200.13"
                   width="217.37"
@@ -439,7 +437,7 @@ const IllustrationEdicoesDaSemadec = () => {
                   height="1.94"
                 />
                 <rect
-                  className="cls-5"
+                  className="cls-5 assign-color"
                   x="222.01"
                   y="181.75"
                   width="169.71"
@@ -530,7 +528,7 @@ const IllustrationEdicoesDaSemadec = () => {
                   height="1.95"
                 />
                 <rect
-                  className="cls-5"
+                  className="cls-5 assign-color"
                   x="222.01"
                   y="236.9"
                   width="169.71"
@@ -554,7 +552,7 @@ const IllustrationEdicoesDaSemadec = () => {
                   d="M336.74,322.3c-2.83,1.09-84.89,2.58-88.1.75-.35-.21-.25-3.83-1.47-13.2,0-.45-1.92-2.18-4.85-4.64-3.82-3.2-5.63-4.66-11.31-9.08L283.08,277l3.12,3.06,10.32,10.15s33.53,18.1,36.85,20.49S339.57,321.22,336.74,322.3Z"
                 />
                 <path
-                  className="cls-5"
+                  className="cls-5 assign-color"
                   d="M342.39,323.43c-2.85,1-90.28,1.95-93.43,0-.74-.46-1.42-5.54-2-12.5-.07-.87-8.93-7.95-10.14-9.26l53.58-18,6.77,6.36s39.43,18.35,42.65,20.85S345.28,322.44,342.39,323.43Z"
                 />
                 <path
@@ -638,7 +636,7 @@ const IllustrationEdicoesDaSemadec = () => {
                   d="M64.75,197.82c4.93,13.41,27.25,48.37,37.59,53.5,7.65,3.78,30.49,8.42,33.43,7.69,4.24-1,13.73-29.84,9.85-30.12-18.66-1.35-30.54-3.77-34.94-5.51-3.71-1.47-19.17-15.75-39.23-33.19C64.46,184.12,61.79,189.8,64.75,197.82Z"
                 />
                 <path
-                  className="cls-5"
+                  className="cls-5 assign-color"
                   d="M76.21,227.12,89,202.71s-10.37-9.19-16.83-13.47c-8.55-5.65-12.66-3.8-9.33,8.32C65.08,205.66,76.21,227.12,76.21,227.12Z"
                 />
                 <path
@@ -670,7 +668,7 @@ const IllustrationEdicoesDaSemadec = () => {
                   d="M167.05,233.62c3.92,1,7.34,1.85,10.74,4.14,4.51,3,8.77,8,10.27,9.71,1.65,1.93,3.23,3.92,4.79,5.93.06.08-.08.19-.15.11A133.69,133.69,0,0,0,181.18,241a26.44,26.44,0,0,0-6.55-4.7,46.39,46.39,0,0,0-7.59-2.64S167,233.62,167.05,233.62Z"
                 />
                 <path
-                  className="cls-5"
+                  className="cls-5 assign-color"
                   d="M23.35,272.89c2.37.77,70-18.8,70-18.8l-8-23.47s4-7.55,2.11-14.81c-2.44-9.7-20.4-25.65-21.81-26.59-5.66-3.75-11-3.69-15.67-1.2C30.43,198.41,23.35,272.89,23.35,272.89Z"
                 />
                 <path
@@ -786,7 +784,7 @@ const IllustrationEdicoesDaSemadec = () => {
                   d="M76.05,229.83a67.94,67.94,0,0,1,14.07-4.39,66.86,66.86,0,0,1,7.32-1.06c1.24-.1,2.48-.13,3.66-.29a21.46,21.46,0,0,0,3.52-.84,23.79,23.79,0,0,0,6.45-3.28,12.47,12.47,0,0,1,3.26-1.88,7.5,7.5,0,0,1,3.8-.55,2.75,2.75,0,0,1,1.79,1,3.14,3.14,0,0,1,.51,2,9.45,9.45,0,0,1-1.05,3.67,18.32,18.32,0,0,1-4.81,5.73v-.59a99.66,99.66,0,0,1,8.91,6.52,32.42,32.42,0,0,1,4,3.86,12.2,12.2,0,0,1,1.54,2.35,7,7,0,0,1,.81,2.75,3.46,3.46,0,0,1-.27,1.49,2.28,2.28,0,0,1-1.09,1.1,4,4,0,0,1-2.9,0,24.59,24.59,0,0,1-4.9-2.63c-1.54-1-3-2.07-4.56-3.09-.75-.51-1.52-1-2.3-1.48a10,10,0,0,0-2.44-1.12l.19-.31a65.1,65.1,0,0,1,5.41,7.78,38.91,38.91,0,0,1,2.17,4.21,22.09,22.09,0,0,1,1.45,4.5,22,22,0,0,0-1.54-4.46,36.12,36.12,0,0,0-2.25-4.15,66,66,0,0,0-5.53-7.64l-.38-.45.57.15a10.25,10.25,0,0,1,2.55,1.14c.8.47,1.58,1,2.35,1.46,1.53,1,3,2,4.58,3a23.63,23.63,0,0,0,4.8,2.52,3.5,3.5,0,0,0,2.47,0,2,2,0,0,0,1-2,9,9,0,0,0-2.22-4.72,32.4,32.4,0,0,0-3.93-3.75,94.88,94.88,0,0,0-8.87-6.43l-.41-.27.39-.32a17.83,17.83,0,0,0,4.58-5.49,9,9,0,0,0,1-3.36,2.48,2.48,0,0,0-.47-1.51,2,2,0,0,0-1.32-.76,6.88,6.88,0,0,0-3.41.51,12,12,0,0,0-3.11,1.77,24.06,24.06,0,0,1-6.65,3.36,22.91,22.91,0,0,1-3.64.86c-1.26.16-2.48.18-3.7.27-2.43.19-4.87.47-7.28.9A76,76,0,0,0,76.05,229.83Z"
                 />
                 <path
-                  className="cls-5"
+                  className="cls-5 assign-color"
                   d="M27.07,224.56l27.21-4.68s1-13.83.44-21.56C54,188.1,50,186,42.42,196,37.34,202.68,27.07,224.56,27.07,224.56Z"
                 />
                 <path
