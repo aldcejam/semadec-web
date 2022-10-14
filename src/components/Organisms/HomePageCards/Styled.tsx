@@ -1,4 +1,4 @@
-import { styled } from "@mui/system";
+import { styled } from "@mui/material";
 
 
 export const StyledHomePageCard = styled("article")`
