@@ -5,14 +5,10 @@ import AngleLine from "../../public/format/AngleLine";
 import PageTitle from "../components/Atoms/PageTitle/Index";
 import ListSports from "../components/templates/ListSports/Index";
 import { ContainerContentPage } from "../styles/global/globals";
-import { StyedButtonSport, StyledFindGameBySport } from "../styles/Styed.FindGameBySport";
+import {StyledFindGameBySport } from "../styles/Styed.FindGameBySport";
 
 const FindGameBySport: NextPage = () => {
     const { query } = useRouter();
-
-
-
-
 
     return (
         <>
@@ -27,7 +23,7 @@ const FindGameBySport: NextPage = () => {
                     <div className="container">
                         <AngleLine />
                         <AngleLine />
-                        <ListSports curso={query.curso}/>
+                        <ListSports course={query.curso}/>
                     </div>
                 </StyledFindGameBySport>
             </ContainerContentPage>
