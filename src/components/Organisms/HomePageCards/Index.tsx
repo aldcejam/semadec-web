@@ -14,7 +14,6 @@ const HomePageCard = ({ illustration, title, link }: TypesHomePageCard) => {
     return (
         <Link href={link}>
             <StyledHomePageCard className="card">
-                {illustration}
                 <CardTitle
                     title={title}
                 />
