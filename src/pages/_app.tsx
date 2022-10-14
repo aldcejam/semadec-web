@@ -19,7 +19,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       {/*  */}
       <DefaultBackground />
       <ContainerGlobal>
-        <SideBarPage />
         <SettingsButtons />
       </ContainerGlobal>
       {/*  */}

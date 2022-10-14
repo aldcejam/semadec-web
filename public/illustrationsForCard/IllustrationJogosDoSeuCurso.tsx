@@ -1,5 +1,4 @@
 import { styled } from "@mui/material";
-import { useThemeContext } from "../../src/contexts/ThemeContext";
 
 const IllustrationJogosDoSeuCurso = () => {
   const StyledIllustrationJogosDoSeuCurso = styled("div")`

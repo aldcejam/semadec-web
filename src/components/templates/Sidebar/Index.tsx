@@ -1,7 +1,6 @@
 import { useState } from "react"
 import MenuBurguer from "../../Atoms/MenuBurguer/Index"
 import { StyledSidebarPage } from "./Styled"
-import ButtonRedirectProfile from "../../Molecules/Sidebar/ButtonRedirectProfile/Index";
 import Navegation from "../../Organisms/Sidebar/Navegation/Index";
 import RedirectIcon from "../../Molecules/Sidebar/RedirectIcon/Index";
 
