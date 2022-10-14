@@ -17,8 +17,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeContextProvider>
       {/*  */}
-      <DefaultBackground />
       <ContainerGlobal>
+        <SideBarPage />
+        <SettingsButtons />
       </ContainerGlobal>
       {/*  */}
       <ContainerPage>
