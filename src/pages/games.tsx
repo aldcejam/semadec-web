@@ -48,6 +48,16 @@ const Game = () => {
                     logo: "/testes/time3.png",
                     score: 2,
                 },
+                {
+                    course: "fis",
+                    logo: "/testes/time3.png",
+                    score: 2,
+                },
+                {
+                    course: "ener",
+                    logo: "/testes/time3.png",
+                    score: 2,
+                },
             ],
             specification: {
                 date: date,

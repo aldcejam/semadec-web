@@ -3,12 +3,12 @@ import {styled} from "@mui/material/styles";
 export const StyleForTwoTeams = styled("div")`
   display: flex;
   align-items: baseline;
-  gap: 10px;
+  gap: 5px;
   
   .team {
     display: flex;
     align-items: baseline;
-    gap: 10px;
+    gap: 5px;
     &:nth-of-type(2) {
       flex-direction: row-reverse;
     }
