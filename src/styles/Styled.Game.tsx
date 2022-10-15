@@ -56,7 +56,7 @@ export const StyledGame = styled('div')`
                 ${props => props.theme.breakpoints.down("sm")}{
                     grid-template-columns: repeat(1, 1fr);
                 }
-                grid-auto-rows: 150px;
+                grid-auto-rows: 140px;
                 gap: 20px;
                 
             }
