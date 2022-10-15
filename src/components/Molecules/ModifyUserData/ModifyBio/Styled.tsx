@@ -1,4 +1,4 @@
-import { styled } from "@mui/material";
+import styled from "@mui/material/styles/styled";
 
 export const StyledModifyBio = styled("div")`
   grid-area: bio-message;

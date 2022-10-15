@@ -1,5 +1,4 @@
-import { styled } from "@mui/material";
-
+import styled from "@mui/material/styles/styled";
 
 export const StyledSports = styled("div")`
             display: flex ;

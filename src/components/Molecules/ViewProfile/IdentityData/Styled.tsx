@@ -1,4 +1,4 @@
-import { styled } from "@mui/material";
+import styled from "@mui/material/styles/styled";
 
 export const StyledIdentity = styled("div")`
     text-align: center;

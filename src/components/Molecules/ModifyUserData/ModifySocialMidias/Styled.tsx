@@ -1,4 +1,4 @@
-import { styled } from "@mui/material";
+import styled from "@mui/material/styles/styled";
 
 export const StyledModifySocialMidias = styled("div")`
   grid-area: social-midias;

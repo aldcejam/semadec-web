@@ -1,4 +1,4 @@
-import { styled } from "@mui/material";
+import styled from "@mui/material/styles/styled";
 
 export const RedirecticonStyled = styled("li")`
   width: 200px;
