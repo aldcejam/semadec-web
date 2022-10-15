@@ -1,4 +1,4 @@
-import styled from "@mui/material/styles/styled";
+import {styled} from "@mui/material/styles";
 
 export const StyedButtonSport = styled("button")`
   width: clamp(120px, 20vw, 250px);

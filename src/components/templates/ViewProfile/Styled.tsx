@@ -1,4 +1,4 @@
-import styled from "@mui/material/styles/styled";
+import {styled} from "@mui/material/styles";
 
 export const StyledViewProfile = styled("main")`
   position: relative;

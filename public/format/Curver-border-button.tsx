@@ -1,4 +1,4 @@
-import styled from "@mui/material/styles/styled";
+import {styled} from "@mui/material/styles";
 import { useThemeContext } from "../../src/contexts/ThemeContext";
 
 const CurverBorderButton = () => {
