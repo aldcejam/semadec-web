@@ -14,7 +14,7 @@ const SideBarPage = () => {
             <div className="redirect-home">
                 <RedirectIcon 
                 href="/"
-                icon="/icons/home.svg"
+                icon="/Icons/home.svg"
                 text="Home"
                 />
             </div>
