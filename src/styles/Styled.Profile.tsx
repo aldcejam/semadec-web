@@ -10,7 +10,6 @@ const StyledProfile = styled("div")`
   gap: 20px;
   ${(props) => props.theme.breakpoints.down("md")} {
     grid-template-columns: 1fr;
-    
   }
 `;
 

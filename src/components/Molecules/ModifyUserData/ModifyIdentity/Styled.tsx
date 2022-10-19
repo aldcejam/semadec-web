@@ -1,10 +1,10 @@
 import {styled} from "@mui/material/styles";
 
-export const StyledModifySocialMidias = styled("div")`
-  display: grid;
-  gap: 10px;
-
-  .input-material-ui {
+export const StyledModifyIdentity = styled("div")`
+    display: grid;
+    gap: 10px;
+    
+    .input-material-ui {
     width: 100%;
     transition: 0.3s all;
     input {
@@ -27,15 +27,4 @@ export const StyledModifySocialMidias = styled("div")`
     }
   }
 
-  &.input-error {
-    color: ${(props) => props.theme.palette.error.main};
-    .MuiOutlinedInput-root {
-      & fieldset {
-        border: 2px solid ${(props) => props.theme.palette.error.main} !important;
-      }
-      &.Mui-focused fieldset {
-        border: 2px solid ${(props) => props.theme.palette.error.main} !important;
-      }
-    }
-  }
-`;
+`

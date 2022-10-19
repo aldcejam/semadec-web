@@ -3,7 +3,7 @@ import Sports from "../../Organisms/ListSports/Sports/Index"
 import { StyledListSports } from "./Styled"
 
 type ListSportsProps = {
-    course: string[] | string | undefined,
+    course: any,
 }
 const ListSports = ({ course }: ListSportsProps) => {
     return (

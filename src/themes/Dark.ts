@@ -35,11 +35,13 @@ export const DarkTheme = (mainColor: string, secondaryColor:string) => {
       },
       background: {
         paper: "#211f1f",
-        default: "linear-gradient(135deg, #5B6ABD 0%, #D943B8 100%)",
+        default: `linear-gradient(135deg, ${mainColor} 0%, ${secondaryColor} 100%)`,
       },
+      divider: "#211f1f1a",
       action: {
         active: "#fff",
         disabled: "#000",
+        
       },
     },
     breakpoints: {

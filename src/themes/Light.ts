@@ -13,7 +13,9 @@ export const LightTheme = (mainColor: string, secondaryColor:string) => {
         main: mainColor,
         contrastText: "#363636",
         light: "#D8D8D8",
-        dark: '#000000'
+        dark: '#000000',
+        "50": "#F2F2F2"
+
       },
       secondary: {
         main: secondaryColor,
@@ -35,14 +37,16 @@ export const LightTheme = (mainColor: string, secondaryColor:string) => {
         /* Subtitle */
         secondary: "#353535",
       },
+      background: {
+        paper: "#d9d9d9",
+        default: `linear-gradient(135deg, ${mainColor} 0%, ${secondaryColor} 100%)`,
+      },
+      divider: "#d9d9d91a",
       action: {
         active: "#000",
         disabled: "#fff",
       },
-      background: {
-        paper: "#d9d9d9",
-        default: "linear-gradient(135deg, #5B6ABD 0%, #D943B8 100%)",
-      },
+      
     },
     shape:{
       borderRadius: "15px"

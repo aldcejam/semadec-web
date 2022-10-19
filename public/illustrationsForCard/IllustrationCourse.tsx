@@ -13,7 +13,6 @@ const IllustrationCourse = () => {
 
     .svg {
       .assign-color{
-
       }
       .cls-1 {
         fill: #263238;

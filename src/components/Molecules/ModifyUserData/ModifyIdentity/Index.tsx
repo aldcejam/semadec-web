@@ -1,5 +1,5 @@
 import { TextField } from "@mui/material"
-import { StyledModifyIdentity } from "./Styles"
+import { StyledModifyIdentity } from "./Styled"
 
 type InputTextProps = {
     register: any,

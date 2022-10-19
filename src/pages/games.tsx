@@ -1,13 +1,16 @@
-import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
-import CurverBorderButton from "../../public/format/Curver-border-button";
 import GameCard from "../components/GameCard/Index";
 import PageTitle from "../components/Atoms/PageTitle/Index";
 import { ContainerContentPage } from "../styles/global/globals";
 import { StyledGame } from "../styles/Styled.Game";
+import { useRouter } from "next/router";
 
 
 const Game = () => {
+
+    const router = useRouter()
+    const { sportSelected, categoryGenre } = router.query
+    const sport = sportSelected as string
 
     const date = new Date(2020,10,11)
 
@@ -90,14 +93,14 @@ const Game = () => {
                 <title>Jogos</title>
             </Head>
 
-            <PageTitle title="Jogos" />
+            <PageTitle title={sportSelected ? sport : "esporte não definido"} />
             <ContainerContentPage with_background_color="true">
                 <StyledGame className="box-page">
                     <div className="style-background">
                         <div />
                     </div>
                     <div className="container">
-                        <h2>feminino</h2>
+                        <h2>{categoryGenre}</h2>
                         <div className="container__segunda">
                             <h3>Segunda</h3>
                             <div className="segunda__cards cards">
