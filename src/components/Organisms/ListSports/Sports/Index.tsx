@@ -1,38 +1,20 @@
-import ButtonSport from "../../../Molecules/ListSports/ButtonSport/Index"
+import ButtonSport from "../../../Atoms/ListSports/ButtonSport/Index";
 import { StyledSports } from "./Styled"
-import { useState } from "react";
-import ModalSelectCategorys from "../../../templates/ListSports/ModalSelectCategorys/Index";
-import { sports, SportProps } from "../Sports/api"
+import { ApiSports, ApiSportsProps } from "./api"
+import { dataForResearchProps } from "../../../templates/ListSports/ModalSelectCategorys/TypesDataForResearch"
 
-type dataForResearchProps = {
-    sport: {
-        sportName: string,
-        categorys: string[] | undefined,
-        categoryGenre: string[]
-    }
-    userSelectedCategory: string,
-    userSelectedCategoryGenre: string
+
+type SportsProps = {
+    dataForResearch: dataForResearchProps,
+    setDataForResearch: React.Dispatch<React.SetStateAction<dataForResearchProps>>
+    ToggleModal: () => void
 }
 
-const Sports = () => {
+const Sports = ({dataForResearch,setDataForResearch, ToggleModal}:SportsProps) => {
 
-    const sportsArraySize = sports.length / 2
+    const sportsArraySize = ApiSports.length / 2
 
-    const [modalIsOpen, setModalIsOpen] = useState(false);
-    const [dataForResearch, setDataForResearch] = useState<dataForResearchProps>({
-        sport: {
-            sportName: "",
-            categorys: undefined,
-            categoryGenre: []
-        },
-        userSelectedCategory: "",
-        userSelectedCategoryGenre: ""
-    });
-
-    const ToggleModal = () => {
-        modalIsOpen ? setModalIsOpen(false) : setModalIsOpen(true)
-    }
-    const handleButtonSport = (sport: SportProps) => {
+    const handleButtonSport = (sport: ApiSportsProps) => {
         setDataForResearch({ ...dataForResearch, sport: sport })
         ToggleModal()
     }
@@ -40,7 +22,7 @@ const Sports = () => {
     return (
         <StyledSports>
             <div className="sports__left">
-                {sports.map((sport, index) => {
+                {ApiSports.map((sport, index) => {
                     if (index >= sportsArraySize) {
                         return (
                             <span
@@ -53,7 +35,7 @@ const Sports = () => {
                 })}
             </div>
             <div className="sports__right">
-                {sports.map((sport, index) => {
+                {ApiSports.map((sport, index) => {
                     if (index < sportsArraySize) {
                         return (
                             <span
@@ -65,12 +47,6 @@ const Sports = () => {
                     }
                 })}
             </div>
-            <ModalSelectCategorys
-                ToggleModal={ToggleModal}
-                modalIsOpen={modalIsOpen}
-                dataForResearch={dataForResearch}
-                setDataForResearch={setDataForResearch}
-            />
         </StyledSports >
     )
 }

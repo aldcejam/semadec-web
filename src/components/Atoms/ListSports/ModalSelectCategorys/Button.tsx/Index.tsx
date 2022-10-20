@@ -1,12 +1,13 @@
 import Link from "next/link"
 import { StyledButton } from "./Styled"
-import {dataForResearch} from "../../../templates/ListSports/ModalSelectCategorys/Types" 
+import {dataForResearchProps} from "../../../../templates/ListSports/ModalSelectCategorys/TypesDataForResearch" 
 
-type ButtonProps = dataForResearch &{
+type ButtonProps = {
     value: string
+    dataForResearch: dataForResearchProps
 }
 
-const Button = ({ value,dataForResearch }: ButtonProps) => {
+const Button = ({ value, dataForResearch }: ButtonProps) => {
     const category = dataForResearch.userSelectedCategory
     const categoryGenre = dataForResearch.userSelectedCategoryGenre
     const sportSelected = dataForResearch.sport.sportName

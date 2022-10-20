@@ -9,6 +9,11 @@ export const StyledButtonSelectGenre = styled("article")`
   box-shadow: inset -5px -5px 10px
     ${(props) => props.theme.palette.secondary.main}3f;
   cursor: pointer;
+
+  &.selected {
+    background-color: ${(props) => props.theme.palette.primary.main};
+  }
+
   .illustration {
     position: relative;
     width: 90px;

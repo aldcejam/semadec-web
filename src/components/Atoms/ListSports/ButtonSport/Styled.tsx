@@ -10,6 +10,7 @@ export const StyedButtonSport = styled("button")`
   border-radius: 10px;
   cursor: pointer;
   color: ${(props) => props.theme.palette.primary.contrastText};
+  text-transform: capitalize;
 
   &:hover {
     transition: 0.4s;

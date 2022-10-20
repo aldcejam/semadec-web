@@ -1,35 +1,25 @@
 import Modal from '@mui/material/Modal';
-import Button from '../../../Atoms/ListSports/Button.tsx/Index';
-import Categorys from '../../../Organisms/ListSports/Categorys/Index';
-import GenreOptions from '../../../Organisms/ListSports/GenreOptions/Index';
+import Button from '../../../Atoms/ListSports/ModalSelectCategorys/Button.tsx/Index';
+import Categorys from '../../../Organisms/ListSports/ModalSelectCategorys/Categorys/Index';
+import GenreOptions from '../../../Organisms/ListSports/ModalSelectCategorys/GenreOptions/Index';
 import { StyledBox } from './Styled';
-import {dataForResearch} from "./Types"
+import { dataForResearchProps } from "./TypesDataForResearch"
 
-type ModalSelectCategorysProps = dataForResearch &{
+type ModalSelectCategorysProps = {
     modalIsOpen: boolean,
     ToggleModal: () => void
-    setDataForResearch: React.Dispatch<React.SetStateAction<{
-        sport: {
-            sportName: string,
-            categorys: string[] | undefined,
-            categoryGenre: string[]
-        }
-        userSelectedCategory: string,
-        userSelectedCategoryGenre: string
-
-    }>>
+    dataForResearch: dataForResearchProps,
+    setDataForResearch: React.Dispatch<React.SetStateAction<dataForResearchProps>>
 }
 
 
-const ModalSelectCategorys = ({ dataForResearch, setDataForResearch ,modalIsOpen, ToggleModal }: ModalSelectCategorysProps) => {
-    
+const ModalSelectCategorys = ({ dataForResearch, setDataForResearch, modalIsOpen, ToggleModal }: ModalSelectCategorysProps) => {
+
     const SelectCategory = (category: string) => {
-        setDataForResearch({...dataForResearch, userSelectedCategory: category})
-        console.log(dataForResearch)
+        setDataForResearch({ ...dataForResearch, userSelectedCategory: category })
     }
     const selectCategoryGenre = (categoryGenre: string) => {
-        setDataForResearch({...dataForResearch, userSelectedCategoryGenre: categoryGenre})
-        console.log(dataForResearch)
+        setDataForResearch({ ...dataForResearch, userSelectedCategoryGenre: categoryGenre })
     }
 
     return (
@@ -39,22 +29,26 @@ const ModalSelectCategorys = ({ dataForResearch, setDataForResearch ,modalIsOpen
             onClose={ToggleModal}
             aria-labelledby="keep-mounted-modal-title"
             aria-describedby="keep-mounted-modal-description"
-            BackdropProps={{ sx: { backgroundColor: "divider", backdropFilter: "blur(5px)" } }}
+            BackdropProps={{ sx: { backgroundColor: "divider", backdropFilter: "blur(5px)", outline:"none"} }}
         >
             <StyledBox>
-                <h4>{dataForResearch.sport.sportName}</h4>
-                <h5>Selecione as categorias</h5>
+                <div className="titles">
+                    <h4>Esporte: {dataForResearch.sport.sportName}</h4>
+                    <h5>Selecione as categorias</h5>
+                </div>
                 {dataForResearch.sport.categorys ?
-                    <Categorys 
-                    selectCategory={SelectCategory}
-                    categorys={dataForResearch.sport.categorys} /> :
+                    <Categorys
+                        selectCategory={SelectCategory}
+                        categorys={dataForResearch.sport.categorys} /> :
                     ""
                 }
-                <GenreOptions 
-                selectCategoryGenre={selectCategoryGenre}
-                categoryGenre={dataForResearch.sport.categoryGenre} />
+                <GenreOptions
+                    dataForResearch={dataForResearch}
+                    selectCategoryGenre={selectCategoryGenre}
+                    categoryGenre={dataForResearch.sport.categoryGenre}
+                />
 
-                <Button dataForResearch={dataForResearch} value="proceguir"/>
+                <Button dataForResearch={dataForResearch} value="proceguir" />
             </StyledBox>
         </Modal>
     )

@@ -19,5 +19,21 @@ export const StyledBox = styled("section")`
     display: grid;
     gap: 20px;
 
+    .titles{
+        text-align: center;
+        h4{
+            margin: 0;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            color: ${props => props.theme.palette.text.primary};
+        }
+        h5{
+            margin: 5px 0 10px;
+            color: ${props => props.theme.palette.text.secondary};
+            font-weight: 500;
+            font-size: 0.7rem;
+        }
+    }
+
 
 `

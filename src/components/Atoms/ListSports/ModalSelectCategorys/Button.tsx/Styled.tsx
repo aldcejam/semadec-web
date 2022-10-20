@@ -31,7 +31,7 @@ export const StyledButton = styled("div")`
         background-color: ${props => props.theme.palette.background.paper}c4;
         border-radius: 8px;
         color: ${props => props.theme.palette.text.primary};
-        text-transform: capitalize;
+        text-transform: uppercase;
         font-size: 1rem;
         font-weight: 600;
         transition: all 0.3s ease;

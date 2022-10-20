@@ -1,13 +1,13 @@
-export type SportProps = {
+export type ApiSportsProps = {
   sportName: string;
   categorys: string[] | undefined;
   categoryGenre: string[];
 
 }
 
-type ArraySportProps = Array<SportProps>
+type ArrayApiSportsProps = Array<ApiSportsProps>
 
-export const sports: ArraySportProps = [
+export const ApiSports: ArrayApiSportsProps = [
   {
     sportName: "futsal",
     categorys: undefined,
