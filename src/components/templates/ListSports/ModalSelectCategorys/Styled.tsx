@@ -3,7 +3,7 @@ import { styled } from "@mui/material/styles";
 export const StyledBox = styled("section")`
     position: absolute;
     width: clamp(200px, 100%, 400px);
-    max-height: 100vh;
+    max-height: 95vh;
     overflow-y: auto;
     background-color: ${props => props.theme.palette.background.paper}75;
     backdrop-filter: blur(50px);
@@ -18,6 +18,20 @@ export const StyledBox = styled("section")`
     border-top: 2px solid ${props => props.theme.palette.primary.main};
     display: grid;
     gap: 20px;
+
+    
+    ::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: ${props => props.theme.palette.primary.dark}b5;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: ${props => props.theme.palette.primary.dark};
+  }
 
     .titles{
         text-align: center;

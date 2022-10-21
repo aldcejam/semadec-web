@@ -1,17 +1,39 @@
 import { styled } from "@mui/material/styles";
 
 export const StyledButtonSelectGenre = styled("article")`
+  position: relative;
   text-align: center;
   padding: 10px;
   border-top: 2px solid ${(props) => props.theme.palette.primary.main};
   border-bottom: 2px solid ${(props) => props.theme.palette.secondary.main};
   border-radius: ${(props) => props.theme.shape.borderRadius};
   box-shadow: inset -5px -5px 10px
-    ${(props) => props.theme.palette.secondary.main}3f;
+  ${(props) => props.theme.palette.secondary.main}3f;
   cursor: pointer;
-
+  transition: 0.3s;
+  :before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: ${(props) => props.theme.shape.borderRadius};
+    box-shadow: inset 5px 5px 10px
+    ${(props) => props.theme.palette.primary.main}3f;
+    
+  }
   &.selected {
-    background-color: ${(props) => props.theme.palette.primary.main};
+    border-top-width: 4px ;
+    border-bottom-width: 4px solid;
+    border-radius: ${(props) => props.theme.shape.borderRadius};
+    box-shadow: inset -5px -5px 10px
+    ${(props) => props.theme.palette.secondary.main}97;
+    background: ${(props) => props.theme.palette.primary.dark}12;
+    :before{
+        box-shadow: inset 5px 5px 10px
+        ${(props) => props.theme.palette.primary.main}97;
+      }
   }
 
   .illustration {

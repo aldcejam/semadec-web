@@ -3,10 +3,12 @@ import { StyedButtonSport } from "./Styled"
 type ButtonSportProps = {
     nameButton: string
 }
-const ButtonSport = ({nameButton}:ButtonSportProps) => {
+const ButtonSport = ({ nameButton }: ButtonSportProps) => {
     return (
         <StyedButtonSport>
-            {nameButton}
+            <span>
+                {nameButton}
+            </span>
         </StyedButtonSport>
     )
 }

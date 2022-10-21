@@ -1,24 +1,32 @@
 import Link from "next/link"
 import { StyledButton } from "./Styled"
-import {dataForResearchProps} from "../../../../templates/ListSports/ModalSelectCategorys/TypesDataForResearch" 
+import { dataForResearchGameProps } from "../../../../templates/ListSports/ModalSelectCategorys/TypesDataForResearchGame"
+import { toast } from "react-toastify";
 
 type ButtonProps = {
     value: string
-    dataForResearch: dataForResearchProps
+    dataForResearch: dataForResearchGameProps
 }
+
 
 const Button = ({ value, dataForResearch }: ButtonProps) => {
     const category = dataForResearch.userSelectedCategory
     const categoryGenre = dataForResearch.userSelectedCategoryGenre
     const sportSelected = dataForResearch.sport.sportName
+
+    const HandleButton = () => {
+        if (!dataForResearch.userSelectedCategoryGenre) {
+            toast.error("Selecione uma categoria e um gênero para continuar");
+        }else{
+            window.location.href = `games?category=${category}&categoryGenre=${categoryGenre}&sportSelected=${sportSelected}`;
+        }
+    }
     return (
-        <Link href={`games?category=${category}&categoryGenre=${categoryGenre}&sportSelected=${sportSelected}`}>
-            <StyledButton>
-                <div>
-                    <button>{value}</button>
-                </div>
-            </StyledButton>
-        </Link>
+        <StyledButton onClick={() => HandleButton()}>
+            <div>
+                <button>{value}</button>
+            </div>
+        </StyledButton>
     )
 }
 

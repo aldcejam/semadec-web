@@ -11,11 +11,10 @@ export const StyledSports = styled("div")`
             .sports__left,.sports__right{
                 display: grid;
                 gap: 10px;
-                padding: 20px;
+                padding: 30px 25px;
                 text-align: center;
                 background-color: ${props => props.theme.palette.primary.light}1a;
-                backdrop-filter: blur(10px);
-                border: 1px solid ${props => props.theme.palette.primary.dark}91;
+                backdrop-filter: blur(80px);
                 border-radius: 10px;
 
                 ${(props) => props.theme.breakpoints.down('xs')}{

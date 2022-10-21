@@ -11,6 +11,12 @@ export const StyledCategorys = styled("div")`
             padding: 7px 12px;
             background-color: ${props => props.theme.palette.primary.light}97;
             cursor: pointer;
+            transition: 0.3s;
+            &.selected{
+                background: ${props => props.theme.palette.background.default};
+                border: solid 1px ${props => props.theme.palette.secondary.main};
+            }
+
             p{
                 font-size: 1.1rem;
                 text-transform: capitalize;

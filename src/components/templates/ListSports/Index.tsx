@@ -3,7 +3,7 @@ import Title from "../../Molecules/ListSports/Title/Index"
 import Sports from "../../Organisms/ListSports/Sports/Index";
 import ModalSelectCategorys from "./ModalSelectCategorys/Index";
 import { StyledListSports } from "./Styled"
-import { dataForResearchProps} from "./ModalSelectCategorys/TypesDataForResearch"
+import { dataForResearchGameProps } from "./ModalSelectCategorys/TypesDataForResearchGame"
 
 type ListSportsProps = {
     course: any,
@@ -11,7 +11,7 @@ type ListSportsProps = {
 const ListSports = ({ course }: ListSportsProps) => {
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
-    const [dataForResearch, setDataForResearch] = useState<dataForResearchProps>({
+    const [dataForResearch, setDataForResearch] = useState<dataForResearchGameProps>({
         sport: {
             sportName: "",
             categorys: undefined,

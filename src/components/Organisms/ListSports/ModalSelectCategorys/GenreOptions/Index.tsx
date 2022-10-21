@@ -1,11 +1,11 @@
 import ButtonSelectGenre from "../../../../Molecules/ListSports/ModalSelectCategorys/ButtonSelectGenre/Index"
-import { dataForResearchProps } from "../../../../templates/ListSports/ModalSelectCategorys/TypesDataForResearch"
+import { dataForResearchGameProps } from "../../../../templates/ListSports/ModalSelectCategorys/TypesDataForResearchGame"
 import { StyledGenreOptions } from "./Styled"
 
 type GenreOptionsProps = {
     selectCategoryGenre: (categoryGenre: string) => void,
     categoryGenre: string[]
-    dataForResearch: dataForResearchProps
+    dataForResearch: dataForResearchGameProps
 }
 const GenreOptions = ({ categoryGenre, selectCategoryGenre, dataForResearch }: GenreOptionsProps) => {
 
@@ -15,10 +15,7 @@ const GenreOptions = ({ categoryGenre, selectCategoryGenre, dataForResearch }: G
             {categoryGenre.map((genre) => {
                 return (
                     <span
-                        onClick={() =>{
-                            console.log(genre + "&&" +dataForResearch.userSelectedCategoryGenre)
-                            selectCategoryGenre(genre)
-                        }}
+                        onClick={() => selectCategoryGenre(genre)}
                         key={genre}>
                         <ButtonSelectGenre
                             selected={dataForResearch.userSelectedCategoryGenre == genre ? true : false}

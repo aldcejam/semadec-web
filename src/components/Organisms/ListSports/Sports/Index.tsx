@@ -1,12 +1,12 @@
 import ButtonSport from "../../../Atoms/ListSports/ButtonSport/Index";
 import { StyledSports } from "./Styled"
 import { ApiSports, ApiSportsProps } from "./api"
-import { dataForResearchProps } from "../../../templates/ListSports/ModalSelectCategorys/TypesDataForResearch"
+import { dataForResearchGameProps } from "../../../templates/ListSports/ModalSelectCategorys/TypesDataForResearchGame"
 
 
 type SportsProps = {
-    dataForResearch: dataForResearchProps,
-    setDataForResearch: React.Dispatch<React.SetStateAction<dataForResearchProps>>
+    dataForResearch: dataForResearchGameProps,
+    setDataForResearch: React.Dispatch<React.SetStateAction<dataForResearchGameProps>>
     ToggleModal: () => void
 }
 
@@ -15,7 +15,7 @@ const Sports = ({dataForResearch,setDataForResearch, ToggleModal}:SportsProps) =
     const sportsArraySize = ApiSports.length / 2
 
     const handleButtonSport = (sport: ApiSportsProps) => {
-        setDataForResearch({ ...dataForResearch, sport: sport })
+        setDataForResearch({ userSelectedCategory: '',userSelectedCategoryGenre:'', sport: sport })
         ToggleModal()
     }
 

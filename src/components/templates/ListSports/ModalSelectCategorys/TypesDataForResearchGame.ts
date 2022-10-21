@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-export type dataForResearchProps = {
+export type dataForResearchGameProps = {
   sport: {
     sportName: string;
     categorys: string[] | undefined;
-    categoryGenre: string[];
+    categoryGenre: string[] ;
   };
   userSelectedCategory: string;
   userSelectedCategoryGenre: string;

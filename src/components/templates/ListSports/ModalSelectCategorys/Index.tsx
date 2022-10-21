@@ -3,13 +3,13 @@ import Button from '../../../Atoms/ListSports/ModalSelectCategorys/Button.tsx/In
 import Categorys from '../../../Organisms/ListSports/ModalSelectCategorys/Categorys/Index';
 import GenreOptions from '../../../Organisms/ListSports/ModalSelectCategorys/GenreOptions/Index';
 import { StyledBox } from './Styled';
-import { dataForResearchProps } from "./TypesDataForResearch"
+import { dataForResearchGameProps } from "./TypesDataForResearchGame"
 
 type ModalSelectCategorysProps = {
     modalIsOpen: boolean,
     ToggleModal: () => void
-    dataForResearch: dataForResearchProps,
-    setDataForResearch: React.Dispatch<React.SetStateAction<dataForResearchProps>>
+    dataForResearch: dataForResearchGameProps,
+    setDataForResearch: React.Dispatch<React.SetStateAction<dataForResearchGameProps>>
 }
 
 
@@ -38,6 +38,7 @@ const ModalSelectCategorys = ({ dataForResearch, setDataForResearch, modalIsOpen
                 </div>
                 {dataForResearch.sport.categorys ?
                     <Categorys
+                        dataForResearch={dataForResearch}
                         selectCategory={SelectCategory}
                         categorys={dataForResearch.sport.categorys} /> :
                     ""
@@ -48,7 +49,7 @@ const ModalSelectCategorys = ({ dataForResearch, setDataForResearch, modalIsOpen
                     categoryGenre={dataForResearch.sport.categoryGenre}
                 />
 
-                <Button dataForResearch={dataForResearch} value="proceguir" />
+                <Button  dataForResearch={dataForResearch} value="prosseguir" />
             </StyledBox>
         </Modal>
     )
