@@ -12,6 +12,7 @@ const Button = ({ value, dataForSearchBySportCategories }: ButtonProps) => {
     const category = dataForSearchBySportCategories.userSelectedCategory
     const categoryGenre = dataForSearchBySportCategories.userSelectedCategoryGenre
     const sportSelected = dataForSearchBySportCategories.sport.sportName
+    const RedirectUrl = `games?${category ? `category=${category}&` : ""}${categoryGenre ? `categoryGenre=${categoryGenre}&` : ""}${sportSelected ? `sport=${sportSelected}` : ""}`
 
     const VerifyIfCategoriesIsSelected = () => {
         if (!dataForSearchBySportCategories.userSelectedCategoryGenre) {
@@ -21,7 +22,7 @@ const Button = ({ value, dataForSearchBySportCategories }: ButtonProps) => {
             toast.error("Selecione uma categoria do esporte para continuar");
         }
         else{
-            window.location.href = `games?category=${category}&categoryGenre=${categoryGenre}&sportSelected=${sportSelected}`;
+            window.location.href = RedirectUrl;
         }
     }
     return (
