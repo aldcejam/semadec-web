@@ -13,11 +13,11 @@ const Button = ({ value, dataForSearchBySportCategories }: ButtonProps) => {
     const categoryGenre = dataForSearchBySportCategories.userSelectedCategoryGenre
     const sportSelected = dataForSearchBySportCategories.sport.sportName
 
-    const HandleButton = () => {
+    const VerifyIfCategoriesIsSelected = () => {
         if (!dataForSearchBySportCategories.userSelectedCategoryGenre) {
             toast.error("Selecione uma categoria de gênero para continuar");
         }
-        else if(!dataForSearchBySportCategories.userSelectedCategory){
+        else if(dataForSearchBySportCategories.sport.categorys && !dataForSearchBySportCategories.userSelectedCategory){
             toast.error("Selecione uma categoria do esporte para continuar");
         }
         else{
@@ -27,7 +27,7 @@ const Button = ({ value, dataForSearchBySportCategories }: ButtonProps) => {
     return (
         <StyledButton>
             <div>
-                <button onClick={() => HandleButton()}>{value}</button>
+                <button onClick={() => VerifyIfCategoriesIsSelected()}>{value}</button>
             </div>
         </StyledButton>
     )
