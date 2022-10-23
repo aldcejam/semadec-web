@@ -12,7 +12,7 @@ const Button = ({ value, dataForSearchBySportCategories }: ButtonProps) => {
     const category = dataForSearchBySportCategories.userSelectedCategory
     const categoryGenre = dataForSearchBySportCategories.userSelectedCategoryGenre
     const sportSelected = dataForSearchBySportCategories.sport.sportName
-    const RedirectUrl = `games?${category ? `category=${category}&` : ""}${categoryGenre ? `categoryGenre=${categoryGenre}&` : ""}${sportSelected ? `sport=${sportSelected}` : ""}`
+    const RedirectUrl = `games?${category ? `category=${category}&` : ""}${categoryGenre ? `categoryGenre=${categoryGenre}&` : ""}${sportSelected ? `sportSelected=${sportSelected}` : ""}`
 
     const VerifyIfCategoriesIsSelected = () => {
         if (!dataForSearchBySportCategories.userSelectedCategoryGenre) {

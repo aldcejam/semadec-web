@@ -4,10 +4,16 @@ type TypesPageTitle = {
     title: string
 }
 
-const PageTitle = ({title}:TypesPageTitle)=>{
-    return(
+const PageTitle = ({ title }: TypesPageTitle) => {
+    const dividerTitle = title.split("-")
+    return (
         <StyledPageTitle>
-            {title}
+            {dividerTitle[1] ?
+                <span>
+                    {dividerTitle[0]}
+                    <span className="subtitle">{"-" + dividerTitle[1]}</span>
+                </span>
+                : <span>{dividerTitle[0]}</span>}
         </StyledPageTitle>
     )
 }

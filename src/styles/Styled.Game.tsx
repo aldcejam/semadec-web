@@ -32,6 +32,7 @@ export const StyledGame = styled('div')`
             font-weight: 600;
             font-size: 1.8rem;
             color: ${props => props.theme.palette.text.primary};
+            text-transform: capitalize;
         }
 
         &__segunda{

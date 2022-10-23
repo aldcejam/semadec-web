@@ -20,6 +20,11 @@ export const StyledPageTitle = styled('h1')`
         width: 100%;
         background: ${(props)=> props.theme.palette.background.default};
     }
+    .subtitle{
+      font-size: 1.1rem;
+      font-weight: 400;
+      text-transform: capitalize;
+    }
     
 
 `

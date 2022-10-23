@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 const Game = () => {
 
     const router = useRouter()
-    const { sportSelected, categoryGenre } = router.query
+    const { sportSelected, categoryGenre,category } = router.query
     const sport = sportSelected as string
 
     const date = new Date(2020,10,11)
@@ -93,7 +93,11 @@ const Game = () => {
                 <title>Jogos</title>
             </Head>
 
-            <PageTitle title={sportSelected ? sport : "esporte não definido"} />
+            <PageTitle title={
+                `${sportSelected ? sport : "esporte não definido"}
+                ${category ? ` - ${category}` : ""}
+                `}
+                />
             <ContainerContentPage with_background_color="true">
                 <StyledGame className="box-page">
                     <div className="style-background">
