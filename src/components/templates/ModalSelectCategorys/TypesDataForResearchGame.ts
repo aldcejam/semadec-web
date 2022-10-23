@@ -1,6 +1,4 @@
-import { useState } from "react";
-
-export type dataForResearchGameProps = {
+export type dataForSearchBySportCategoriesProps = {
   sport: {
     sportName: string;
     categorys: string[] | undefined;

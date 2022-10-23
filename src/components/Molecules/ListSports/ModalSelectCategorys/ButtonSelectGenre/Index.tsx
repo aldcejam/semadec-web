@@ -11,23 +11,23 @@ type ButtonSelectGenreProps = {
 const ButtonSelectGenre = ({ genre, selected }: ButtonSelectGenreProps) => {
     const ShowCategoryGenre = (genre: string) => {
         switch (genre) {
-            case "famale":
+            case "feminino":
                 return <IllustrationFamale />
-            case "male":
+            case "masculino":
                 return <IllustrationMale />
-            case "mixed":
+            case "misto":
                 return <IllustrationMixed />
         }
 
     }
     const tranlateCategoryGenre = (categoryGenre: string) => {
         switch (categoryGenre) {
-            case "male":
-                return "masculino"
-            case "famale":
-                return "feminino"
-            case "mixed":
-                return "misto"
+            case "masculino":
+                return "male"
+            case "feminino":
+                return "famale"
+            case "misto":
+                return "mixed"
             default: return ""
         }
     }
@@ -37,7 +37,7 @@ const ButtonSelectGenre = ({ genre, selected }: ButtonSelectGenreProps) => {
             <div className="illustration">
                 {ShowCategoryGenre(genre)}
             </div>
-            <p>{tranlateCategoryGenre(genre)}</p>
+            <p>{genre}</p>
         </StyledButtonSelectGenre>
     )
 }

@@ -1,13 +1,13 @@
-import { dataForResearchGameProps } from "../../../../templates/ListSports/ModalSelectCategorys/TypesDataForResearchGame"
+import { dataForSearchBySportCategoriesProps } from "../../../templates/ModalSelectCategorys/TypesDataForResearchGame"
 import { StyledCategorys } from "./Styled"
 
 type CategorysProps = {
     categorys: string[]
     selectCategory: (category: string) => void
-    dataForResearch: dataForResearchGameProps
+    dataForSearchBySportCategories: dataForSearchBySportCategoriesProps
     
 }
-const Categorys = ({categorys, selectCategory, dataForResearch}:CategorysProps) => {
+const Categorys = ({categorys, selectCategory, dataForSearchBySportCategories}:CategorysProps) => {
     return (
         <StyledCategorys>
             {categorys.map((category) => {
@@ -15,7 +15,7 @@ const Categorys = ({categorys, selectCategory, dataForResearch}:CategorysProps) 
                     <div 
                     onClick={() => {selectCategory(category); }}
                     key={category} 
-                    className={`category ${dataForResearch.userSelectedCategory == category ? "selected" : ''}`}>
+                    className={`category ${dataForSearchBySportCategories.userSelectedCategory == category ? "selected" : ''}`}>
                         <p>{category}</p>
                     </div>
                 )

@@ -1,43 +1,21 @@
-import { useState } from "react";
 import Title from "../../Molecules/ListSports/Title/Index"
 import Sports from "../../Organisms/ListSports/Sports/Index";
-import ModalSelectCategorys from "./ModalSelectCategorys/Index";
-import { StyledListSports } from "./Styled"
-import { dataForResearchGameProps } from "./ModalSelectCategorys/TypesDataForResearchGame"
+import { dataForSearchBySportCategoriesProps } from "../ModalSelectCategorys/TypesDataForResearchGame"
+import { StyledListSports } from "./Styled";
 
 type ListSportsProps = {
     course: any,
+    ToggleModal: () => void,
+    setDataForSearchBySportCategories: React.Dispatch<React.SetStateAction<dataForSearchBySportCategoriesProps>>
 }
-const ListSports = ({ course }: ListSportsProps) => {
-
-    const [modalIsOpen, setModalIsOpen] = useState(false);
-    const [dataForResearch, setDataForResearch] = useState<dataForResearchGameProps>({
-        sport: {
-            sportName: "",
-            categorys: undefined,
-            categoryGenre: []
-        },
-        userSelectedCategory: "",
-        userSelectedCategoryGenre: ""
-    });
-
-    const ToggleModal = () => {
-        modalIsOpen ? setModalIsOpen(false) : setModalIsOpen(true)
-    }
+const ListSports = ({ course,ToggleModal, setDataForSearchBySportCategories }: ListSportsProps) => {
 
     return (
         <StyledListSports>
             <Title title={course} />
             <Sports
                 ToggleModal={ToggleModal}
-                dataForResearch={dataForResearch}
-                setDataForResearch={setDataForResearch}
-            />
-            <ModalSelectCategorys
-                ToggleModal={ToggleModal}
-                modalIsOpen={modalIsOpen}
-                dataForResearch={dataForResearch}
-                setDataForResearch={setDataForResearch}
+                setDataForSearchBySportCategories={setDataForSearchBySportCategories}
             />
         </StyledListSports>
     )
