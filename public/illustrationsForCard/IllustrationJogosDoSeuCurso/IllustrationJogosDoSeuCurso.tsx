@@ -12,7 +12,6 @@ const IllustrationJogosDoSeuCurso = () => {
     display: flex;
     align-items: center;
     justify-content: right;
-
     .svg {
       .assign-color{
       }
