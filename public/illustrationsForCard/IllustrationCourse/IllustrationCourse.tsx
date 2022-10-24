@@ -1,7 +1,7 @@
 import {styled} from "@mui/material/styles";
-import Part1 from "./Part1";
-import Part2 from "./Part2";
-import Part3 from "./Part3";
+import Parte1 from "./Parte-1";
+import Parte2 from "./Parte-2";
+import Parte3 from "./Parte-3";
 
 const IllustrationCourse = () => {
 
@@ -68,9 +68,9 @@ const IllustrationCourse = () => {
           <defs></defs>
           <g id="Camada_2" data-name="Camada 2">
             <g id="Camada_1-2" data-name="Camada 1">
-              <Part1/>
-              <Part2/>
-              <Part3/>
+              <Parte1/>
+              <Parte2/>
+              <Parte3/>
             </g>
           </g>
         </svg>

@@ -1,4 +1,4 @@
-const Part2 = () => {
+const Parte2 = () => {
     return (
         <>
             <g id="freepik--character-2--inject-11">
@@ -69,4 +69,4 @@ const Part2 = () => {
     )
 }
 
-export default Part2
+export default Parte2
