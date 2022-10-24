@@ -1,11 +1,13 @@
 import {styled} from "@mui/material/styles";
-import Parte1 from "./Parte-1";
-import Parte2 from "./Parte-2";
-import Parte3 from "./Parte-3";
-import Parte4 from "./Parte-4";
-import Parte5 from "./Parte-5";
-import Parte6 from "./Parte-6";
-import Parte7 from "./Parte-7";
+import { lazy } from "react";
+
+const Parte1 = lazy(() => import('./Parte-1'))
+const Parte2 = lazy(() => import('./Parte-2'))
+const Parte3 = lazy(() => import('./Parte-3'))
+const Parte4 = lazy(() => import('./Parte-4'))
+const Parte5 = lazy(() => import('./Parte-5'))
+const Parte6 = lazy(() => import('./Parte-6'))
+const Parte7 = lazy(() => import('./Parte-7'))
 
 const IllustrationPublicacoesSobreSemadec = () => {
 

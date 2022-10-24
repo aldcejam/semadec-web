@@ -1,15 +1,14 @@
 
-import { lazy, Suspense } from 'react'
+import { lazy } from 'react'
+import IllustrationCourse from "../../../../public/illustrationsForCard/IllustrationCourse/IllustrationCourse"
+import IllustrationEdicoesDaSemadec from "../../../../public/illustrationsForCard/IllustrationEdicoesDaSemadec/IllustrationEdicoesDaSemadec"
+import IllustrationJogosDoSeuCurso from "../../../../public/illustrationsForCard/IllustrationJogosDoSeuCurso/IllustrationJogosDoSeuCurso"
+import IllustrationJogosEsportivos from "../../../../public/illustrationsForCard/IllustrationJogosEsportivos/IllustrationJogosEsportivos"
+import IllustrationPublicacoesSobreSemadec from "../../../../public/illustrationsForCard/IllustrationPublicacoesSobreSemadec/IllustrationPublicacoesSobreSemadec"
+import IllustrationRecordesDestaEdicao from "../../../../public/illustrationsForCard/IllustrationRecordesDeTodosOsAnos/IllustrationRecordesDeTodosOsAnos"
 import HomePageCard from "../../Organisms/HomePageCards/Index"
 import { StyledHomePageCards } from "./Styled"
 
-
-const IllustrationCourse = lazy(() => import("../../../../public/illustrationsForCard/IllustrationCourse/IllustrationCourse"))
-const IllustrationEdicoesDaSemadec = lazy(() => import("../../../../public/illustrationsForCard/IllustrationEdicoesDaSemadec/IllustrationEdicoesDaSemadec"))
-const IllustrationJogosDoSeuCurso = lazy(() => import("../../../../public/illustrationsForCard/IllustrationJogosDoSeuCurso/IllustrationJogosDoSeuCurso"))
-const IllustrationJogosEsportivos = lazy(() => import("../../../../public/illustrationsForCard/IllustrationJogosEsportivos/IllustrationJogosEsportivos"))
-const IllustrationPublicacoesSobreSemadec = lazy(() => import("../../../../public/illustrationsForCard/IllustrationPublicacoesSobreSemadec/IllustrationPublicacoesSobreSemadec"))
-const IllustrationRecordesDestaEdicao = lazy(() => import("../../../../public/illustrationsForCard/IllustrationRecordesDeTodosOsAnos/IllustrationRecordesDeTodosOsAnos"))
 
 const HomePageCards = () => {
     return (
@@ -24,21 +23,8 @@ const HomePageCards = () => {
                 <HomePageCard link='/' title='publicações sobre a semadec' illustration={<IllustrationPublicacoesSobreSemadec />} />
             </div>
             <div className="grid-right">
-                <HomePageCard
-                    link='/'
-                    title='recordes de todos os anos'
-                    illustration={<Suspense fallback={<div>carregando</div>}>
-                        <IllustrationRecordesDestaEdicao />
-                    </Suspense>
-                    } />
-                <HomePageCard 
-                link='/' 
-                title='Edições da semadec' 
-                illustration={
-                    <Suspense fallback={<div>carregando</div>}>
-                        <IllustrationEdicoesDaSemadec />
-                    </Suspense>
-                } />
+                <HomePageCard link='/' title='recordes de todos os anos' illustration={<IllustrationRecordesDestaEdicao />} />
+                <HomePageCard link='/' title='Edições da semadec' illustration={<IllustrationEdicoesDaSemadec />} />
             </div>
         </StyledHomePageCards>
     )
