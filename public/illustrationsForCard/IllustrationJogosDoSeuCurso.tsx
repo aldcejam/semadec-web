@@ -12,7 +12,6 @@ const IllustrationJogosDoSeuCurso = () => {
 
     .svg {
       .assign-color{
-
       }
       .cls-1 {
         fill: #b55b52;

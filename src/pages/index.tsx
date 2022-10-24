@@ -13,6 +13,7 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>Home</title>
+        <meta name="description" content="pagina de redireciomento para as paginas de conteúdo"/>
       </Head>
 
       <PageTitle title={`Bem vindo ${name}`} />

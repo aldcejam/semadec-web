@@ -32,7 +32,6 @@ export const StyledHomePageCard = styled("article")`
     border: 2px solid ${(props) => props.theme.palette.primary.main};
 
   }
-
   .illustration {
     .assign-color{
       fill: ${(props) => props.theme.palette.primary.main};

@@ -13,6 +13,7 @@ const Navegation = () => {
                     <RedirectIcon
                         href="/"
                         text="Home"
+                        alt="icone de redirecionamento"
                         icon="/Icons/log-out.svg"
                     />
                 </div>

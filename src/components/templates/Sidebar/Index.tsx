@@ -16,6 +16,7 @@ const SideBarPage = () => {
                 href="/"
                 icon="/Icons/home.svg"
                 text="Home"
+                alt="icone de redirecionamento"
                 />
             </div>
             <Navegation />
