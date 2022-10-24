@@ -1,6 +1,5 @@
 
 import Head from 'next/head'
-import HomePageCard from '../components/Organisms/HomePageCards/Index'
 import PageTitle from '../components/Atoms/PageTitle/Index'
 import { ContainerContentPage } from '../styles/global/globals'
 import { StylePageIndex } from '../styles/Styled.index'

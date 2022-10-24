@@ -35,7 +35,7 @@ export const StyledGame = styled('div')`
             text-transform: capitalize;
         }
 
-        &__segunda{
+        &__segunda, &__weekday{
             position: relative;
             h3{
                 color: ${props => props.theme.palette.text.primary};

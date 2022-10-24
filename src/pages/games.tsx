@@ -9,10 +9,12 @@ import { useRouter } from "next/router";
 const Game = () => {
 
     const router = useRouter()
-    const { sportSelected, categoryGenre,category } = router.query
+    const { sportSelected, categoryGenre, category } = router.query
     const sport = sportSelected as string
 
-    const date = new Date(2020,10,11)
+    const date1 = new Date(2022, 9, 12)
+    const date2 = new Date(2022, 9, 23)
+    const date3 = new Date(2022, 9, 29)
 
     const games = [
         {
@@ -29,7 +31,7 @@ const Game = () => {
                 },
             ],
             specification: {
-                date: date,
+                date: date1,
                 situation: "pré-cadastrado"
 
             }
@@ -63,7 +65,7 @@ const Game = () => {
                 },
             ],
             specification: {
-                date: date,
+                date: date2,
                 situation: "terminado"
             }
         },
@@ -81,10 +83,37 @@ const Game = () => {
                 },
             ],
             specification: {
-                date: date,
+                date: date3,
                 situation: "andamento"
             }
         },
+    ]
+    const translateWeekDays = (day: string) => {
+        switch (day) {
+            case "Sun":
+                return "Domingo";
+            case "Mon":
+                return "Segunda";
+            case "Tue":
+                return "Terça";
+            case "Wed":
+                return "Quarta";
+            case "Thu":
+                return "Quinta";
+            case "Fri":
+                return "Sexta";
+            case "Sat":
+                return "Sábado";
+        }
+    }
+    const weekday = [
+        "Sun",
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
     ]
 
     return (
@@ -97,7 +126,7 @@ const Game = () => {
                 `${sportSelected ? sport : "esporte não definido"}
                 ${category ? ` - ${category}` : ""}
                 `}
-                />
+            />
             <ContainerContentPage with_background_color="true">
                 <StyledGame className="box-page">
                     <div className="style-background">
@@ -105,16 +134,30 @@ const Game = () => {
                     </div>
                     <div className="container">
                         <h2>{categoryGenre}</h2>
-                        <div className="container__segunda">
-                            <h3>Segunda</h3>
-                            <div className="segunda__cards cards">
-                                {games.map((game, index) => {
-                                    return (
-                                        <GameCard key={index} game={game} />
-                                    )
-                                })}
-                            </div>
-                        </div>
+                        {weekday.map((day) => (
+                            games.map((game) => {
+                                return (
+                                    game.specification.date.toDateString().split(" ")[0] == day ?
+                                        <div className="container__weekday">
+                                            <div className="weekday__title">
+                                                <h3>{translateWeekDays(game.specification.date.toDateString().split(" ")[0])}</h3>
+                                            </div>
+                                            <div className="segunda__cards cards">
+                                                {games.map((game, index) => {
+                                                    return (
+                                                        game.specification.date.toDateString().split(" ")[0] == day ?
+                                                        <GameCard key={index} game={game} />: null
+                                                    )
+                                                })}
+                                            </div>
+
+                                        </div>
+                                        : null
+
+                                )
+                            })
+
+                        ))}
                     </div>
                 </StyledGame>
             </ContainerContentPage>
