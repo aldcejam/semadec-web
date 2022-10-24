@@ -1,10 +1,9 @@
 import {styled} from "@mui/material/styles";
-import { lazy } from "react";
+import Parte1 from "./Parte-1";
+import Parte2 from "./Parte-2";
+import Parte3 from "./Parte-3";
+import Parte4 from "./Parte-4";
 
-const Parte1 = lazy(() => import('./Parte-1'))
-const Parte2 = lazy(() => import('./Parte-2'))
-const Parte3 = lazy(() => import('./Parte-3'))
-const Parte4 = lazy(() => import('./Parte-4'))
 
 const IllustrationEdicoesDaSemadec = () => {
 
