@@ -1,12 +1,15 @@
 
-import IllustrationCourse from "../../../../public/illustrationsForCard/IllustrationCourse/IllustrationCourse"
-import IllustrationEdicoesDaSemadec from "../../../../public/illustrationsForCard/IllustrationEdicoesDaSemadec/IllustrationEdicoesDaSemadec"
-import IllustrationJogosDoSeuCurso from "../../../../public/illustrationsForCard/IllustrationJogosDoSeuCurso/IllustrationJogosDoSeuCurso"
-import IllustrationJogosEsportivos from "../../../../public/illustrationsForCard/IllustrationJogosEsportivos/IllustrationJogosEsportivos"
-import IllustrationPublicacoesSobreSemadec from "../../../../public/illustrationsForCard/IllustrationPublicacoesSobreSemadec/IllustrationPublicacoesSobreSemadec"
-import IllustrationRecordesDestaEdicao from "../../../../public/illustrationsForCard/IllustrationRecordesDeTodosOsAnos/IllustrationRecordesDeTodosOsAnos"
+import { lazy } from 'react'
 import HomePageCard from "../../Organisms/HomePageCards/Index"
 import { StyledHomePageCards } from "./Styled"
+
+
+const IllustrationCourse = lazy(() => import("../../../../public/illustrationsForCard/IllustrationCourse/IllustrationCourse"))
+const IllustrationEdicoesDaSemadec = lazy(() => import("../../../../public/illustrationsForCard/IllustrationEdicoesDaSemadec/IllustrationEdicoesDaSemadec"))
+const IllustrationJogosDoSeuCurso = lazy(() => import("../../../../public/illustrationsForCard/IllustrationJogosDoSeuCurso/IllustrationJogosDoSeuCurso"))
+const IllustrationJogosEsportivos = lazy(() => import("../../../../public/illustrationsForCard/IllustrationJogosEsportivos/IllustrationJogosEsportivos"))
+const IllustrationPublicacoesSobreSemadec = lazy(() => import("../../../../public/illustrationsForCard/IllustrationPublicacoesSobreSemadec/IllustrationPublicacoesSobreSemadec"))
+const IllustrationRecordesDestaEdicao = lazy(() => import("../../../../public/illustrationsForCard/IllustrationRecordesDeTodosOsAnos/IllustrationRecordesDeTodosOsAnos"))
 
 const HomePageCards = () => {
     return (
