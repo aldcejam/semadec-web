@@ -1,4 +1,3 @@
-
 import Head from 'next/head'
 import PageTitle from '../components/Atoms/PageTitle/Index'
 import { ContainerContentPage } from '../styles/global/globals'
