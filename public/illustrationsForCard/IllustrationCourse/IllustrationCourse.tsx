@@ -13,7 +13,6 @@ const IllustrationCourse = () => {
     display: flex;
     align-items: center;
     justify-content: center;
-
     .svg {
       .assign-color{
       }
