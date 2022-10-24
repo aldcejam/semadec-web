@@ -1,4 +1,4 @@
-import IllustrationCourse from "../../../../public/illustrationsForCard/IllustrationCourse"
+import IllustrationCourse from "../../../../public/illustrationsForCard/IllustrationCourse/IllustrationCourse"
 import IllustrationEdicoesDaSemadec from "../../../../public/illustrationsForCard/IllustrationEdicoesDaSemadec"
 import IllustrationJogosDoSeuCurso from "../../../../public/illustrationsForCard/IllustrationJogosDoSeuCurso/IllustrationJogosDoSeuCurso"
 import IllustrationJogosEsportivos from "../../../../public/illustrationsForCard/IllustrationJogosEsportivos"
