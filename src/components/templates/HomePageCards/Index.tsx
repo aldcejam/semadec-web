@@ -1,6 +1,6 @@
 import IllustrationCourse from "../../../../public/illustrationsForCard/IllustrationCourse"
 import IllustrationEdicoesDaSemadec from "../../../../public/illustrationsForCard/IllustrationEdicoesDaSemadec"
-import IllustrationJogosDoSeuCurso from "../../../../public/illustrationsForCard/IllustrationJogosDoSeuCurso"
+import IllustrationJogosDoSeuCurso from "../../../../public/illustrationsForCard/IllustrationJogosDoSeuCurso/IllustrationJogosDoSeuCurso"
 import IllustrationJogosEsportivos from "../../../../public/illustrationsForCard/IllustrationJogosEsportivos"
 import IllustrationPublicacoesSobreSemadec from "../../../../public/illustrationsForCard/IllustrationPublicacoesSobreSemadec"
 import IllustrationRecordesDestaEdicao from "../../../../public/illustrationsForCard/IllustrationRecordesDeTodosOsAnos"
