@@ -11,7 +11,8 @@ export const StyledGame = styled('div')`
         border-top: 10px solid ${props => props.theme.palette.primary.main};
         filter: blur(40px);
         border-radius: 45px;
-        div{
+        ::before{   
+            content: "";
             position: absolute;
             background-color: #ffffffc5;
             background-color: ${props => props.theme.palette.secondary.main}c5;
@@ -24,7 +25,7 @@ export const StyledGame = styled('div')`
         }
     }
 
-    .container{
+    .content{
         z-index: 20;
         width: 100%;
         padding: 0 30px;
@@ -35,33 +36,7 @@ export const StyledGame = styled('div')`
             text-transform: capitalize;
         }
 
-        &__segunda, &__weekday{
-            position: relative;
-            h3{
-                color: ${props => props.theme.palette.text.primary};
-                text-align: right;
-                padding-bottom: 7px;
-                border-bottom: 2px solid ${props => props.theme.palette.primary.main};
-                font-size: 1.5rem;
-                font-weight: 500;
-            }
-            
-            
-            .segunda__cards{
-                position: relative;
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                ${props => props.theme.breakpoints.down("md")}{
-                    grid-template-columns: repeat(2, 1fr);
-                }
-                ${props => props.theme.breakpoints.down("sm")}{
-                    grid-template-columns: repeat(1, 1fr);
-                }
-                grid-auto-rows: 140px;
-                gap: 20px;
-                
-            }
-        }
+        
     }
 
 `

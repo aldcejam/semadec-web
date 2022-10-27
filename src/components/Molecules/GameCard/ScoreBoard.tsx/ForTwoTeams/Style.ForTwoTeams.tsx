@@ -20,33 +20,13 @@ export const StyleForTwoTeams = styled("div")`
     }
     &__score {
       font-size: 1.5rem;
+      font-weight: 600;
       color: ${(props) => props.theme.palette.text.primary};
     }
   }
 
   .icon-versus {
-    position: relative;
     width: 15px;
     height: 15px;
-    padding-top: 2px;
-
-    &::after, &::before{
-      content: "";
-      position: absolute;
-      height: 100%;
-      width: 2px;
-      right: 0;
-      left: 0;
-      margin: auto;
-      background: ${props => props.theme.palette.primary.dark};
-      border-radius: 100px;
-
-    }
-    &::after {
-      transform: rotate(45deg);
-    }
-    &::before {
-      transform: rotate(-45deg);
-    }
   }
 `;

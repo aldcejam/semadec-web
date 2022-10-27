@@ -1,13 +1,28 @@
 import Image from "next/image"
 import { StyleForTwoTeams } from "./Style.ForTwoTeams"
-import { TeamsProps } from "../../TypesTeams"
+import { PlacarGameProps } from "../../../../templates/GameList/TypesTeams"
+import IconVersus from "../../../../Atoms/IconVersus/Index"
 
-const ForTwoTeams = ({ game }: TeamsProps) => {
+const ForTwoTeams = ({ placar }: PlacarGameProps) => {
+
+    const applyIconVersus = (currentTeam: number) => {
+        const firstTeam = 0
+        if (currentTeam == firstTeam) {
+            return (
+                <div className="icon-versus">
+                    <IconVersus />
+                </div>
+            )
+
+        }else{
+            return null
+        }
+    }
 
     return (
         <StyleForTwoTeams>
             {
-                game.placar.map((team, index) => {
+                placar.map((team, index) => {
                     return (
                         <div key={team.course} className="team">
                             <div className="team__logo">
@@ -16,12 +31,7 @@ const ForTwoTeams = ({ game }: TeamsProps) => {
                             <div className="team__score">
                                 {team.score}
                             </div>
-
-                            {index == 0 ?
-                                <div className="icon-versus" />
-                                :
-                                ""
-                            }
+                            {applyIconVersus(index)}
                         </div>
                     )
                 })

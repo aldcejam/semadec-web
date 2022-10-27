@@ -12,14 +12,14 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>Home</title>
-        <meta name="description" content="pagina de redireciomento para as paginas de conteúdo"/>
+        <meta name="description" content="pagina de redireciomento para as paginas de conteúdo" />
       </Head>
 
       <PageTitle title={`Bem vindo ${name}`} />
 
       <ContainerContentPage with_background_color='false'>
         <StylePageIndex className="box-page">
-          <HomePageCards/>
+          <HomePageCards />
         </StylePageIndex>
       </ContainerContentPage>
     </>
