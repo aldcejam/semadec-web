@@ -1,5 +1,6 @@
 import { NextPage } from "next"
 import Head from "next/head"
+import Image from "next/image"
 import { useState } from "react"
 import PageTitle from "../components/Atoms/PageTitle/Index"
 import AvailableTeams from "../components/Organisms/RegisterGame/AvailableTeams/Index"
@@ -11,7 +12,7 @@ const Profile: NextPage = () => {
 
   const [dataForRegistration, setDataForRegistration] = useState<DateForRegistrationProps>({
     teams: [""],
-    sportName:"",
+    sportName: "",
     sportCategory: "",
     sportGenre: "",
     gameSituation: "",
@@ -33,9 +34,15 @@ const Profile: NextPage = () => {
       <ContainerContentPage with_background_color='true'>
         <StyledRegisterGame className="box-page">
           <div className="container">
-            <AvailableTeams 
-            setDataForRegistration={setDataForRegistration}
-            dataForRegistration={dataForRegistration}/>
+            <div className="decorative-left">
+              <Image src={"/format/doubleTriangle.svg"} layout="fill" />
+            </div>
+            <div className="decorative-right">
+              <Image src={"/format/doubleTriangle.svg"} layout="fill" />
+            </div>
+            <AvailableTeams
+              setDataForRegistration={setDataForRegistration}
+              dataForRegistration={dataForRegistration} />
           </div>
         </StyledRegisterGame>
       </ContainerContentPage>
