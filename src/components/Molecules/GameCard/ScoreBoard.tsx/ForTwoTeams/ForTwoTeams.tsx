@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { StyleForTwoTeams } from "./Style.ForTwoTeams"
-import { PlacarGameProps } from "../../../../templates/GameList/TypesTeams"
+import { PlacarGameProps } from "../../../../../Types/GameList/TypesTeams"
 import IconVersus from "../../../../Atoms/IconVersus/Index"
 
 const ForTwoTeams = ({ placar }: PlacarGameProps) => {

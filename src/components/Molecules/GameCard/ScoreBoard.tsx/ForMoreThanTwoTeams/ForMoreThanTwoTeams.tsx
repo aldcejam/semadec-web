@@ -1,6 +1,6 @@
 import Image from "next/image"
 import IconVersus from "../../../../Atoms/IconVersus/Index"
-import { PlacarGameProps } from "../../../../templates/GameList/TypesTeams"
+import { PlacarGameProps } from "../../../../../Types/GameList/TypesTeams"
 import { StyleForMoreThanTwoTeams } from "./Style.ForMoreThanTwoTeams"
 
 

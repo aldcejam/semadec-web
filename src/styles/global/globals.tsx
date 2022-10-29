@@ -1,10 +1,10 @@
 import { styled } from "@mui/material/styles";
 
-type TypesContainerContentPage = { 
-  with_background_color: 'true' | 'false'
-}
+type TypesContainerContentPage = {
+  with_background_color: "true" | "false";
+};
 
-export const ContainerContentPage = styled("div")<TypesContainerContentPage>(({ with_background_color, ...props }) =>`
+export const ContainerContentPage = styled("div")<TypesContainerContentPage>(({ with_background_color, ...props }) => `
   position: relative;
   padding-right: 10px;
   width: calc(100% + 20px);
@@ -37,18 +37,17 @@ export const ContainerContentPage = styled("div")<TypesContainerContentPage>(({ 
     background: ${props.theme.palette.primary.dark};
   }
     .box-page{
-      position: absolute;
+      position: relative;
       min-height: 100%;
       width: 100%;
       display: flex;
-      justify-content: center;
       padding-bottom: 50px;
       border-radius: ${props.theme.shape.borderRadius};
       overflow: hidden;
       &::before{
           content: "";
           position: absolute;
-          width: ${with_background_color == "true" ?  "100%":"" };
+          width: ${with_background_color == "true" ? "100%" : ""};
           min-height: 100%;
           background-color: ${props.theme.palette.secondary.dark}1a;
           backdrop-filter: blur(10px);
@@ -57,7 +56,8 @@ export const ContainerContentPage = styled("div")<TypesContainerContentPage>(({ 
           
       }
     }
-`);
+`
+);
 
 export const ContainerPage = styled("div")`
   position: absolute;
@@ -77,7 +77,6 @@ export const ContainerPage = styled("div")`
     top: 70px;
     padding: 0 10px;
   }
-
 `;
 
 export const ContainerGlobal = styled("div")`

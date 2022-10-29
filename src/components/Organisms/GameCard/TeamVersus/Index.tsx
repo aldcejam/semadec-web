@@ -1,6 +1,6 @@
 import ForMoreThanTwoTeams from "../../../Molecules/GameCard/ScoreBoard.tsx/ForMoreThanTwoTeams/ForMoreThanTwoTeams"
 import ForTwoTeams from "../../../Molecules/GameCard/ScoreBoard.tsx/ForTwoTeams/ForTwoTeams"
-import { PlacarGameProps } from "../../../templates/GameList/TypesTeams"
+import { PlacarGameProps } from "../../../../Types/GameList/TypesTeams"
 
 
 const TeamVersus = ({ placar }:PlacarGameProps ) => {

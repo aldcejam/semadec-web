@@ -1,5 +1,5 @@
 import { StyledGameSpecification } from "./Styled"
-import { GameProps } from "../../../templates/GameList/TypesTeams"
+import { GameProps } from "../../../../Types/GameList/TypesTeams"
 import GameSituation from "../../../Atoms/GameCard/GameSituation/Index"
 
 type GameSpecificationProps = {

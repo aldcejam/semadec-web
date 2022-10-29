@@ -1,5 +1,5 @@
 import GameCard from "../../../templates/GameCard/Index"
-import { GameProps } from "../../../templates/GameList/TypesTeams"
+import { GameProps } from "../../../../Types/GameList/TypesTeams"
 import { StyledGameListByWeekDay } from "./Styled"
 
 type GameListByWeekDayProps = {
@@ -10,7 +10,7 @@ const GameListByWeekDay = ({ games, day }: GameListByWeekDayProps) => {
 
 
     return (
-        <StyledGameListByWeekDay>
+        <StyledGameListByWeekDay className="dasda">
             {
                 games.map((game, index) => {
                     return (
