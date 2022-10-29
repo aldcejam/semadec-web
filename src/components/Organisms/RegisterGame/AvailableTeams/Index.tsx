@@ -64,7 +64,6 @@ const AvailableTeams = ({ dataForRegistration, setDataForRegistration }: Availab
                     )
                 })}
             </div>
-            <h3>!!! clique para selecionar/2 cliques para desselecionar</h3>
         </StyledAvailableTeams>
     )
 }

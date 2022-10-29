@@ -5,46 +5,26 @@ import GenreOptions from '../../Organisms/ModalSelectCategorys/GenreOptions/Inde
 import { StyledBox } from './Styled';
 import { dataForSearchBySportCategoriesProps } from "./TypesDataForResearchGame"
 import { toast } from "react-toastify";
+import { DateForRegistrationProps } from '../../../Types/RegisterGame/TypesDateForRegistration';
 
 
 type ModalSelectCategorysProps = {
     modalIsOpen: boolean,
     ToggleModal: () => void
-    dataForSearchBySportCategories: dataForSearchBySportCategoriesProps,
-    setDataForSearchBySportCategories: React.Dispatch<React.SetStateAction<dataForSearchBySportCategoriesProps>>
+    data: dataForSearchBySportCategoriesProps | DateForRegistrationProps
+    setdata: any
+    Submit: () => void
 }
 
-
-const ModalSelectCategorys = ({ dataForSearchBySportCategories, setDataForSearchBySportCategories, modalIsOpen, ToggleModal }: ModalSelectCategorysProps) => {
+const ModalSelectCategorys = ({ data, setdata, modalIsOpen, ToggleModal,Submit }: ModalSelectCategorysProps) => {
 
     const SelectCategory = (category: string) => {
-        setDataForSearchBySportCategories({ ...dataForSearchBySportCategories, userSelectedCategory: category })
+        setdata({ ...data, userSelectedCategory: category })
     }
     const selectCategoryGenre = (categoryGenre: string) => {
-        setDataForSearchBySportCategories({ ...dataForSearchBySportCategories, userSelectedCategoryGenre: categoryGenre })
+        setdata({ ...data, userSelectedCategoryGenre: categoryGenre })
     }
 
-    const VerifyIfCategoriesIsSelected = (redirectUrl: string) => {
-        if (!dataForSearchBySportCategories.userSelectedCategoryGenre) {
-            toast.error("Selecione uma categoria de gênero para continuar");
-        }
-        else if (dataForSearchBySportCategories.sport.categorys && !dataForSearchBySportCategories.userSelectedCategory) {
-            toast.error("Selecione uma categoria do esporte para continuar");
-        }
-        else {
-            window.location.href = redirectUrl;
-        }
-    }
-    const Submit = () => {
-        const category = dataForSearchBySportCategories.userSelectedCategory
-        const categoryGenre = dataForSearchBySportCategories.userSelectedCategoryGenre
-        const sportSelected = dataForSearchBySportCategories.sport.sportName
-        const RedirectUrl = `games?${category ? `category=${category}&` : ""}${categoryGenre ? `categoryGenre=${categoryGenre}&` : ""}${sportSelected ? `sportSelected=${sportSelected}` : ""}`
-
-        VerifyIfCategoriesIsSelected(RedirectUrl)
-
-
-    }
 
     return (
         <Modal
@@ -57,20 +37,20 @@ const ModalSelectCategorys = ({ dataForSearchBySportCategories, setDataForSearch
         >
             <StyledBox>
                 <div className="titles">
-                    <h4>Esporte: {dataForSearchBySportCategories.sport.sportName}</h4>
+                    <h4>Esporte: {data.sport.sportName}</h4>
                     <h5>Selecione as categorias</h5>
                 </div>
-                {dataForSearchBySportCategories.sport.categorys ?
+                {data.sport.categorys ?
                     <Categorys
-                        dataForSearchBySportCategories={dataForSearchBySportCategories}
+                        dataForSearchBySportCategories={data}
                         selectCategory={SelectCategory}
-                        categorys={dataForSearchBySportCategories.sport.categorys} /> :
+                        categorys={data.sport.categorys} /> :
                     ""
                 }
                 <GenreOptions
-                    dataForSearchBySportCategories={dataForSearchBySportCategories}
+                    dataForSearchBySportCategories={data}
                     selectCategoryGenre={selectCategoryGenre}
-                    categoryGenre={dataForSearchBySportCategories.sport.categoryGenre}
+                    categoryGenre={data.sport.categoryGenre}
                 />
 
                 <SubmitButton

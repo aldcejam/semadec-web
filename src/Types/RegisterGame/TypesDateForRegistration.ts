@@ -1,8 +1,14 @@
 export type DateForRegistrationProps = {
     teams: string[],
-    sportName: string,
-    sportCategory: string,
-    sportGenre: string,
+    sport: {
+        sportName: string;
+        categorys: string[] | undefined;
+        categoryGenre: string[] ;
+        MinNumberOfTeams: number;
+        MaxNumberOfTeams: number | undefined;
+    },
+    userSelectedCategory: string,
+    userSelectedCategoryGenre: string,
     gameSituation: string,
     gameDate: Date,
     scoreForFirst: number,

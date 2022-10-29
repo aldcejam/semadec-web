@@ -1,6 +1,6 @@
 import { DateForRegistrationProps } from "../../../../Types/RegisterGame/TypesDateForRegistration";
 import SelectSportButton from "../../../Atoms/SportButton/Select/Index"
-import { ApiSports } from "../../ListSports/Sports/fetchSports"
+import { ApiSports, ApiSportsProps } from "../../ListSports/Sports/fetchSports"
 import { StyledAvailableSports } from "./Styled"
 
 type AvailableSportsProps = {
@@ -9,10 +9,18 @@ type AvailableSportsProps = {
 }
 const AvailableSports = ({ dataForRegistration, setDataForRegistration }: AvailableSportsProps) => {
 
-    const SelectSport = (sportName: string) => {
+    
+
+    const SelectSport = (sport: ApiSportsProps) => {
         setDataForRegistration({
             ...dataForRegistration,
-            sportName: sportName
+            sport: {...dataForRegistration.sport,
+                sportName: sport.sportName,
+                categoryGenre: sport.categoryGenre,
+                categorys: sport.categorys,
+                MinNumberOfTeams: sport.MinNumberOfTeams,
+                MaxNumberOfTeams: sport.MaxNumberOfTeams
+            }
         })
     }
     
@@ -24,10 +32,10 @@ const AvailableSports = ({ dataForRegistration, setDataForRegistration }: Availa
                     return (
                         <span
                             key={sport.sportName}
-                            onClick={() => SelectSport(sport.sportName)}>
+                            onClick={() => SelectSport(sport)}>
                             <SelectSportButton
                                 value={sport.sportName}
-                                selected={dataForRegistration.sportName == sport.sportName ? "selected" : ""}
+                                selected={dataForRegistration.sport.sportName == sport.sportName ? "selected" : ""}
                             />
                         </span>
                     )

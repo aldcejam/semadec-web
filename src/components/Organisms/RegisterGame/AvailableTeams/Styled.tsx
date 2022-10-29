@@ -16,5 +16,6 @@ export const StyledAvailableTeams = styled("div")`
     h3{
         font-size: 0.7rem;
         font-weight: 300;
+        margin: 5px 0 0 0;
     }
 `

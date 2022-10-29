@@ -2,6 +2,7 @@ import { NextPage } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { toast } from "react-toastify";
 import AngleLine from "../../public/format/AngleLine";
 import PageTitle from "../components/Atoms/PageTitle/Index";
 import ListSports from "../components/templates/ListSports/Index";
@@ -14,7 +15,6 @@ const FindGameBySport: NextPage = () => {
     const { query } = useRouter();
     const course = query.curso;
 
-    const [modalIsOpen, setModalIsOpen] = useState(false);
     const [dataForSearchBySportCategories, setDataForSearchBySportCategories] = useState<dataForSearchBySportCategoriesProps>({
         sport: {
             sportName: "",
@@ -24,8 +24,32 @@ const FindGameBySport: NextPage = () => {
         userSelectedCategory: "",
         userSelectedCategoryGenre: ""
     });
+
+    const [modalIsOpen, setModalIsOpen] = useState(false);
     const ToggleModal = () => {
         modalIsOpen ? setModalIsOpen(false) : setModalIsOpen(true)
+    }
+    
+    const VerifyIfCategoriesIsSelected = (redirectUrl: string) => {
+        if (!dataForSearchBySportCategories.userSelectedCategoryGenre) {
+            toast.error("Selecione uma categoria de gênero para continuar");
+        }
+        else if (dataForSearchBySportCategories.sport.categorys && !dataForSearchBySportCategories.userSelectedCategory) {
+            toast.error("Selecione uma categoria do esporte para continuar");
+        }
+        else {
+            window.location.href = redirectUrl;
+        }
+    }
+    const Submit = () => {
+        const category = dataForSearchBySportCategories.userSelectedCategory
+        const categoryGenre = dataForSearchBySportCategories.userSelectedCategoryGenre
+        const sportSelected = dataForSearchBySportCategories.sport.sportName
+        const RedirectUrl = `games?${category ? `category=${category}&` : ""}${categoryGenre ? `categoryGenre=${categoryGenre}&` : ""}${sportSelected ? `sportSelected=${sportSelected}` : ""}`
+
+        VerifyIfCategoriesIsSelected(RedirectUrl)
+
+
     }
 
     return (
@@ -48,8 +72,9 @@ const FindGameBySport: NextPage = () => {
                         <ModalSelectCategorys
                             ToggleModal={ToggleModal}
                             modalIsOpen={modalIsOpen}
-                            dataForSearchBySportCategories={dataForSearchBySportCategories}
-                            setDataForSearchBySportCategories={setDataForSearchBySportCategories}
+                            data={dataForSearchBySportCategories}
+                            setdata={setDataForSearchBySportCategories}
+                            Submit={Submit}
                         />
                     </div>
                 </StyledFindGameBySport>

@@ -6,6 +6,7 @@ export const StyledAvailableSports = styled("div")`
       color: ${({ theme }) => theme.palette.text.primary};
       text-align: center;
       font-weight: 600;
+      margin: 0px 0 20px;
   }
   .box-sports {
     display: flex;

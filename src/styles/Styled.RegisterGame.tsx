@@ -36,6 +36,7 @@ export const StyledRegisterGame = styled("div")`
             gap: 30px;
             width: 65%;
             margin: 0 auto;
+            padding: 0 10px;
             ${props => props.theme.breakpoints.down("md")}{
                 width: 100%;
             }
