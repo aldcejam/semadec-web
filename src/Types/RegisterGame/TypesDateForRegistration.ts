@@ -5,7 +5,7 @@ export type DateForRegistrationProps = {
         categorys: string[] | undefined;
         categoryGenre: string[] ;
         MinNumberOfTeams: number;
-        MaxNumberOfTeams: number | undefined;
+        MaxNumberOfTeams: number;
     },
     userSelectedCategory: string,
     userSelectedCategoryGenre: string,

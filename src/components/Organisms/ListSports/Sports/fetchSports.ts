@@ -3,7 +3,7 @@ export type ApiSportsProps = {
   categorys: string[] | undefined;
   categoryGenre: string[];
   MinNumberOfTeams: number;
-  MaxNumberOfTeams: number | 99;
+  MaxNumberOfTeams: number;
 }
 
 type ArrayApiSportsProps = Array<ApiSportsProps>
