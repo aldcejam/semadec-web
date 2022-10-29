@@ -37,7 +37,7 @@ const RegisterGame: NextPage = () => {
       if (dataForRegistration.sport.sportName !== "") {
         if (dataForRegistration.sport.MinNumberOfTeams <= dataForRegistration.teams.length - 1) {
           if (dataForRegistration.sport.MaxNumberOfTeams >= dataForRegistration.teams.length - 1) {
-            ToggleModal()
+            ToggleModalSelectCategorys()
           }
           else {
             toast.error("Número de equipes maior que o necessário, por favor, desselecione alguma equipe")
@@ -57,9 +57,15 @@ const RegisterGame: NextPage = () => {
     }
   }
 
-  const [modalCategorysOpen, setModalCategorysOpen] = useState(false)
-  const ToggleModal = () => {
-    modalCategorysOpen ? setModalCategorysOpen(false) : setModalCategorysOpen(true)
+  const [modalSelectCategorysOpen, setModalSelectCategorysOpen] = useState(false)
+  const ToggleModalSelectCategorys = () => {
+    modalSelectCategorysOpen ? setModalSelectCategorysOpen(false) : setModalSelectCategorysOpen(true)
+  }
+
+  const [modalToConfigGame, setModalToConfigGame] = useState(false)
+
+  const ToggleModalToConfigGame = () => {
+    modalToConfigGame ? setModalToConfigGame(false) : setModalToConfigGame(true)
   }
 
   return (
@@ -93,11 +99,11 @@ const RegisterGame: NextPage = () => {
                 value="Selecionar categorias" />
             </div>
             <ModalSelectCategorys
-              ToggleModal={ToggleModal}
-              modalIsOpen={modalCategorysOpen}
+              ToggleModal={ToggleModalSelectCategorys}
+              modalIsOpen={modalSelectCategorysOpen}
               data={dataForRegistration}
               setdata={setDataForRegistration}
-
+              Submit={ToggleModalToConfigGame}
             />
           </div>
         </StyledRegisterGame>
