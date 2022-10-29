@@ -39,7 +39,7 @@ const Game = () => {
                     <div className="content">
                         <h2>{categoryGenre}</h2>
                         {ListWeekday.map((day) => (
-                            <GameList day={day}/>
+                            <GameList key={day} day={day}/>
                         ))}
                     </div>
                 </StyledGame>
