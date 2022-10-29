@@ -1,7 +1,7 @@
-import ButtonSport from "../../../Atoms/ListSports/ButtonSport/Index";
 import { StyledSports } from "./Styled"
-import { ApiSports, ApiSportsProps } from "./api"
+import { ApiSports, ApiSportsProps } from "./fetchSports"
 import { dataForSearchBySportCategoriesProps } from "../../../templates/ModalSelectCategorys/TypesDataForResearchGame"
+import HoverSportButton from "../../../Atoms/SportButton/Hover/Index"
 
 
 type SportsProps = {
@@ -27,7 +27,7 @@ const Sports = ({setDataForSearchBySportCategories, ToggleModal}:SportsProps) =>
                             <span
                                 onClick={() => handleButtonSport(sport)}
                                 key={sport.sportName}>
-                                <ButtonSport nameButton={sport.sportName} />
+                                <HoverSportButton nameButton={sport.sportName} />
                             </span>
                         )
                     }
@@ -40,7 +40,7 @@ const Sports = ({setDataForSearchBySportCategories, ToggleModal}:SportsProps) =>
                             <span
                                 onClick={() => handleButtonSport(sport)}
                                 key={sport.sportName}>
-                                <ButtonSport nameButton={sport.sportName} />
+                                <HoverSportButton nameButton={sport.sportName} />
                             </span>
                         )
                     }

@@ -1,6 +1,6 @@
 import {styled} from "@mui/material/styles";
 
-export const StyedButtonSport = styled("button")`
+export const StyedHoverSportButton = styled("button")`
   position: relative;
   width: clamp(120px, 20vw, 250px);
   padding: 10px 0;

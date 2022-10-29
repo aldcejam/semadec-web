@@ -1,9 +1,11 @@
 import Modal from '@mui/material/Modal';
-import Button from '../../Atoms/ModalSelectCategorys/Button.tsx/Index';
+import SubmitButton from '../../Atoms/SubmitButton.tsx/Index';
 import Categorys from '../../Organisms/ModalSelectCategorys/Categorys/Index';
 import GenreOptions from '../../Organisms/ModalSelectCategorys/GenreOptions/Index';
 import { StyledBox } from './Styled';
 import { dataForSearchBySportCategoriesProps } from "./TypesDataForResearchGame"
+import { toast } from "react-toastify";
+
 
 type ModalSelectCategorysProps = {
     modalIsOpen: boolean,
@@ -22,6 +24,28 @@ const ModalSelectCategorys = ({ dataForSearchBySportCategories, setDataForSearch
         setDataForSearchBySportCategories({ ...dataForSearchBySportCategories, userSelectedCategoryGenre: categoryGenre })
     }
 
+    const VerifyIfCategoriesIsSelected = (redirectUrl: string) => {
+        if (!dataForSearchBySportCategories.userSelectedCategoryGenre) {
+            toast.error("Selecione uma categoria de gênero para continuar");
+        }
+        else if (dataForSearchBySportCategories.sport.categorys && !dataForSearchBySportCategories.userSelectedCategory) {
+            toast.error("Selecione uma categoria do esporte para continuar");
+        }
+        else {
+            window.location.href = redirectUrl;
+        }
+    }
+    const Submit = () => {
+        const category = dataForSearchBySportCategories.userSelectedCategory
+        const categoryGenre = dataForSearchBySportCategories.userSelectedCategoryGenre
+        const sportSelected = dataForSearchBySportCategories.sport.sportName
+        const RedirectUrl = `games?${category ? `category=${category}&` : ""}${categoryGenre ? `categoryGenre=${categoryGenre}&` : ""}${sportSelected ? `sportSelected=${sportSelected}` : ""}`
+
+        VerifyIfCategoriesIsSelected(RedirectUrl)
+
+
+    }
+
     return (
         <Modal
             keepMounted
@@ -29,7 +53,7 @@ const ModalSelectCategorys = ({ dataForSearchBySportCategories, setDataForSearch
             onClose={ToggleModal}
             aria-labelledby="keep-mounted-modal-title"
             aria-describedby="keep-mounted-modal-description"
-            BackdropProps={{ sx: { backgroundColor: "divider", backdropFilter: "blur(5px)", outline:"none"} }}
+            BackdropProps={{ sx: { backgroundColor: "divider", backdropFilter: "blur(5px)", outline: "none" } }}
         >
             <StyledBox>
                 <div className="titles">
@@ -38,7 +62,7 @@ const ModalSelectCategorys = ({ dataForSearchBySportCategories, setDataForSearch
                 </div>
                 {dataForSearchBySportCategories.sport.categorys ?
                     <Categorys
-                    dataForSearchBySportCategories={dataForSearchBySportCategories}
+                        dataForSearchBySportCategories={dataForSearchBySportCategories}
                         selectCategory={SelectCategory}
                         categorys={dataForSearchBySportCategories.sport.categorys} /> :
                     ""
@@ -49,7 +73,9 @@ const ModalSelectCategorys = ({ dataForSearchBySportCategories, setDataForSearch
                     categoryGenre={dataForSearchBySportCategories.sport.categoryGenre}
                 />
 
-                <Button  dataForSearchBySportCategories={dataForSearchBySportCategories} value="prosseguir" />
+                <SubmitButton
+                    Submit={Submit}
+                    value="prosseguir" />
             </StyledBox>
         </Modal>
     )

@@ -1,9 +1,10 @@
 import { styled } from "@mui/material";
 
 export const StyledAvailableTeams = styled("div")`
-    color: ${({ theme }) => theme.palette.text.primary};
     text-align: center;
+    color: ${({ theme }) => theme.palette.text.primary};
     h2{
+        font-weight: 600;
     }
     .box-teams{
         display: flex;

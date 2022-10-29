@@ -48,7 +48,7 @@ const AvailableTeams = ({ dataForRegistration, setDataForRegistration }: Availab
     return (
         <StyledAvailableTeams>
             <h2>Times disponíveis</h2>
-            <article className="box-teams">
+            <div className="box-teams">
                 {RegisteredTeams.map(team => {
                     return (
                         <span
@@ -63,7 +63,7 @@ const AvailableTeams = ({ dataForRegistration, setDataForRegistration }: Availab
                         </span>
                     )
                 })}
-            </article>
+            </div>
             <h3>!!! clique para selecionar/2 cliques para desselecionar</h3>
         </StyledAvailableTeams>
     )

@@ -1,12 +1,11 @@
 import { styled } from "@mui/material/styles";
 
-export const StyledButton = styled("div")`
+export const StyledSubmitButton = styled("div")`
     display: flex;
     justify-content: center;
     width: 100%;
     div{
     position: relative;
-    width: 140px;
     display: flex;
     justify-content: center;
     &:after{
@@ -26,18 +25,18 @@ export const StyledButton = styled("div")`
         z-index: 10;
         left: 2px;
         top: 2px;
-        padding: 10px 0;
+        padding: 10px;
         border: 0px;
-        background-color: ${props => props.theme.palette.background.paper}c4;
+        background-color: ${props => props.theme.palette.background.paper};
         border-radius: 8px;
         color: ${props => props.theme.palette.text.primary};
-        text-transform: uppercase;
+        text-transform: capitalize;
         font-size: 1rem;
         font-weight: 600;
         transition: all 0.3s ease;
 
         &:hover{
-            background-color: ${props => props.theme.palette.background.paper};
+            background-color: transparent;
         }
     }
     }
