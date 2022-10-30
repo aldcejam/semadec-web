@@ -5,6 +5,7 @@ export const StyledCategorys = styled("div")`
         justify-content: center;
         gap: 10px;
         flex-wrap: wrap;
+        margin-bottom: 25px;
         .category{
             border: solid 1px ${props => props.theme.palette.primary.main};
             border-radius: ${props => props.theme.shape.borderRadius};

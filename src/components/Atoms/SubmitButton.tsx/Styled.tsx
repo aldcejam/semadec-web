@@ -4,6 +4,7 @@ export const StyledSubmitButton = styled("div")`
     display: flex;
     justify-content: center;
     width: 100%;
+    max-height: 40px;
     div{
     position: relative;
     display: flex;

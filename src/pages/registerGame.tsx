@@ -16,7 +16,10 @@ import ModalToConfigGame from "../components/templates/ModalToConfigGame/Index"
 const RegisterGame: NextPage = () => {
 
   const [dataForRegistration, setDataForRegistration] = useState<DateForRegistrationProps>({
-    teams: [""],
+    teams: [{
+      teamName: "",
+      teamLogo: ""
+    }],
     sport: {
       sportName: "",
       categorys: undefined,

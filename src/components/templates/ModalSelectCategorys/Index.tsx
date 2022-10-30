@@ -25,6 +25,7 @@ const ModalSelectCategorys = ({ data, setdata, modalIsOpen, ToggleModal, Submit 
         setdata({ ...data, userSelectedCategoryGenre: categoryGenre })
     }
 
+
     const VerifyIfCategoriesIsSelected = () => {
         if (!data.userSelectedCategoryGenre) {
             toast.error("Selecione uma categoria de gênero para continuar");
@@ -36,6 +37,7 @@ const ModalSelectCategorys = ({ data, setdata, modalIsOpen, ToggleModal, Submit 
             Submit()
         }
     }
+    
 
     return (
         <Modal

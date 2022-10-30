@@ -13,31 +13,33 @@ const AvailableTeams = ({ dataForRegistration, setDataForRegistration }: Availab
     let teamIsSelected: boolean = false;
     const CheckIfTeamAlreadySelected = (teamName: string) => {
         dataForRegistration.teams.forEach(team => {
-            if (team == teamName) {
+            if (team.teamName == teamName) {
                 teamIsSelected = true
             }
         });
 
     }
-    const SelectTeam = (teamName: string) => {
-        CheckIfTeamAlreadySelected(teamName)
+    const SelectTeam = (selectedTeam: {teamName:string,teamLogo:string}) => {
+        CheckIfTeamAlreadySelected(selectedTeam.teamName)
+        
         dataForRegistration.teams.forEach(() => {
             !teamIsSelected ?
                 setDataForRegistration({
                     ...dataForRegistration,
-                    teams: [...dataForRegistration.teams, teamName]
+                    teams: [...dataForRegistration.teams, 
+                        {teamLogo: selectedTeam.teamLogo,teamName: selectedTeam.teamName}]
                 })
                 :
                 setDataForRegistration({
                     ...dataForRegistration,
-                    teams: dataForRegistration.teams.filter(team => team !== teamName)
+                    teams: dataForRegistration.teams.filter(team => team.teamName !== selectedTeam.teamName)
                 })
         });
     }
-
+    
     const cardSelected = (teamSelected: string) => {
         return (dataForRegistration.teams.map((team) => {
-            if (team === teamSelected) {
+            if (team.teamName === teamSelected) {
                 return "selected"
             }
             else {
@@ -45,6 +47,7 @@ const AvailableTeams = ({ dataForRegistration, setDataForRegistration }: Availab
             }
         }))
     }
+    console.log(dataForRegistration.teams)
     return (
         <StyledAvailableTeams>
             <h2>Times disponíveis</h2>
@@ -52,7 +55,7 @@ const AvailableTeams = ({ dataForRegistration, setDataForRegistration }: Availab
                 {RegisteredTeams.map(team => {
                     return (
                         <span
-                            onClick={() => SelectTeam(team.teamName)}
+                            onClick={() => SelectTeam(team)}
                             key={team.teamName}
                         >
                             <TeamCard

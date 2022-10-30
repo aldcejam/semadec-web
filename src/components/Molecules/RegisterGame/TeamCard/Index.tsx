@@ -8,10 +8,10 @@ type TeamCardProps = {
     cardSelected: string[];
 }
 const TeamCard = ({ teamLogo, teamName, cardSelected }: TeamCardProps) => {
-    const ola = cardSelected? cardSelected.filter(team => team === "selected"):null
+    const styleClass = cardSelected? cardSelected.filter(team => team === "selected"):null
     return (
         <StyledTeamCard>
-            <div className={`container-logo ${ola}`}>
+            <div className={`container-logo ${styleClass}`}>
                 <div className="logo">
                     <Image src={teamLogo} layout="fill" />
                 </div>

@@ -1,5 +1,8 @@
 export type DateForRegistrationProps = {
-    teams: string[],
+    teams: Array<{
+        teamName: string;
+        teamLogo: string;
+    }>,
     sport: {
         sportName: string;
         categorys: string[] | undefined;
