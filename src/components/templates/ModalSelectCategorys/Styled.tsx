@@ -2,13 +2,8 @@ import { styled } from "@mui/material/styles";
 
 export const StyledModalSelectCategorys = styled("section")`
     position: absolute;
-    width: clamp(200px, 100%, 500px);
+    width: clamp(200px, 100%, 400px);
     max-height: 95vh;
-    ${props => props.theme.breakpoints.down("sm")} {
-      min-height: 100vh;
-      max-height: 100vh;
-      border-radius: 10px;
-    }
 
     overflow-y: auto;
     background-color: ${props => props.theme.palette.background.paper}75;
@@ -22,7 +17,8 @@ export const StyledModalSelectCategorys = styled("section")`
     border-right: 2px solid ${props => props.theme.palette.secondary.main};
     border-left: 2px solid ${props => props.theme.palette.primary.main};
     border-top: 2px solid ${props => props.theme.palette.primary.main};
-    display: inline;
+    display: grid;
+    gap: 20px;
 
     
     ::-webkit-scrollbar {
@@ -40,7 +36,6 @@ export const StyledModalSelectCategorys = styled("section")`
 
     .titles{
         text-align: center;
-        margin-bottom: 25px;
         h4{
             margin: 0;
             font-size: 1.2rem;
