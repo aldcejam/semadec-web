@@ -11,6 +11,7 @@ import ModalSelectCategorys from "../components/templates/ModalSelectCategorys/I
 import { ContainerContentPage } from "../styles/global/globals"
 import { StyledRegisterGame } from "../styles/Styled.RegisterGame"
 import { DateForRegistrationProps } from "../Types/RegisterGame/TypesDateForRegistration"
+import ModalToConfigGame from "../components/templates/ModalToConfigGame/Index"
 
 const RegisterGame: NextPage = () => {
 
@@ -57,6 +58,10 @@ const RegisterGame: NextPage = () => {
     }
   }
 
+  const SubmitOpenModalToConfigGame = () => {
+    modalToConfigGame ? setModalToConfigGame(false) : setModalToConfigGame(true)
+  }
+
   const [modalSelectCategorysOpen, setModalSelectCategorysOpen] = useState(false)
   const ToggleModalSelectCategorys = () => {
     modalSelectCategorysOpen ? setModalSelectCategorysOpen(false) : setModalSelectCategorysOpen(true)
@@ -64,9 +69,6 @@ const RegisterGame: NextPage = () => {
 
   const [modalToConfigGame, setModalToConfigGame] = useState(false)
 
-  const ToggleModalToConfigGame = () => {
-    modalToConfigGame ? setModalToConfigGame(false) : setModalToConfigGame(true)
-  }
 
   return (
     <>
@@ -103,8 +105,16 @@ const RegisterGame: NextPage = () => {
               modalIsOpen={modalSelectCategorysOpen}
               data={dataForRegistration}
               setdata={setDataForRegistration}
-              Submit={ToggleModalToConfigGame}
+              Submit={SubmitOpenModalToConfigGame}
             />
+            <ModalToConfigGame
+              modalIsOpen={modalToConfigGame}
+              ToggleModal={SubmitOpenModalToConfigGame}
+              dataForRegistration={dataForRegistration}
+              setDataForRegistration={setDataForRegistration}
+            />
+
+
           </div>
         </StyledRegisterGame>
       </ContainerContentPage>

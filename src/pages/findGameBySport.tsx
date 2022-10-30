@@ -30,26 +30,13 @@ const FindGameBySport: NextPage = () => {
         modalIsOpen ? setModalIsOpen(false) : setModalIsOpen(true)
     }
     
-    const VerifyIfCategoriesIsSelected = (redirectUrl: string) => {
-        if (!dataForSearchBySportCategories.userSelectedCategoryGenre) {
-            toast.error("Selecione uma categoria de gênero para continuar");
-        }
-        else if (dataForSearchBySportCategories.sport.categorys && !dataForSearchBySportCategories.userSelectedCategory) {
-            toast.error("Selecione uma categoria do esporte para continuar");
-        }
-        else {
-            window.location.href = redirectUrl;
-        }
-    }
     const Submit = () => {
         const category = dataForSearchBySportCategories.userSelectedCategory
         const categoryGenre = dataForSearchBySportCategories.userSelectedCategoryGenre
         const sportSelected = dataForSearchBySportCategories.sport.sportName
-        const RedirectUrl = `games?${category ? `category=${category}&` : ""}${categoryGenre ? `categoryGenre=${categoryGenre}&` : ""}${sportSelected ? `sportSelected=${sportSelected}` : ""}`
-
-        VerifyIfCategoriesIsSelected(RedirectUrl)
-
-
+        const redirectUrl = `games?${category ? `category=${category}&` : ""}${categoryGenre ? `categoryGenre=${categoryGenre}&` : ""}${sportSelected ? `sportSelected=${sportSelected}` : ""}`
+        
+        window.location.href = redirectUrl
     }
 
     return (

@@ -14,6 +14,8 @@ const AvailableSports = ({ dataForRegistration, setDataForRegistration }: Availa
     const SelectSport = (sport: ApiSportsProps) => {
         setDataForRegistration({
             ...dataForRegistration,
+            userSelectedCategory: "",
+            userSelectedCategoryGenre: "",
             sport: {...dataForRegistration.sport,
                 sportName: sport.sportName,
                 categoryGenre: sport.categoryGenre,

@@ -5,6 +5,7 @@ import GenreOptions from '../../Organisms/ModalSelectCategorys/GenreOptions/Inde
 import { StyledModalSelectCategorys } from './Styled';
 import { dataForSearchBySportCategoriesProps } from "./TypesDataForResearchGame"
 import { DateForRegistrationProps } from '../../../Types/RegisterGame/TypesDateForRegistration';
+import { toast } from 'react-toastify';
 
 
 type ModalSelectCategorysProps = {
@@ -15,7 +16,7 @@ type ModalSelectCategorysProps = {
     Submit: () => void
 }
 
-const ModalSelectCategorys = ({ data, setdata, modalIsOpen, ToggleModal,Submit }: ModalSelectCategorysProps) => {
+const ModalSelectCategorys = ({ data, setdata, modalIsOpen, ToggleModal, Submit }: ModalSelectCategorysProps) => {
 
     const SelectCategory = (category: string) => {
         setdata({ ...data, userSelectedCategory: category })
@@ -24,6 +25,17 @@ const ModalSelectCategorys = ({ data, setdata, modalIsOpen, ToggleModal,Submit }
         setdata({ ...data, userSelectedCategoryGenre: categoryGenre })
     }
 
+    const VerifyIfCategoriesIsSelected = () => {
+        if (!data.userSelectedCategoryGenre) {
+            toast.error("Selecione uma categoria de gênero para continuar");
+        }
+        else if (data.sport.categorys && !data.userSelectedCategory) {
+            toast.error("Selecione uma categoria do esporte para continuar");
+        }
+        else {
+            Submit()
+        }
+    }
 
     return (
         <Modal
@@ -53,7 +65,7 @@ const ModalSelectCategorys = ({ data, setdata, modalIsOpen, ToggleModal,Submit }
                 />
 
                 <SubmitButton
-                    Submit={Submit}
+                    Submit={VerifyIfCategoriesIsSelected}
                     value="prosseguir" />
             </StyledModalSelectCategorys>
         </Modal>
