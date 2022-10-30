@@ -1,6 +1,6 @@
 import { styled } from "@mui/material/styles";
 
-export const StyledBox = styled("section")`
+export const StyledModalSelectCategorys = styled("section")`
     position: absolute;
     width: clamp(200px, 100%, 400px);
     max-height: 95vh;

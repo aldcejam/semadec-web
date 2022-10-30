@@ -2,9 +2,8 @@ import Modal from '@mui/material/Modal';
 import SubmitButton from '../../Atoms/SubmitButton.tsx/Index';
 import Categorys from '../../Organisms/ModalSelectCategorys/Categorys/Index';
 import GenreOptions from '../../Organisms/ModalSelectCategorys/GenreOptions/Index';
-import { StyledBox } from './Styled';
+import { StyledModalSelectCategorys } from './Styled';
 import { dataForSearchBySportCategoriesProps } from "./TypesDataForResearchGame"
-import { toast } from "react-toastify";
 import { DateForRegistrationProps } from '../../../Types/RegisterGame/TypesDateForRegistration';
 
 
@@ -35,7 +34,7 @@ const ModalSelectCategorys = ({ data, setdata, modalIsOpen, ToggleModal,Submit }
             aria-describedby="keep-mounted-modal-description"
             BackdropProps={{ sx: { backgroundColor: "divider", backdropFilter: "blur(5px)", outline: "none" } }}
         >
-            <StyledBox>
+            <StyledModalSelectCategorys>
                 <div className="titles">
                     <h4>Esporte: {data.sport.sportName}</h4>
                     <h5>Selecione as categorias</h5>
@@ -56,7 +55,7 @@ const ModalSelectCategorys = ({ data, setdata, modalIsOpen, ToggleModal,Submit }
                 <SubmitButton
                     Submit={Submit}
                     value="prosseguir" />
-            </StyledBox>
+            </StyledModalSelectCategorys>
         </Modal>
     )
 }
