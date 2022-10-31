@@ -1,8 +1,10 @@
+export type TeamsProps = {
+    teamName: string,
+    teamLogo: string
+}
+
 export type DateForRegistrationProps = {
-    teams: Array<{
-        teamName: string;
-        teamLogo: string;
-    }>,
+    teams: Array<TeamsProps>,
     sport: {
         sportName: string;
         categorys: string[] | undefined;

@@ -1,5 +1,4 @@
 import { Modal } from "@mui/material"
-import Image from "next/image";
 import { DateForRegistrationProps } from "../../../Types/RegisterGame/TypesDateForRegistration";
 import { StyledModalToConfigGame } from "./Styled"
 
@@ -24,8 +23,8 @@ const ModalToConfigGame = ({ ToggleModal, modalIsOpen, dataForRegistration, setD
                 <article>
                     {dataForRegistration.teams.map((team, index) => {
                         return (
-                            <div key={index}>
-                                {team.teamLogo}
+                            <div className="card" key={index}>
+                            
                             </div>
                         )
                     })

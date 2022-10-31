@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { DateForRegistrationProps } from "../../../../Types/RegisterGame/TypesDateForRegistration";
+import { DateForRegistrationProps, TeamsProps} from "../../../../Types/RegisterGame/TypesDateForRegistration";
 import TeamCard from "../../../Molecules/RegisterGame/TeamCard/Index"
 import { RegisteredTeams } from "./FetchRegisteredTeams"
 import { StyledAvailableTeams } from "./Styled"
@@ -10,6 +9,7 @@ type AvailableTeamsProps = {
 }
 const AvailableTeams = ({ dataForRegistration, setDataForRegistration }: AvailableTeamsProps) => {
 
+    /* ================================= */
     let teamIsSelected: boolean = false;
     const CheckIfTeamAlreadySelected = (teamName: string) => {
         dataForRegistration.teams.forEach(team => {
@@ -19,25 +19,37 @@ const AvailableTeams = ({ dataForRegistration, setDataForRegistration }: Availab
         });
 
     }
-    const SelectTeam = (selectedTeam: {teamName:string,teamLogo:string}) => {
+    
+    const UncheckIfTeamIsSelected = (selectedTeam: TeamsProps, teams: Array<TeamsProps>) => {
+        return (
+            setDataForRegistration({
+                ...dataForRegistration,
+                teams: teams.filter(team => team.teamName !== selectedTeam.teamName)
+            })
+        )
+    }
+
+    const ToggleTeamSelected = (selectedTeam: TeamsProps) => {
         CheckIfTeamAlreadySelected(selectedTeam.teamName)
-        
+
+        teamIsSelected ?
+            UncheckIfTeamIsSelected(selectedTeam, dataForRegistration.teams)
+            :
+            setDataForRegistration({
+                ...dataForRegistration,
+                teams: [...dataForRegistration.teams,
+                { teamLogo: selectedTeam.teamLogo, teamName: selectedTeam.teamName }]
+            })
+    }
+
+    const SelectTeam = (selectedTeam: { teamName: string, teamLogo: string }) => {
         dataForRegistration.teams.forEach(() => {
-            !teamIsSelected ?
-                setDataForRegistration({
-                    ...dataForRegistration,
-                    teams: [...dataForRegistration.teams, 
-                        {teamLogo: selectedTeam.teamLogo,teamName: selectedTeam.teamName}]
-                })
-                :
-                setDataForRegistration({
-                    ...dataForRegistration,
-                    teams: dataForRegistration.teams.filter(team => team.teamName !== selectedTeam.teamName)
-                })
+            ToggleTeamSelected(selectedTeam)
         });
     }
-    
-    const cardSelected = (teamSelected: string) => {
+    /* ================================= */
+
+    const HaddleCardIsSelected = (teamSelected: string) => {
         return (dataForRegistration.teams.map((team) => {
             if (team.teamName === teamSelected) {
                 return "selected"
@@ -47,7 +59,7 @@ const AvailableTeams = ({ dataForRegistration, setDataForRegistration }: Availab
             }
         }))
     }
-    console.log(dataForRegistration.teams)
+
     return (
         <StyledAvailableTeams>
             <h2>Times disponíveis</h2>
@@ -61,7 +73,7 @@ const AvailableTeams = ({ dataForRegistration, setDataForRegistration }: Availab
                             <TeamCard
                                 teamLogo={team.teamLogo}
                                 teamName={team.teamName}
-                                cardSelected={cardSelected(team.teamName)}
+                                cardSelected={HaddleCardIsSelected(team.teamName)}
                             />
                         </span>
                     )
