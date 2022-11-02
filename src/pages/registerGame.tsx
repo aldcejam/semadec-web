@@ -35,6 +35,8 @@ const RegisterGame: NextPage = () => {
     scoreForSecond: 0,
     scoreForThird: 0,
   })
+  
+  
 
   const SubmitOpenSelectCategorys = () => {
     if (dataForRegistration.teams.length > 2) {
@@ -57,10 +59,10 @@ const RegisterGame: NextPage = () => {
       }
     } else {
       toast.error("Selecione mais de um curso para continuar");
-
     }
+    
   }
-
+  
   const SubmitOpenModalToConfigGame = () => {
     modalToConfigGame ? setModalToConfigGame(false) : setModalToConfigGame(true)
   }

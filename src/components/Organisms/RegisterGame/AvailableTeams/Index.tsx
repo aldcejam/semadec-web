@@ -1,4 +1,4 @@
-import { DateForRegistrationProps, TeamsProps} from "../../../../Types/RegisterGame/TypesDateForRegistration";
+import { DateForRegistrationProps, TeamsProps } from "../../../../Types/RegisterGame/TypesDateForRegistration";
 import TeamCard from "../../../Molecules/RegisterGame/TeamCard/Index"
 import { RegisteredTeams } from "./FetchRegisteredTeams"
 import { StyledAvailableTeams } from "./Styled"
@@ -8,6 +8,7 @@ type AvailableTeamsProps = {
     setDataForRegistration: React.Dispatch<React.SetStateAction<DateForRegistrationProps>>
 }
 const AvailableTeams = ({ dataForRegistration, setDataForRegistration }: AvailableTeamsProps) => {
+
 
     /* ================================= */
     let teamIsSelected: boolean = false;
@@ -19,12 +20,12 @@ const AvailableTeams = ({ dataForRegistration, setDataForRegistration }: Availab
         });
 
     }
-    
-    const UncheckIfTeamIsSelected = (selectedTeam: TeamsProps, teams: Array<TeamsProps>) => {
+
+    const UncheckIfTeamIsSelected = (selectedTeam: TeamsProps) => {
         return (
             setDataForRegistration({
                 ...dataForRegistration,
-                teams: teams.filter(team => team.teamName !== selectedTeam.teamName)
+                teams: dataForRegistration.teams.filter(team => team.teamName !== selectedTeam.teamName)
             })
         )
     }
@@ -32,17 +33,20 @@ const AvailableTeams = ({ dataForRegistration, setDataForRegistration }: Availab
     const ToggleTeamSelected = (selectedTeam: TeamsProps) => {
         CheckIfTeamAlreadySelected(selectedTeam.teamName)
 
-        teamIsSelected ?
-            UncheckIfTeamIsSelected(selectedTeam, dataForRegistration.teams)
-            :
+        if (teamIsSelected) {
+            UncheckIfTeamIsSelected(selectedTeam)
+        } else {
             setDataForRegistration({
                 ...dataForRegistration,
                 teams: [...dataForRegistration.teams,
                 { teamLogo: selectedTeam.teamLogo, teamName: selectedTeam.teamName }]
             })
+
+        }
     }
 
     const SelectTeam = (selectedTeam: { teamName: string, teamLogo: string }) => {
+
         dataForRegistration.teams.forEach(() => {
             ToggleTeamSelected(selectedTeam)
         });
@@ -59,7 +63,7 @@ const AvailableTeams = ({ dataForRegistration, setDataForRegistration }: Availab
             }
         }))
     }
-
+    
     return (
         <StyledAvailableTeams>
             <h2>Times disponíveis</h2>

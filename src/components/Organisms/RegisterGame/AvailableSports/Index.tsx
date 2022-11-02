@@ -26,6 +26,7 @@ const AvailableSports = ({ dataForRegistration, setDataForRegistration }: Availa
         })
     }
     
+    console.log(dataForRegistration)
     return (
         <StyledAvailableSports>
             <h2 className="title">Escolha o esporte</h2>
