@@ -2,8 +2,9 @@ import { styled } from "@mui/material/styles"
 import { FormControl } from "@mui/material"
 
 export const StyledSelectPontuations = styled(FormControl)`
-        width: 80%;
-      .MuiOutlinedInput-root {
+    width: 80%;
+    cursor: pointer;
+    .MuiOutlinedInput-root {
           label {
         }
         & fieldset {

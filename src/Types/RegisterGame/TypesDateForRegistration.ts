@@ -2,6 +2,10 @@ export type TeamsProps = {
     teamName: string,
     teamLogo: string
 }
+export type PontuationsGameProps = {
+    position: number, 
+    score: number
+}
 
 export type DateForRegistrationProps = {
     teams: Array<TeamsProps>,
@@ -16,7 +20,5 @@ export type DateForRegistrationProps = {
     userSelectedCategoryGenre: string,
     gameSituation: string,
     gameDate: Date,
-    scoreForFirst: number,
-    scoreForSecond: number,
-    scoreForThird: number,
+    pontuationsGame: Array<PontuationsGameProps>,
 }

@@ -29,11 +29,9 @@ const RegisterGame: NextPage = () => {
     },
     userSelectedCategory: "",
     userSelectedCategoryGenre: "",
-    gameSituation: "",
     gameDate: new Date(),
-    scoreForFirst: 0,
-    scoreForSecond: 0,
-    scoreForThird: 0,
+    pontuationsGame: [{position:0, score:10}],
+    gameSituation: "Em andamento",
   })
   
   

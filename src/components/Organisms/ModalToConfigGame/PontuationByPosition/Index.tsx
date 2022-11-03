@@ -1,25 +1,31 @@
-import { useState } from "react"
-import { DateForRegistrationProps } from "../../../../Types/RegisterGame/TypesDateForRegistration";
+import { useState, useEffect } from "react"
+import { DateForRegistrationProps, PontuationsGameProps } from "../../../../Types/RegisterGame/TypesDateForRegistration";
 import SelectPontuations from "../../../Atoms/ModalToConfigGame/SelectPontuations/Index"
 import Pontuation from "../../../Molecules/ModalToConfigGame/Pontuation/Index"
 
 type SelectPontuationsProps = {
     dataForRegistration: DateForRegistrationProps;
-    setDataForRegistration: any
+    setDataForRegistration: React.Dispatch<React.SetStateAction<DateForRegistrationProps>>
 }
-const PontuationByPosition = () => {
+const PontuationByPosition = ({ dataForRegistration, setDataForRegistration }: SelectPontuationsProps) => {
     const [positionsWithScore, setPositionsWithScore] = useState(3)
-    type PositionsProps = {
-        position: number,
-        score: number
-    }
-    const [pontuations, setPontuations] = useState<PositionsProps[]>([
+    
+    const [pontuations, setPontuations] = useState<PontuationsGameProps[]>([
         { position: 0, score: 30 },
         { position: 1, score: 0 },
         { position: 2, score: 0 },
         { position: 3, score: 0 },
         { position: 4, score: 0 },
     ])
+
+    useEffect(() => {
+        setDataForRegistration({
+            ...dataForRegistration,
+            pontuationsGame: pontuations
+        })
+    }, [positionsWithScore, pontuations])
+
+    
     return (
         <section>
             <SelectPontuations

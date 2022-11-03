@@ -1,7 +1,6 @@
 import { Modal } from "@mui/material"
 import { DateForRegistrationProps } from "../../../Types/RegisterGame/TypesDateForRegistration";
 import { StyledModalToConfigGame } from "./Styled"
-import Image from "next/image";
 import PontuationByPosition from "../../Organisms/ModalToConfigGame/PontuationByPosition/Index";
 import LogoTeams from "../../Molecules/ModalToConfigGame/LogosTeams/Index";
 import SituationGame from "../../Organisms/ModalToConfigGame/SituationGame/Index";
@@ -13,7 +12,6 @@ type ModalConfigGameProps = {
     setDataForRegistration: React.Dispatch<React.SetStateAction<DateForRegistrationProps>>
 }
 const ModalToConfigGame = ({ ToggleModal, modalIsOpen, dataForRegistration, setDataForRegistration }: ModalConfigGameProps) => {
-
 
     return (
         <Modal
@@ -37,6 +35,11 @@ const ModalToConfigGame = ({ ToggleModal, modalIsOpen, dataForRegistration, setD
                         />
                     </div>
                     <div className="situation">
+                        <SituationGame
+                            dataForRegistration={dataForRegistration}
+                            setDataForRegistration={setDataForRegistration}
+                        />
+                        
                     </div>
                 </div>
             </StyledModalToConfigGame>
@@ -45,10 +48,3 @@ const ModalToConfigGame = ({ ToggleModal, modalIsOpen, dataForRegistration, setD
 }
 
 export default ModalToConfigGame
-
-/* const removeFirstItemStringNull = () => {
-    setDataForRegistration({
-      ...dataForRegistration,
-      teams: dataForRegistration.teams.filter(team => team.teamName.length !== 0)
-    })
-  } */
