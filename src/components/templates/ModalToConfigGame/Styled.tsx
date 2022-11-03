@@ -29,84 +29,23 @@ export const StyledModalToConfigGame = styled("section")`
   .container {
     display: grid;
     grid-template:
-      "cards cards"
-      "positions-with-score situation"
+      "teams teams"
+      "positions situation"
       / 1fr 1fr;
-    margin-top: 40px;
+    margin-top: 20px;
     gap: 50px;
 
-    .cards {
-      position: relative;
-      grid-area: cards;
-      width: 100%;
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-
-      .card {
-        position: relative;
-        width: clamp(80px, 8vw, 110px);
-        height: clamp(80px, 8vw, 110px);
-      }
+    .teams{
+      grid-area: teams;
     }
-    .positions-with-score {
-        grid-area: positions-with-score;
-        #demo-simple-select-helper-label{
-            font-size: 1rem;
-            
-        }
-
-      .input-material-ui {
-        width: 80%;
-      }
-      .MuiOutlinedInput-root {
-          label {
-        }
-        & fieldset {
-            border: solid 2px ${(props) => props.theme.palette.primary.main};
-            border-radius: ${(props) => props.theme.shape.borderRadius};
-        }
-        &.Mui-focused fieldset {
-            border: solid 2px ${(props) => props.theme.palette.primary.dark};
-        }
-    }
-    MuiInputLabel-root {
-        padding-bottom: 10px;
-      }
-    }
+    
     .situation {
       grid-area: situation;
     }
   }
 
   .pontuations{
-      margin-top: 20px;
+      grid-area: positions;
 
-    .pontuation{
-      display: flex;
-      gap: 10px;
-      align-items: baseline;
-      p{
-        font-size: 1.3rem;
-        color: ${(props) => props.theme.palette.text.primary};
-        font-weight: 600;
-      }
-      input{
-        background-color: ${(props) => props.theme.palette.background.paper};
-        border: 2px solid ${(props) => props.theme.palette.primary.dark};
-        border-radius: ${(props) => props.theme.shape.borderRadius};
-        color: ${(props) => props.theme.palette.text.secondary};
-        font-size: 1.6rem;
-        padding: 7px 10px 7px 6px;
-        width: 70px;
-        transition: 0.3s;
-
-        :focus{
-          outline: none;
-          border: 2px solid ${(props) => props.theme.palette.primary.main};
-          
-        }
-      }
-    }
   }
 `;
