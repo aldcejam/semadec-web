@@ -2,11 +2,12 @@ import { StyledSituationsButtons } from "./Styled"
 
 type SituationsButtonsProps = {
     Submit: () => void
-    value: string
+    value: "pré-cadestrado" | "Em andamento"
+    selected: boolean
 }
-const SituationsButtons = ({ Submit, value}: SituationsButtonsProps) => {
+const SituationsButtons = ({ Submit, value,selected}: SituationsButtonsProps) => {
     return(
-        <StyledSituationsButtons>
+        <StyledSituationsButtons className={`selected-${selected.toString()}`}>
             {value}
         </StyledSituationsButtons>
     )

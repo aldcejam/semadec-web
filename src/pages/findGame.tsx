@@ -2,16 +2,15 @@ import { NextPage } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { toast } from "react-toastify";
 import AngleLine from "../../public/format/AngleLine";
 import PageTitle from "../components/Atoms/PageTitle/Index";
 import ListSports from "../components/templates/ListSports/Index";
 import ModalSelectCategorys from "../components/templates/ModalSelectCategorys/Index";
 import { dataForSearchBySportCategoriesProps } from "../components/templates/ModalSelectCategorys/TypesDataForResearchGame";
 import { ContainerContentPage } from "../styles/global/globals";
-import { StyledFindGameBySport } from "../styles/Styed.FindGameBySport";
+import { StyledFindGame } from "../styles/Styed.FindGame";
 
-const FindGameBySport: NextPage = () => {
+const FindGame: NextPage = () => {
     const { query } = useRouter();
     const course = query.curso;
 
@@ -48,7 +47,7 @@ const FindGameBySport: NextPage = () => {
             <PageTitle title="Jogos" />
 
             <ContainerContentPage with_background_color="true">
-                <StyledFindGameBySport className="box-page">
+                <StyledFindGame className="box-page">
                     <div className="container">
                         <AngleLine />
                         <AngleLine />
@@ -64,10 +63,10 @@ const FindGameBySport: NextPage = () => {
                             Submit={Submit}
                         />
                     </div>
-                </StyledFindGameBySport>
+                </StyledFindGame>
             </ContainerContentPage>
         </>
     )
 }
 
-export default FindGameBySport
+export default FindGame

@@ -1,6 +1,6 @@
 import {styled} from "@mui/material/styles";
 
-export const StyledFindGameBySport = styled('div')`
+export const StyledFindGame = styled('div')`
     display: flex;
     justify-content: center;
     

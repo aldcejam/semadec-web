@@ -1,4 +1,4 @@
-import { ThemeProvider } from '@mui/material'
+import { ThemeProvider as ThemeProviderMaterialUI } from '@mui/material'
 import { DarkTheme, LightTheme } from '../themes'
 import { createContext, ReactNode, useContext, useEffect, useMemo, useState } from "react";
 
@@ -43,9 +43,9 @@ export const ThemeContextProvider = ({ children }: ChildrenProps) => {
 
     return (
         <ThemeContext.Provider value={{ themeName, themeModifier, mainColor,secondaryColor }}>
-            <ThemeProvider theme={theme}>
+            <ThemeProviderMaterialUI theme={theme}>
                 {children}
-            </ThemeProvider>
+            </ThemeProviderMaterialUI>
         </ThemeContext.Provider>
     )
 
