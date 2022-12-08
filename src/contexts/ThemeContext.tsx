@@ -1,5 +1,3 @@
-"use client"
-
 import { ThemeProvider as ThemeProviderMaterialUI } from '@mui/material'
 import { DarkTheme, LightTheme } from '../themes'
 import { createContext, ReactNode, useContext, useEffect, useMemo, useState } from "react";

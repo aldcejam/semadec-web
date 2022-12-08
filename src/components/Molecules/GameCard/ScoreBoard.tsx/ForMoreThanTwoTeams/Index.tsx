@@ -1,10 +1,11 @@
 import Image from "next/image"
 import IconVersus from "../../../../Atoms/IconVersus/Index"
-import { PlacarGameProps } from "../../../../../Types/GameList/TypesTeams"
+import { ScoreboardGameProps } from "../../../../../use/FetchGames/GameProps"
 import { StyleForMoreThanTwoTeams } from "./Style.ForMoreThanTwoTeams"
 
 
-const ForMoreThanTwoTeams = ({ placar }: PlacarGameProps) => {
+
+const ForMoreThanTwoTeams = ({ placar }: ScoreboardGameProps) => {
 
     const applyIconVersus = (currentTeam: number, lastTeamWithoutIcon: number) => {
         if (currentTeam < lastTeamWithoutIcon) {

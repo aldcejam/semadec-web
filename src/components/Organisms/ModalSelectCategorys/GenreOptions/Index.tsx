@@ -1,11 +1,11 @@
 import ButtonSelectGenre from "../../../Molecules/ListSports/ModalSelectCategorys/ButtonSelectGenre/Index"
-import { dataForSearchBySportCategoriesProps } from "../../../../Types/DataForGameResearchProps"
+import { DataForGameResearchProps } from "../../../../Types/DataForGameResearchProps"
 import { StyledGenreOptions } from "./Styled"
 
 type GenreOptionsProps = {
     selectCategoryGenre: (categoryGenre: string) => void,
     categoryGenre: string[]
-    dataForSearchBySportCategories: dataForSearchBySportCategoriesProps
+    dataForSearchBySportCategories: DataForGameResearchProps
 }
 const GenreOptions = ({ categoryGenre, selectCategoryGenre, dataForSearchBySportCategories }: GenreOptionsProps) => {
     const tranlateCategoryGenre = (categoryGenre: string) => {

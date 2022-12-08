@@ -1,4 +1,4 @@
-export type PlacarGameProps = {
+export type ScoreboardGameProps = {
   placar: Array<{
     course: string;
     logo: string;

@@ -1,10 +1,10 @@
-import { dataForSearchBySportCategoriesProps } from "../../../../Types/DataForGameResearchProps"
+import { DataForGameResearchProps } from "../../../../Types/DataForGameResearchProps"
 import { StyledCategorys } from "./Styled"
 
 type CategorysProps = {
     categorys: string[]
     selectCategory: (category: string) => void
-    dataForSearchBySportCategories: dataForSearchBySportCategoriesProps
+    dataForSearchBySportCategories: DataForGameResearchProps
     
 }
 const Categorys = ({categorys, selectCategory, dataForSearchBySportCategories}:CategorysProps) => {

@@ -1,9 +1,9 @@
 import Image from "next/image"
 import { StyleForTwoTeams } from "./Style.ForTwoTeams"
-import { PlacarGameProps } from "../../../../../Types/GameList/TypesTeams"
+import { ScoreboardGameProps } from "../../../../../use/FetchGames/GameProps"
 import IconVersus from "../../../../Atoms/IconVersus/Index"
 
-const ForTwoTeams = ({ placar }: PlacarGameProps) => {
+const ForTwoTeams = ({ placar }: ScoreboardGameProps) => {
 
     const applyIconVersus = (currentTeam: number) => {
         const firstTeam = 0

@@ -1,9 +1,8 @@
 import ForMoreThanTwoTeams from "../../../Molecules/GameCard/ScoreBoard.tsx/ForMoreThanTwoTeams/Index"
 import ForTwoTeams from "../../../Molecules/GameCard/ScoreBoard.tsx/ForTwoTeams/Index"
-import { PlacarGameProps } from "../../../../Types/GameList/TypesTeams"
+import { ScoreboardGameProps } from "../../../../use/FetchGames/GameProps"
 
-
-const TeamVersus = ({ placar }:PlacarGameProps ) => {
+const TeamVersus = ({ placar }:ScoreboardGameProps ) => {
     return (
         <div>
             {

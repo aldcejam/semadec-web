@@ -1,11 +1,11 @@
-import { DateForRegistrationProps,gameSituationProps as TypeSituation  } from "../../../../Types/RegisterGame/TypesDateForRegistration";
+import { DataForGameRegistrationProps,gameSituationProps as TypeSituation  } from "../../../../Types/DataForGameRegistrationProps"; 
 import SituationsButton from "../../../Molecules/ModalToConfigGame/SituationsButton/Index"
 import { StyledSituationGame } from "./Styled"
 
 
 type SituationGameProps = {
-    dataForRegistration: DateForRegistrationProps;
-    setDataForRegistration: React.Dispatch<React.SetStateAction<DateForRegistrationProps>>
+    dataForRegistration: DataForGameRegistrationProps;
+    setDataForRegistration: React.Dispatch<React.SetStateAction<DataForGameRegistrationProps>>
 }
 const SituationGame = ({ dataForRegistration, setDataForRegistration }: SituationGameProps) => {
 
