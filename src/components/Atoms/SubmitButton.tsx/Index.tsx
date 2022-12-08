@@ -1,5 +1,4 @@
 import { StyledSubmitButton } from "./Styled"
-import { dataForSearchBySportCategoriesProps } from "../../../Types/DataForGameResearchProps"
 
 type SubmitButtonProps = {
     value: string

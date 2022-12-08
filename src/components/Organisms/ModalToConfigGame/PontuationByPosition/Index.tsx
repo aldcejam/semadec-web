@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react"
-import { DateForRegistrationProps, PontuationsGameProps } from "../../../../Types/RegisterGame/TypesDateForRegistration";
+import { PontuationsGameProps, DataForGameRegistrationProps } from "../../../../Types/DataForGameRegistrationProps" 
 import SelectPontuations from "../../../Atoms/ModalToConfigGame/SelectPontuations/Index"
 import Pontuation from "../../../Molecules/ModalToConfigGame/Pontuation/Index"
 
 type SelectPontuationsProps = {
-    dataForRegistration: DateForRegistrationProps;
-    setDataForRegistration: React.Dispatch<React.SetStateAction<DateForRegistrationProps>>
+    dataForRegistration: DataForGameRegistrationProps;
+    setDataForRegistration: React.Dispatch<React.SetStateAction<DataForGameRegistrationProps>>
 }
 
 const PontuationByPosition = ({ dataForRegistration, setDataForRegistration }: SelectPontuationsProps) => {
