@@ -38,7 +38,7 @@ export const LightTheme = (mainColor: string, secondaryColor:string) => {
         secondary: "#353535",
       },
       background: {
-        paper: "#d9d9d9",
+        paper: "#dbdbdb",
         default: `linear-gradient(135deg, ${mainColor} 0%, ${secondaryColor} 100%)`,
       },
       divider: "#d9d9d91a",
@@ -49,7 +49,7 @@ export const LightTheme = (mainColor: string, secondaryColor:string) => {
       
     },
     shape:{
-      borderRadius: "15px"
+      borderRadius: 5
     },
     breakpoints: {
       values: {

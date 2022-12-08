@@ -10,7 +10,7 @@ const StyledMenuBurguer = styled('div')<TypesStyledMenuBurguer>(({ menuisactive,
     position: absolute;
     z-index: 10;
     left: 10px;
-    margin: 25px auto;
+    margin: 20px auto;
     cursor: pointer;
     ${props.theme.breakpoints.down('xs')}{  
         position: fixed;
@@ -19,7 +19,7 @@ const StyledMenuBurguer = styled('div')<TypesStyledMenuBurguer>(({ menuisactive,
     .line{
         background: ${props.theme.palette.background.default};
         width: 30px;
-        height: 4px;
+        height: 3px;
         border-radius: 10px;
         transition: 0.5s;
     }
@@ -30,10 +30,10 @@ const StyledMenuBurguer = styled('div')<TypesStyledMenuBurguer>(({ menuisactive,
     }
     .line:nth-of-type(2){
         transform: ${menuisactive == 'true' ? 'rotate(45deg)' : 'rotate(0)'};
-        margin-top: ${menuisactive == 'true' ? '-4px' : '4px'};
+        margin-top: ${menuisactive == 'true' ? '-3px' : '4px'};
     }
     .line:nth-of-type(3){
-        margin-top: ${menuisactive == 'true' ? '-4px' : '4px'};
+        margin-top: ${menuisactive == 'true' ? '-3px' : '4px'};
         transform: ${menuisactive == 'true' ? 'rotate(-45deg)' : 'rotate(0)'};
         
     }

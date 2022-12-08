@@ -4,9 +4,9 @@ export const StyledButtonSelectGenre = styled("article")`
   position: relative;
   text-align: center;
   padding: 10px;
-  border-top: 2px solid ${(props) => props.theme.palette.primary.main};
-  border-bottom: 2px solid ${(props) => props.theme.palette.secondary.main};
-  border-radius: ${(props) => props.theme.shape.borderRadius};
+  border-top: 2px solid ${(props) => props.theme.palette.primary.main}a1;
+  border-bottom: 2px solid ${(props) => props.theme.palette.secondary.main}a1;
+  border-radius: ${(props) => props.theme.shape.borderRadius}px;
   box-shadow: inset -5px -5px 10px
   ${(props) => props.theme.palette.secondary.main}3f;
   cursor: pointer;
@@ -18,7 +18,7 @@ export const StyledButtonSelectGenre = styled("article")`
     height: 100%;
     top: 0;
     left: 0;
-    border-radius: ${(props) => props.theme.shape.borderRadius};
+    border-radius: ${(props) => props.theme.shape.borderRadius}px;
     box-shadow: inset 5px 5px 10px
     ${(props) => props.theme.palette.primary.main}3f;
     
@@ -26,13 +26,15 @@ export const StyledButtonSelectGenre = styled("article")`
   &.selected {
     border-top-width: 4px ;
     border-bottom-width: 4px solid;
+    border-top: 2px solid ${(props) => props.theme.palette.secondary.main};
+  border-bottom: 2px solid ${(props) => props.theme.palette.primary.main};
     border-radius: ${(props) => props.theme.shape.borderRadius};
     box-shadow: inset -5px -5px 10px
-    ${(props) => props.theme.palette.secondary.main}97;
+    ${(props) => props.theme.palette.primary.main}97;
     background: ${(props) => props.theme.palette.primary.dark}12;
     :before{
         box-shadow: inset 5px 5px 10px
-        ${(props) => props.theme.palette.primary.main}97;
+        ${(props) => props.theme.palette.secondary.main}97;
       }
   }
 

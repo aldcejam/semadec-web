@@ -14,7 +14,7 @@ export const StyedHoverSportButton = styled("button")`
     content: "";
     position: absolute;
     background-color: ${(props) => props.theme.palette.primary.light}3a;
-    border-radius: 10px;
+    border-radius: 5px;
     width: 100%;
     height: 100%;
     top: 0;

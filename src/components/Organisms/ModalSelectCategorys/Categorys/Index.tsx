@@ -1,4 +1,4 @@
-import { dataForSearchBySportCategoriesProps } from "../../../templates/ModalSelectCategorys/TypesDataForResearchGame"
+import { dataForSearchBySportCategoriesProps } from "../../../../Types/DataForGameResearchProps"
 import { StyledCategorys } from "./Styled"
 
 type CategorysProps = {

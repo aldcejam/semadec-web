@@ -11,6 +11,8 @@ const IllustrationJogosDoSeuCurso = () => {
     align-items: center;
     justify-content: right;
     .svg {
+      width: 100%;
+      height: 100%;
       .assign-color{
       }
       .cls-1 {

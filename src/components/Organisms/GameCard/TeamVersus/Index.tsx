@@ -1,5 +1,5 @@
-import ForMoreThanTwoTeams from "../../../Molecules/GameCard/ScoreBoard.tsx/ForMoreThanTwoTeams/ForMoreThanTwoTeams"
-import ForTwoTeams from "../../../Molecules/GameCard/ScoreBoard.tsx/ForTwoTeams/ForTwoTeams"
+import ForMoreThanTwoTeams from "../../../Molecules/GameCard/ScoreBoard.tsx/ForMoreThanTwoTeams/Index"
+import ForTwoTeams from "../../../Molecules/GameCard/ScoreBoard.tsx/ForTwoTeams/Index"
 import { PlacarGameProps } from "../../../../Types/GameList/TypesTeams"
 
 

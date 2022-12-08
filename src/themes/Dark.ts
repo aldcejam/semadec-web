@@ -54,8 +54,9 @@ export const DarkTheme = (mainColor: string, secondaryColor:string) => {
       },
     },
     shape:{
-      borderRadius: "15px"
+      borderRadius: 5
     },
+    
     shadows: [
       "none",
       "inset 3px 3px 3px #353232, inset -3px -3px 3px #1b1919",

@@ -7,7 +7,7 @@ export const StyledSelectSportButton = styled("button")`
     text-transform: capitalize;
     padding: 10px 20px;
     border: solid 2px ${(props) => props.theme.palette.primary.main}97;
-    border-radius: ${(props) => props.theme.shape.borderRadius};
+    border-radius: ${(props) => props.theme.shape.borderRadius}px;
     cursor: pointer;
     transition: all 0.3s ease;
 

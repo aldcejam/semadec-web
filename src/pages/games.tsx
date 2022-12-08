@@ -1,16 +1,16 @@
-import Head from "next/head";
-import PageTitle from "../components/Atoms/PageTitle/Index";
-import { ContainerContentPage } from "../styles/global/globals";
-import { StyledGame } from "../styles/Styled.Game";
-import { useRouter } from "next/router";
-import GameList from "../components/templates/GameList/Index";
+import { useSearchParams } from 'next/navigation'
+import PageTitle from '../../src/components/Atoms/PageTitle/Index'
+import { ContainerContentPage } from '../styles/globals'
+import { StyledGames } from '../styles/Pages/StyledGames'
+import GameList from '../../src/components/templates/GameList/Index'
 
 
-const Game = () => {
+const Games = () => {
+    const searchParams = useSearchParams()
+    const sportSelected = searchParams.get('sportSelected')
+    const categoryGenre = searchParams.get('categoryGenre')
+    const category = searchParams.get('category')
 
-    const router = useRouter()
-    const { sportSelected, categoryGenre, category } = router.query
-    const sport = sportSelected as string
 
     const ListWeekday = [
         "Sun",
@@ -24,30 +24,26 @@ const Game = () => {
 
     return (
         <>
-            <Head>
-                <title>Jogos</title>
-            </Head>
-
             <PageTitle title={
-                `${sportSelected ? sport : "esporte não definido"}
+                `${sportSelected ? sportSelected : "esporte não definido"}
                 ${category ? ` - ${category}` : ""}
                 `}
             />
-            <ContainerContentPage with_background_color="true">
-                <StyledGame className="box-page">
-                    <div className="style-background"/>
+
+            <ContainerContentPage>
+                <StyledGames className="box-page">
+                    <div className="decoration" />
+                    <div className="border" />
                     <div className="content">
                         <h2>{categoryGenre}</h2>
                         {ListWeekday.map((day) => (
-                            <GameList key={day} day={day}/>
+                            <GameList key={day} day={day} />
                         ))}
                     </div>
-                </StyledGame>
+                </StyledGames>
             </ContainerContentPage>
         </>
     )
 }
 
-
-
-export default Game
+export default Games

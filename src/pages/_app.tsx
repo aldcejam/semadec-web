@@ -1,29 +1,25 @@
+import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-
-import '../styles/global/globals.css'
-import { ContainerGlobal } from '../styles/global/globals';
-import { ContainerPage } from '../styles/global/globals';
-
 import { ThemeContextProvider } from '../contexts/ThemeContext'
-
-import SideBarPage from '../components/templates/Sidebar/Index';
-import DefaultBackground from '../../public/Default-background.tsx/Index';
+import DefaultBackground from '../../public/Default-background'
+import { ToastContainer } from "react-toastify";
+import { usePathname } from 'next/navigation'
+import { ContainerGlobal, ContainerPage } from '../styles/globals';
+import Sidebar from '../components/templates/Sidebar/Index';
 import SettingsButtons from '../components/Molecules/SettingsButtons/Index';
-import { ToastContainer } from 'react-toastify';
+import { Rajdhani } from '@next/font/google';
 
-import 'react-toastify/dist/ReactToastify.css';
+const rajdhani = Rajdhani({
+  subsets: ['latin'],
+  weight: ["300", "400", "500", "600", "700"],
+});
 
-
-function MyApp({ Component, pageProps }: AppProps) {
-
+export default function App({ Component, pageProps }: AppProps) {
+  const Page = usePathname()
 
   return (
     <ThemeContextProvider>
-      {/*  */}
       <DefaultBackground />
-      <ContainerGlobal>
-        <SideBarPage />
-        <SettingsButtons />
       <ToastContainer
         position="top-right"
         autoClose={2000}
@@ -36,17 +32,23 @@ function MyApp({ Component, pageProps }: AppProps) {
         pauseOnHover
         theme="colored"
       />
-      {/* Same as */}
-      </ContainerGlobal>
-      {/*  */}
-      <ContainerPage>
-        <Component {...pageProps} />
-      </ContainerPage>
-
+      {
+        Page == '/login'
+          ?
+          <span className={rajdhani.className}>
+            <Component {...pageProps} />
+          </span>
+          :
+          <>
+            <ContainerGlobal className={rajdhani.className}  >
+              <Sidebar />
+              <SettingsButtons />
+            </ContainerGlobal>
+            <ContainerPage className={rajdhani.className}>
+              <Component {...pageProps} />
+            </ContainerPage>
+          </>
+      }
     </ThemeContextProvider>
   )
 }
-
-
-
-export default MyApp

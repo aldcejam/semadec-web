@@ -51,7 +51,7 @@ export const StyledForm = styled("form")`
       filter: blur(10);
       background-color: ${(props) => props.theme.palette.primary.main}5b;
       color: ${(props) => props.theme.palette.text.primary};
-      border-radius: ${(props) => props.theme.shape.borderRadius};
+      border-radius: ${(props) => props.theme.shape.borderRadius}px;
       border: 2px solid ${(props) => props.theme.palette.secondary.main};
 
       &:hover {

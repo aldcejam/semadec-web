@@ -1,5 +1,5 @@
 import ButtonSelectGenre from "../../../Molecules/ListSports/ModalSelectCategorys/ButtonSelectGenre/Index"
-import { dataForSearchBySportCategoriesProps } from "../../../templates/ModalSelectCategorys/TypesDataForResearchGame"
+import { dataForSearchBySportCategoriesProps } from "../../../../Types/DataForGameResearchProps"
 import { StyledGenreOptions } from "./Styled"
 
 type GenreOptionsProps = {

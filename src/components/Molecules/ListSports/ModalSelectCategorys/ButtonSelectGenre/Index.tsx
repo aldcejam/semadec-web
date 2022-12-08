@@ -20,17 +20,6 @@ const ButtonSelectGenre = ({ genre, selected }: ButtonSelectGenreProps) => {
         }
 
     }
-    const tranlateCategoryGenre = (categoryGenre: string) => {
-        switch (categoryGenre) {
-            case "masculino":
-                return "male"
-            case "feminino":
-                return "famale"
-            case "misto":
-                return "mixed"
-            default: return ""
-        }
-    }
 
     return (
         <StyledButtonSelectGenre className={`${selected ? "selected":""}`}>

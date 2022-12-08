@@ -1,20 +1,19 @@
-import { NextPage } from "next";
-import Head from "next/head";
-import { useRouter } from "next/router";
+import PageTitle from '../../src/components/Atoms/PageTitle/Index'
 import { useState } from "react";
-import AngleLine from "../../public/format/AngleLine";
-import PageTitle from "../components/Atoms/PageTitle/Index";
-import ListSports from "../components/templates/ListSports/Index";
-import ModalSelectCategorys from "../components/templates/ModalSelectCategorys/Index";
-import { dataForSearchBySportCategoriesProps } from "../components/templates/ModalSelectCategorys/TypesDataForResearchGame";
-import { ContainerContentPage } from "../styles/global/globals";
-import { StyledFindGame } from "../styles/Styed.FindGame";
+import ListSports from "../../src/components/templates/ListSports/Index";
+import ModalSelectCategorys from "../../src/components/templates/ModalSelectCategorys/Index";
+import { DataForGameResearchProps } from "../Types/DataForGameResearchProps";
+import { ContainerContentPage } from "../styles/globals";
+import { StyleFindGame } from "../styles/Pages/StyledFindGame";
+import { useSearchParams } from 'next/navigation'
 
-const FindGame: NextPage = () => {
-    const { query } = useRouter();
-    const course = query.curso;
+const FindGame = () => {
 
-    const [dataForSearchBySportCategories, setDataForSearchBySportCategories] = useState<dataForSearchBySportCategoriesProps>({
+    const searchParams = useSearchParams()
+    const course = searchParams.get('curso')
+
+
+    const [dataForSearchBySportCategories, setDataForSearchBySportCategories] = useState<DataForGameResearchProps>({
         sport: {
             sportName: "",
             categorys: undefined,
@@ -28,33 +27,30 @@ const FindGame: NextPage = () => {
     const ToggleModal = () => {
         modalIsOpen ? setModalIsOpen(false) : setModalIsOpen(true)
     }
-    
+
     const Submit = () => {
         const category = dataForSearchBySportCategories.userSelectedCategory
         const categoryGenre = dataForSearchBySportCategories.userSelectedCategoryGenre
         const sportSelected = dataForSearchBySportCategories.sport.sportName
-        const redirectUrl = `games?${category ? `category=${category}&` : ""}${categoryGenre ? `categoryGenre=${categoryGenre}&` : ""}${sportSelected ? `sportSelected=${sportSelected}` : ""}`
-        
+        //url with category and categoryGenre and sportSelected if they are not undefined
+        const redirectUrl = `games?${category ?`category=${category}&` : ""}${categoryGenre ?`categoryGenre=${categoryGenre}&` : ""}${sportSelected ?`sportSelected=${sportSelected}` : ""}`
+
         window.location.href = redirectUrl
     }
+    console.log(dataForSearchBySportCategories)
 
     return (
         <>
-            <Head>
-                <title>Escolher Esporte</title>
-            </Head>
+            <PageTitle title={`Encontrar jogo`} />
 
-            <PageTitle title="Jogos" />
-
-            <ContainerContentPage with_background_color="true">
-                <StyledFindGame className="box-page">
+            <ContainerContentPage>
+                <StyleFindGame className="box-page">
                     <div className="container">
-                        <AngleLine />
-                        <AngleLine />
+                        <div className="decoration" />
                         <ListSports
                             ToggleModal={ToggleModal}
                             setDataForSearchBySportCategories={setDataForSearchBySportCategories}
-                            course={course} />
+                            course={course ? course : "não há curso selecionado no seu perfil"} />
                         <ModalSelectCategorys
                             ToggleModal={ToggleModal}
                             modalIsOpen={modalIsOpen}
@@ -63,7 +59,7 @@ const FindGame: NextPage = () => {
                             Submit={Submit}
                         />
                     </div>
-                </StyledFindGame>
+                </StyleFindGame>
             </ContainerContentPage>
         </>
     )

@@ -1,27 +1,27 @@
-import { useState } from "react"
-import MenuBurguer from "../../Atoms/MenuBurguer/Index"
-import { StyledSidebarPage } from "./Styled"
-import Navegation from "../../Organisms/Sidebar/Navegation/Index";
+import { useState } from "react";
+import MenuBurguer from "../../Atoms/MenuBurguer/Index";
 import RedirectIcon from "../../Molecules/Sidebar/RedirectIcon/Index";
+import Navegation from "../../Organisms/Sidebar/Navegation/Index";
+import { StyledSidebar } from "./Styled";
+import { StringsRoutes } from "../../../StringsRoutes";
 
 
-const SideBarPage = () => {
+const Sidebar = () => {
     const [menuisative, setmenuisative] = useState(false)
-
     return (
-        <StyledSidebarPage menuisactive={menuisative.toString()}>
+        <StyledSidebar menuisactive={menuisative.toString()}>
             <MenuBurguer menuisactive={menuisative} setmenuisative={setmenuisative} />
             <div className="redirect-home">
-                <RedirectIcon 
-                href="/"
-                icon="/Icons/home.svg"
-                text="Home"
-                alt="icone de redirecionamento"
+                <RedirectIcon
+                    href={StringsRoutes.home}
+                    icon="/Icons/home.svg"
+                    text="Home"
+                    alt="icone de redirecionamento"
                 />
             </div>
             <Navegation />
-        </StyledSidebarPage>
+        </StyledSidebar>
     )
 }
 
-export default SideBarPage;
+export default Sidebar;

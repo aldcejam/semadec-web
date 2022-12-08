@@ -1,17 +1,18 @@
-import { DateForRegistrationProps } from "../../../../Types/RegisterGame/TypesDateForRegistration";
+import { DataForGameRegistrationProps } from "../../../../Types/DataForGameRegistrationProps";
 import SelectSportButton from "../../../Atoms/SportButton/Select/Index"
-import { ApiSports, ApiSportsProps } from "../../ListSports/Sports/fetchSports"
+import { fetchSports,fetchSportsProps } from "../../../../use/FetchSports/fetchSports"
+
 import { StyledAvailableSports } from "./Styled"
 
 type AvailableSportsProps = {
-    dataForRegistration: DateForRegistrationProps;
-    setDataForRegistration: React.Dispatch<React.SetStateAction<DateForRegistrationProps>>
+    dataForRegistration: DataForGameRegistrationProps;
+    setDataForRegistration: React.Dispatch<React.SetStateAction<DataForGameRegistrationProps>>
 }
 const AvailableSports = ({ dataForRegistration, setDataForRegistration }: AvailableSportsProps) => {
 
     
 
-    const SelectSport = (sport: ApiSportsProps) => {
+    const SelectSport = (sport: fetchSportsProps) => {
         setDataForRegistration({
             ...dataForRegistration,
             userSelectedCategory: "",
@@ -31,7 +32,7 @@ const AvailableSports = ({ dataForRegistration, setDataForRegistration }: Availa
         <StyledAvailableSports>
             <h2 className="title">Escolha o esporte</h2>
             <div className="box-sports">
-                {ApiSports.map((sport) => {
+                {fetchSports.map((sport) => {
                     return (
                         <span
                             key={sport.sportName}

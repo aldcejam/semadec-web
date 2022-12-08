@@ -1,5 +1,4 @@
 import { StyledPontuation } from "./Styled"
-import {useEffect} from "react"
 
 type PontuationProps = {
     pontuations: Array<{ position: number, score: number }>,
@@ -16,7 +15,7 @@ const Pontuation = ({ pontuations, setPontuations, positionsWithScore }: Pontuat
                 if (index <= positionsWithScore) {
                     return (
                         <div key={pontuation.position}>
-                            <p>{index + 1}º lugar</p>
+                            <p>{index + 1}º</p>
                             <input type="number" value={pontuation.score} onChange={(e) => {
                                 const newPontuations = [...pontuations]
                                 newPontuations[index].score = Number(e.target.value)

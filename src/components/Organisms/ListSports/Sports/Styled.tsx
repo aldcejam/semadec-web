@@ -15,7 +15,7 @@ export const StyledSports = styled("div")`
                 text-align: center;
                 background-color: ${props => props.theme.palette.primary.light}1a;
                 backdrop-filter: blur(80px);
-                border-radius: 10px;
+                border-radius: 5px;
 
                 ${(props) => props.theme.breakpoints.down('xs')}{
                     padding: 10px;

@@ -11,13 +11,13 @@ const SocialMidias = ({instagram, twitter}:SocialMidiasProps) => {
         <StyledSocialMidias>
             <div className="social-midias--twitter">
                 <div className="twitter--icon">
-                    <Image alt="icone do instagram" src={'/Icons/social-midias/twitter.svg'} layout='fill' />
+                    <Image alt="icone do twitter" src={'/Icons/social-midias/twitter.svg'} layout='fill' />
                 </div>
                 <p>{twitter}</p>
             </div>
             <div className="social-midias--instagram">
                 <div className="instagram--icon">
-                    <Image src={'/Icons/social-midias/instagram.svg'} layout='fill' />
+                    <Image alt="icone do instagram" src={'/Icons/social-midias/instagram.svg'} layout='fill' />
                 </div>
                 <p>{instagram}</p>
             </div>

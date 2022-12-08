@@ -1,11 +1,11 @@
-import { DateForRegistrationProps, TeamsProps } from "../../../../Types/RegisterGame/TypesDateForRegistration";
+import { DataForGameRegistrationProps, TeamsProps } from "../../../../Types/DataForGameRegistrationProps";
+import { RegisteredTeams } from "../../../../use/fetchRegisteredTeams";
 import TeamCard from "../../../Molecules/RegisterGame/TeamCard/Index"
-import { RegisteredTeams } from "./FetchRegisteredTeams"
 import { StyledAvailableTeams } from "./Styled"
 
 type AvailableTeamsProps = {
-    dataForRegistration: DateForRegistrationProps;
-    setDataForRegistration: React.Dispatch<React.SetStateAction<DateForRegistrationProps>>
+    dataForRegistration: DataForGameRegistrationProps;
+    setDataForRegistration: React.Dispatch<React.SetStateAction<DataForGameRegistrationProps>>
 }
 const AvailableTeams = ({ dataForRegistration, setDataForRegistration }: AvailableTeamsProps) => {
 

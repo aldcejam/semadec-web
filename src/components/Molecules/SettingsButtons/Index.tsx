@@ -1,4 +1,4 @@
-import ButtonDarkMode from "../../Atoms/ButtonDarkMode/Index"
+import ButtonDarkMode from "../../Atoms/Buttons/DarkMod/Index"
 import SettingButton from "../../Atoms/SettingButton/Index"
 import { StyledSettingsButtons } from "./Styled"
 

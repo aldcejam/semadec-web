@@ -5,7 +5,7 @@ const ProfilePic = () => {
     return (
         <StyleProfilePic className="profile-pic-size">
             <div>
-                <Image src={'/profile-image.jpg'} layout='fill' />
+                <Image alt="imagem do usuario" src={'/profile-image.jpg'} fill={true} />
             </div>
         </StyleProfilePic>
     )

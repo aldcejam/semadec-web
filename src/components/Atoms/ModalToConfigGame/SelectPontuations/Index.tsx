@@ -30,7 +30,7 @@ const SelectPontuations = ({ positionsWithScore, setPositionsWithScore, pontuati
 
                 <MenuItem value={0}>1 equipe com pontuação</MenuItem>;
                 <MenuItem value={1}>2 equipe com pontuação</MenuItem>;
-                <MenuItem value={2}>3 equipe com pontuação</MenuItem>;
+                <MenuItem selected value={2}>3 equipe com pontuação</MenuItem>;
                 <MenuItem value={3}>4 equipe com pontuação</MenuItem>;
                 <MenuItem value={4}>5 equipe com pontuação</MenuItem>;
             </Select>

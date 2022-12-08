@@ -1,17 +1,19 @@
+"use client"
+
 import {styled} from "@mui/material/styles";
 
-interface IStyledSidebarPage {
+interface IStyledSidebar {
   menuisactive: string
 }
 
-export const StyledSidebarPage = styled("nav")<IStyledSidebarPage>(({ menuisactive, ...props }) => `
+export const StyledSidebar = styled("nav")<IStyledSidebar>(({ menuisactive, ...props }) => `
   width: ${menuisactive == 'true' ? '150px' : '50px'};
   height: 90vh;
   display: flex;
   position: fixed;
   z-index: 99;
   margin: auto;
-  border-radius: 7px;
+  border-radius: ${props.theme.shape.borderRadius}px;
   background-color: ${props.theme.palette.background.paper};
   transition: 0.5s;
   overflow-x: hidden;
@@ -38,7 +40,7 @@ export const StyledSidebarPage = styled("nav")<IStyledSidebarPage>(({ menuisacti
     position: absolute;
     left: 0;
     top: 0;
-    border-radius: 7px;
+    border-radius: ${props.theme.shape.borderRadius}px;
     width: 100%;
     height: 100%;
     transition: all 0.3s ease;

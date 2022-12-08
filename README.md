@@ -1,44 +1,34 @@
-Como usar uma Ilustração:
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-    <!-- CONSEGUIR A ILUSTRAÇÃO E A CONFIGURAR-LA -->
+## Getting Started
 
-    passo 1: 
-    Escolha sua ilustração no site https://storyset.com/ (use apenas as ilustrações deste site,motivo: não ter ilustrações com traços diferente das demais)
+First, run the development server:
 
-    passo 2: abra a ilustração com o "ADOBE ILLUSTRATOR"
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-    passo 3: Selecione a figura toda e aperte o potão direito do mouse e selecione exportar seleção
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-    passo 4: após fazer a etapa 3 será aberto um modal com as configurações, selecione o FORMATO SVG (verifique nas configurações(icone de engrenagem) se as configurações do svg estão assim: ESTILIZAÇÃO:CSS INTERNO, FONTE:SVG, IMAGENS: PRESERVAR, IDS DE OBJETO: NOMES DE CAMADAS)
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-    passo 5: exportar a ilustração para sua maquina, botão: exportar ativo(caso esteja em português)
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-    <!-- USAR NO CODIGO -->
+## Learn More
 
-    <!-- a partir daqui você também poderá se guiar vendo as outras illustrações -->
+To learn more about Next.js, take a look at the following resources:
 
-    passo 6: criar componente
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-    passo 7: criar styled do material ui dentro do componente
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-    passo 8: usar o styled no component, e colocar div.svg (div com class "svg") dentro
+## Deploy on Vercel
 
-    passo 9: copiar o CODIGO svg(não o arquivo) e colocar dentro da div.svg
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-    passo 10: pegar conteúdo Style do svg e colocar dentro do Styled anteriormente criado,
-    estara assim: <defs><styled>.cls{fill:black}</styled></defs>, pegue apenas as classes e e exclua o <defs> e o <style>
-
-    passo 11: importe a cor principal (const {mainColor} = useThemeContext();) e a coloque antes do styled do Material
-
-    passo 12: agora ache a cor principal da ilustração e retire a cor em hexadecimal e coloque o ${mainColor}
-
-    <!-- REDIMENSIONAR -->
-
-    Quando for usar o component poderá em uma tag pai alterar o tamanho.
-    .tagPai{
-        .svg{
-            width: 100px;
-            ...
-        }
-    }
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

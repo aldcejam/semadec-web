@@ -14,7 +14,7 @@ const RedirectIcon = ({ href,icon,text, alt }:RedirectIconProps) => {
         <Link href={href}>
             <RedirecticonStyled>
                 <div className="image">
-                    <Image alt={alt} src={icon} layout={"fill"} />
+                    <Image alt={alt} src={icon} fill />
                 </div>
                 <p>{text}</p>
             </RedirecticonStyled>

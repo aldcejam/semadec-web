@@ -1,20 +1,22 @@
-import {styled} from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 
 export const StyledHomePageCards = styled('section')`
   width: 100%;
   display: grid;
+  height: fit-content;
   grid-template:
     "gridTop gridTop" auto
     "gridLeft gridRight" auto
     / 6fr 8fr;
-
+    grid-row: 0px;
+   /* centralizar div */
   ${(props) => props.theme.breakpoints.down("xs")} {
     grid-template:
       "gridTop gridTop" auto
       "gridLeft gridRight" auto
       / 6fr 8fr;
   }
-
+  align-content: center;
   gap: 10px;
 
   /* ===== cards grid ===== */
@@ -35,7 +37,6 @@ export const StyledHomePageCards = styled('section')`
     }
 
     .card:nth-of-type(1) {
-      grid-area: item1;
       grid-area: item1;
     }
     .card:nth-of-type(2) {

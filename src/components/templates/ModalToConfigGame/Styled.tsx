@@ -2,7 +2,7 @@ import { styled } from "@mui/material/styles";
 
 export const StyledModalToConfigGame = styled("section")`
   position: absolute;
-  width: clamp(200px, 96vw, 800px);
+  width: clamp(200px, 96vw, 700px);
   max-height: 95vh;
   min-height: 95vh;
   overflow-y: auto;
@@ -12,7 +12,7 @@ export const StyledModalToConfigGame = styled("section")`
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 10px 30px 30px;
-  border-radius: ${(props) => props.theme.shape.borderRadius};
+  border-radius: ${(props) => props.theme.shape.borderRadius}px;
   border-bottom: 2px solid ${(props) => props.theme.palette.secondary.main};
   border-right: 2px solid ${(props) => props.theme.palette.secondary.main};
   border-left: 2px solid ${(props) => props.theme.palette.primary.main};
@@ -32,8 +32,17 @@ export const StyledModalToConfigGame = styled("section")`
       "teams teams"
       "positions situation"
       / 1fr 1fr;
-    margin-top: 20px;
-    gap: 50px;
+      margin-top: 20px;
+      gap: 50px;
+      
+      ${props => props.theme.breakpoints.down("sm")}{
+      grid-template:
+        "teams teams"
+        "positions positions"
+        "situation situation"
+        / 1fr 1fr;
+
+    }
 
     .teams{
       grid-area: teams;

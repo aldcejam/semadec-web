@@ -1,29 +1,24 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import PageTitle from '../components/Atoms/PageTitle/Index'
-import ModifyUserData from '../components/templates/ModifyUserData/Index'
-import { ViewProfile } from '../components/templates/ViewProfile/Index'
-import { ContainerContentPage } from '../styles/global/globals'
-import StyledProfile from '../styles/Styled.Profile'
+import PageTitle from '../../src/components/Atoms/PageTitle/Index'
+import { ContainerContentPage } from '../styles/globals'
+import { StyledProfile } from '../styles/Pages/StyledProfile'
+import { ViewProfile } from '../../src/components/templates/ViewProfile/Index'
+import ModifyUserData from '../../src/components/templates/ModifyUserData/Index'
 
-const Profile: NextPage = () => {
 
-  return (
-    <>
-      <Head>
-        <title>Perfil</title>
-      </Head>
+const Profile = () => {
+    return (
+        <>
+            <PageTitle title={"Perfil"}
+            />
 
-      <PageTitle title={`Perfil`} />
-
-      <ContainerContentPage with_background_color='false'>
-        <StyledProfile>
-          <ViewProfile screen='profileUser'/>
-          <ModifyUserData/>
-        </StyledProfile>
-      </ContainerContentPage>
-    </>
-  )
+            <ContainerContentPage>
+                <StyledProfile>
+                    <ViewProfile screen='profileUser' />
+                    <ModifyUserData />
+                </StyledProfile>
+            </ContainerContentPage>
+        </>
+    )
 }
 
 export default Profile

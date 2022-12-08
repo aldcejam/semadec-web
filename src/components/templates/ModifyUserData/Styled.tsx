@@ -7,7 +7,7 @@ export const StyledModifyUserData = styled("section")`
   overflow: hidden;
   padding: 0 0 50px 0;
   border: ${(props) => props.theme.palette.primary.main} 1px solid;
-  border-radius: ${(props) => props.theme.shape.borderRadius};
+  border-radius: ${(props) => props.theme.shape.borderRadius}px;
   background-color: ${(props) => props.theme.palette.secondary.dark}1a;
   box-shadow: inset -40px -40px 81px ${(props) => props.theme.palette.primary.dark}12;
   backdrop-filter: blur(40px);

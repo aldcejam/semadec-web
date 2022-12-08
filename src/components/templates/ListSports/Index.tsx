@@ -1,12 +1,13 @@
+import { DataForGameResearchProps } from "../../../Types/DataForGameResearchProps";
 import Title from "../../Molecules/ListSports/Title/Index"
 import Sports from "../../Organisms/ListSports/Sports/Index";
-import { dataForSearchBySportCategoriesProps } from "../ModalSelectCategorys/TypesDataForResearchGame"
+
 import { StyledListSports } from "./Styled";
 
 type ListSportsProps = {
     course: any,
     ToggleModal: () => void,
-    setDataForSearchBySportCategories: React.Dispatch<React.SetStateAction<dataForSearchBySportCategoriesProps>>
+    setDataForSearchBySportCategories: React.Dispatch<React.SetStateAction<DataForGameResearchProps>>
 }
 const ListSports = ({ course,ToggleModal, setDataForSearchBySportCategories }: ListSportsProps) => {
 

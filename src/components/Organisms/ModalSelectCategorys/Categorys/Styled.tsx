@@ -8,7 +8,7 @@ export const StyledCategorys = styled("div")`
         margin-bottom: 25px;
         .category{
             border: solid 1px ${props => props.theme.palette.primary.main};
-            border-radius: ${props => props.theme.shape.borderRadius};
+            border-radius: ${props => props.theme.shape.borderRadius}px;
             padding: 7px 12px;
             background-color: ${props => props.theme.palette.primary.light}97;
             cursor: pointer;

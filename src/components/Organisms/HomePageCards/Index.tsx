@@ -12,16 +12,16 @@ type TypesHomePageCard = {
 
 const HomePageCard = ({ illustration, title, link }: TypesHomePageCard) => {
     return (
-        <Link href={link}>
-            <StyledHomePageCard className="card">
+        <StyledHomePageCard className="card">
+            <Link href={link}>
                 <span className="illustration">
                     {illustration}
                 </span>
                 <CardTitle
                     title={title}
                 />
-            </StyledHomePageCard>
-        </Link>
+            </Link>
+        </StyledHomePageCard>
     )
 }
 

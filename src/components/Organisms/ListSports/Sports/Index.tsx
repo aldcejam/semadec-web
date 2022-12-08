@@ -1,19 +1,19 @@
 import { StyledSports } from "./Styled"
-import { ApiSports, ApiSportsProps } from "./fetchSports"
-import { dataForSearchBySportCategoriesProps } from "../../../templates/ModalSelectCategorys/TypesDataForResearchGame"
+import { fetchSports, fetchSportsProps } from "../../../../use/FetchSports/fetchSports"
+import { DataForGameResearchProps } from "../../../../Types/DataForGameResearchProps"
 import HoverSportButton from "../../../Atoms/SportButton/Hover/Index"
 
 
 type SportsProps = {
-    setDataForSearchBySportCategories: React.Dispatch<React.SetStateAction<dataForSearchBySportCategoriesProps>>
+    setDataForSearchBySportCategories: React.Dispatch<React.SetStateAction<DataForGameResearchProps>>
     ToggleModal: () => void
 }
 
 const Sports = ({setDataForSearchBySportCategories, ToggleModal}:SportsProps) => {
 
-    const sportsArraySize = ApiSports.length / 2
+    const sportsArraySize = fetchSports.length / 2
 
-    const handleButtonSport = (sport: ApiSportsProps) => {
+    const handleButtonSport = (sport: fetchSportsProps) => {
         setDataForSearchBySportCategories({ userSelectedCategory: '',userSelectedCategoryGenre:'', sport: sport })
         ToggleModal()
     }
@@ -21,7 +21,7 @@ const Sports = ({setDataForSearchBySportCategories, ToggleModal}:SportsProps) =>
     return (
         <StyledSports>
             <div className="sports__left">
-                {ApiSports.map((sport, index) => {
+                {fetchSports.map((sport, index) => {
                     if (index >= sportsArraySize) {
                         return (
                             <span
@@ -34,7 +34,7 @@ const Sports = ({setDataForSearchBySportCategories, ToggleModal}:SportsProps) =>
                 })}
             </div>
             <div className="sports__right">
-                {ApiSports.map((sport, index) => {
+                {fetchSports.map((sport, index) => {
                     if (index < sportsArraySize) {
                         return (
                             <span

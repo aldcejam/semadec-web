@@ -1,6 +1,7 @@
-import { DateForRegistrationProps } from "../../../../Types/RegisterGame/TypesDateForRegistration";
-import SituationsButtons from "../../../Molecules/ModalToConfigGame/SituationsButtons/Index"
+import { DateForRegistrationProps,gameSituationProps as TypeSituation  } from "../../../../Types/RegisterGame/TypesDateForRegistration";
+import SituationsButton from "../../../Molecules/ModalToConfigGame/SituationsButton/Index"
 import { StyledSituationGame } from "./Styled"
+
 
 type SituationGameProps = {
     dataForRegistration: DateForRegistrationProps;
@@ -8,33 +9,33 @@ type SituationGameProps = {
 }
 const SituationGame = ({ dataForRegistration, setDataForRegistration }: SituationGameProps) => {
 
-    const Submit = (situation: string) => {
+    const Submit = ({gameSituation}: TypeSituation) => {
         setDataForRegistration({
             ...dataForRegistration,
-            gameSituation: situation
+            gameSituation: gameSituation
         })
     }
 
-    const ButtonSelected = (situation: string)=>{
-        if(dataForRegistration.gameSituation == situation){
+    const ButtonSelected = ({gameSituation}: TypeSituation)=>{
+        if(dataForRegistration.gameSituation == gameSituation){
             return(true)
         }else{
             return(false)
-            
         }
     }
 
     return (
         <StyledSituationGame>
-            <SituationsButtons
-                value="Em andamento"
-                Submit={() => Submit("Em andamento")} 
-                selected={true}
+            <p className="title">Situação do jogo:</p>
+            <SituationsButton
+                value="em andamento"
+                Submit={() => Submit({ gameSituation: "em andamento"})} 
+                selected={ButtonSelected({ gameSituation: "em andamento"})}
                 />
-            <SituationsButtons
+            <SituationsButton
                 value="pré-cadestrado"
-                Submit={() => Submit("Em andamento")} 
-                selected={ButtonSelected("pré-cadestrado")}
+                Submit={() => Submit({ gameSituation: "pre-cadastrado"})} 
+                selected={ButtonSelected({ gameSituation: "pre-cadastrado"})}
                 />
 
         </StyledSituationGame>

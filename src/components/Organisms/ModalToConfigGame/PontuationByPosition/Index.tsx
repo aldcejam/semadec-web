@@ -7,9 +7,10 @@ type SelectPontuationsProps = {
     dataForRegistration: DateForRegistrationProps;
     setDataForRegistration: React.Dispatch<React.SetStateAction<DateForRegistrationProps>>
 }
+
 const PontuationByPosition = ({ dataForRegistration, setDataForRegistration }: SelectPontuationsProps) => {
-    const [positionsWithScore, setPositionsWithScore] = useState(3)
-    
+    const [positionsWithScore, setPositionsWithScore] = useState(2)
+
     const [pontuations, setPontuations] = useState<PontuationsGameProps[]>([
         { position: 0, score: 30 },
         { position: 1, score: 0 },
@@ -25,7 +26,7 @@ const PontuationByPosition = ({ dataForRegistration, setDataForRegistration }: S
         })
     }, [positionsWithScore, pontuations])
 
-    
+
     return (
         <section>
             <SelectPontuations

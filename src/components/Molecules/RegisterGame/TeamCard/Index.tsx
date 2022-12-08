@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { useState } from "react";
 import { StyledTeamCard } from "./Styled"
 
 type TeamCardProps = {
@@ -13,7 +12,7 @@ const TeamCard = ({ teamLogo, teamName, cardSelected }: TeamCardProps) => {
         <StyledTeamCard>
             <div className={`container-logo ${styleClass}`}>
                 <div className="logo">
-                    <Image src={teamLogo} layout="fill" />
+                    <Image alt="logo de curso" src={teamLogo} layout="fill" />
                 </div>
             </div>
             <p>{teamName}</p>

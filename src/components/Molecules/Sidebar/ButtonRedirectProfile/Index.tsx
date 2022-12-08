@@ -1,16 +1,13 @@
 import Link from "next/link"
-import { InputRedirectPerfil } from "../../../Atoms/InputRedirectPerfil/Index"
+import { StringsRoutes } from "../../../../StringsRoutes"
+import ButtonRedirectPerfil from "../../../Atoms/Buttons/RedirectPerfil/Index"
 import { StyledButtonRedirectProfile } from "./Styled"
 
-type ButtonRedirectProfileProps = {
-    href: string
-}
-
-const ButtonRedirectProfile = ({}:ButtonRedirectProfileProps) => {
+const ButtonRedirectProfile = () => {
     return (
-        <Link href={'/profile'} >
+        <Link href={StringsRoutes.profile} >
             <StyledButtonRedirectProfile>
-                <InputRedirectPerfil />
+                <ButtonRedirectPerfil />
                 <p>Perfil</p>
             </StyledButtonRedirectProfile>
         </Link>

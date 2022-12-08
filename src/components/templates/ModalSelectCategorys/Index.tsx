@@ -3,15 +3,15 @@ import SubmitButton from '../../Atoms/SubmitButton.tsx/Index';
 import Categorys from '../../Organisms/ModalSelectCategorys/Categorys/Index';
 import GenreOptions from '../../Organisms/ModalSelectCategorys/GenreOptions/Index';
 import { StyledModalSelectCategorys } from './Styled';
-import { dataForSearchBySportCategoriesProps } from "./TypesDataForResearchGame"
-import { DateForRegistrationProps } from '../../../Types/RegisterGame/TypesDateForRegistration';
+import { DataForGameResearchProps } from "../../../Types/DataForGameResearchProps"
+import { DataForGameRegistrationProps } from "../../../Types/DataForGameRegistrationProps";
 import { toast } from 'react-toastify';
 
 
 type ModalSelectCategorysProps = {
     modalIsOpen: boolean,
     ToggleModal: () => void
-    data: dataForSearchBySportCategoriesProps | DateForRegistrationProps
+    data: DataForGameResearchProps | DataForGameRegistrationProps
     setdata: any
     Submit: () => void
 }

@@ -1,5 +1,5 @@
 import { Modal } from "@mui/material"
-import { DateForRegistrationProps } from "../../../Types/RegisterGame/TypesDateForRegistration";
+import { DataForGameRegistrationProps } from "../../../Types/DataForGameRegistrationProps" 
 import { StyledModalToConfigGame } from "./Styled"
 import PontuationByPosition from "../../Organisms/ModalToConfigGame/PontuationByPosition/Index";
 import LogoTeams from "../../Molecules/ModalToConfigGame/LogosTeams/Index";
@@ -8,8 +8,8 @@ import SituationGame from "../../Organisms/ModalToConfigGame/SituationGame/Index
 type ModalConfigGameProps = {
     modalIsOpen: boolean,
     ToggleModal: () => void,
-    dataForRegistration: DateForRegistrationProps;
-    setDataForRegistration: React.Dispatch<React.SetStateAction<DateForRegistrationProps>>
+    dataForRegistration: DataForGameRegistrationProps;
+    setDataForRegistration: React.Dispatch<React.SetStateAction<DataForGameRegistrationProps>>
 }
 const ModalToConfigGame = ({ ToggleModal, modalIsOpen, dataForRegistration, setDataForRegistration }: ModalConfigGameProps) => {
 

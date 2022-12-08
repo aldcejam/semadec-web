@@ -15,7 +15,7 @@ export const StyledPontuation = styled("div")`
     input {
       background-color: ${(props) => props.theme.palette.background.paper};
       border: 2px solid ${(props) => props.theme.palette.primary.dark};
-      border-radius: ${(props) => props.theme.shape.borderRadius};
+      border-radius: ${(props) => props.theme.shape.borderRadius}px;
       color: ${(props) => props.theme.palette.text.secondary};
       font-size: 1.6rem;
       padding: 7px 10px 7px 6px;

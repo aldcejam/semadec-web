@@ -11,6 +11,7 @@ const IllustrationCourse = () => {
     align-items: center;
     justify-content: center;
     .svg {
+      width: 100%;
       .assign-color{
       }
       .cls-1 {
