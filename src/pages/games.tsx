@@ -1,6 +1,6 @@
 import { useSearchParams } from 'next/navigation'
 import PageTitle from '../../src/components/Atoms/PageTitle/Index'
-import { ContainerContentPage } from '../styles/globals'
+import { ContainerContentPage } from '../styles/CustomBackground'
 import { StyledGames } from '../styles/Pages/StyledGames'
 import GameList from '../../src/components/templates/GameList/Index'
 

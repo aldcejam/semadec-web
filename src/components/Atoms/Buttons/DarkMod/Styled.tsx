@@ -1,12 +1,13 @@
 import {styled} from "@mui/material/styles";
 
-interface themeselected {
+type themeselected = {
   themeselected: any
 }
 
 export const StylesButtonDarkMode = styled("div")<themeselected>(({ themeselected, ...props }) => `
   background: ${props.theme.palette.background.default};
   position: relative;
+  z-index: 10;
   display: flex;
   align-items: center;
   border:solid 1px ${props.theme.palette.primary.contrastText};

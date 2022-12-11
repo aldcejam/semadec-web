@@ -18,6 +18,7 @@ export const StyledGameCard = styled("article")`
     position: absolute;
     bottom: 0;
     width: min(50%, 130px);
+    z-index: 0;
     svg {
       position: absolute;
       bottom: 0;
@@ -25,14 +26,10 @@ export const StyledGameCard = styled("article")`
   }
   .game-score {
     padding: 10px 15px;
-    &__only-two-teams {
-      .team {
-      }
-    }
-    &__more-than-two-teams {
-      .more-than-two-teams__teams {
-        
-      }
+
+    .team-versus{
+      position: relative;
+      z-index: 10;
     }
   }
 `;

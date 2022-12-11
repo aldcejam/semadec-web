@@ -3,7 +3,7 @@ import { useState } from "react";
 import ListSports from "../../src/components/templates/ListSports/Index";
 import ModalSelectCategorys from "../../src/components/templates/ModalSelectCategorys/Index";
 import { DataForGameResearchProps } from "../Types/DataForGameResearchProps";
-import { ContainerContentPage } from "../styles/globals";
+import { ContainerContentPage } from "../styles/CustomBackground";
 import { StyleFindGame } from "../styles/Pages/StyledFindGame";
 import { useSearchParams } from 'next/navigation'
 

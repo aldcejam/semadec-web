@@ -14,8 +14,10 @@ const GameCard = ({ game }: GameCardProps) => {
         <StyledGameCard>
             <CurverBorderButton />
             <div className="game-score">
-                <TeamVersus placar={game.placar}/>
-                <GameSpecification game={game}/>
+                <span className="team-versus">
+                    <TeamVersus placar={game.placar} />
+                </span>
+                <GameSpecification game={game} />
             </div>
         </StyledGameCard>
     )

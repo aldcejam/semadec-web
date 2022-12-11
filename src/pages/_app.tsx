@@ -1,12 +1,16 @@
 import '../styles/globals.css'
-import type { AppProps } from 'next/app'
-import { ThemeContextProvider } from '../contexts/ThemeContext'
 import DefaultBackground from '../../public/Default-background'
-import { ToastContainer } from "react-toastify";
-import { usePathname } from 'next/navigation'
 import { ContainerGlobal, ContainerPage } from '../styles/globals';
+
+import type { AppProps } from 'next/app'
+import { usePathname } from 'next/navigation'
+import { ThemeContextProvider } from '../contexts/ThemeContext'
+
+
 import Sidebar from '../components/templates/Sidebar/Index';
 import SettingsButtons from '../components/Molecules/SettingsButtons/Index';
+
+import { ToastContainer } from "react-toastify";
 import { Rajdhani } from '@next/font/google';
 
 const rajdhani = Rajdhani({

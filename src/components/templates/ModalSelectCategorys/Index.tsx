@@ -7,6 +7,12 @@ import { DataForGameResearchProps } from "../../../Types/DataForGameResearchProp
 import { DataForGameRegistrationProps } from "../../../Types/DataForGameRegistrationProps";
 import { toast } from 'react-toastify';
 
+import { Rajdhani } from '@next/font/google';
+
+const rajdhani = Rajdhani({
+  subsets: ['latin'],
+  weight: ["300", "400", "500", "600", "700"],
+});
 
 type ModalSelectCategorysProps = {
     modalIsOpen: boolean,
@@ -47,6 +53,7 @@ const ModalSelectCategorys = ({ data, setdata, modalIsOpen, ToggleModal, Submit 
             aria-labelledby="keep-mounted-modal-title"
             aria-describedby="keep-mounted-modal-description"
             BackdropProps={{ sx: { backgroundColor: "divider", backdropFilter: "blur(5px)", outline: "none" } }}
+            className={rajdhani.className}
         >
             <StyledModalSelectCategorys>
                 <div className="titles">
