@@ -1,5 +1,5 @@
 import PageTitle from '../../src/components/Atoms/PageTitle/Index'
-import { ContainerContentPage } from '../styles/globals'
+import { ContainerContentPage } from '../styles/CustomBackground'
 import { StyledProfile } from '../styles/Pages/StyledProfile'
 import { ViewProfile } from '../../src/components/templates/ViewProfile/Index'
 import ModifyUserData from '../../src/components/templates/ModifyUserData/Index'
