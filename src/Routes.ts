@@ -1,4 +1,4 @@
-type StringsRoutesProps = {
+type RoutesProps = {
     home: string,
     login: string,
     findGame: string,
@@ -6,7 +6,7 @@ type StringsRoutesProps = {
     profile: string
 }
 
-export const StringsRoutes:StringsRoutesProps = {
+export const Routes:RoutesProps = {
     home: "/",
     login: "/login",
     findGame: "/findGame",

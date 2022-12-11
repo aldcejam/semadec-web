@@ -1,6 +1,6 @@
 import { styled } from "@mui/material";
 
-export const StyleRegisterGame = styled("div")`
+export const StyledRegisterGame = styled("div")`
     display: flex;
     justify-content: center;
     .container{

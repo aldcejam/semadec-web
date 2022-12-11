@@ -1,11 +1,11 @@
 import Link from "next/link"
-import { StringsRoutes } from "../../../../StringsRoutes"
+import { Routes } from "../../../../Routes"
 import ButtonRedirectPerfil from "../../../Atoms/Buttons/RedirectPerfil/Index"
 import { StyledButtonRedirectProfile } from "./Styled"
 
 const ButtonRedirectProfile = () => {
     return (
-        <Link href={StringsRoutes.profile} >
+        <Link href={Routes.profile} >
             <StyledButtonRedirectProfile>
                 <ButtonRedirectPerfil />
                 <p>Perfil</p>

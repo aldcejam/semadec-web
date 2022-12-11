@@ -29,6 +29,7 @@ export const ContainerContentPage = styled("div")`
   ::-webkit-scrollbar-thumb:hover {
     background: ${props => props.theme.palette.primary.dark};
   }
+  margin-top: 10px;
     .box-page{
       min-height: 100%;
       width: 100%;

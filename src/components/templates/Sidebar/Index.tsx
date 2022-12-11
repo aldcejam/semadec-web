@@ -1,9 +1,9 @@
 import { useState } from "react";
+import { Routes } from "../../../Routes";
 import MenuBurguer from "../../Atoms/MenuBurguer/Index";
 import RedirectIcon from "../../Molecules/Sidebar/RedirectIcon/Index";
 import Navegation from "../../Organisms/Sidebar/Navegation/Index";
 import { StyledSidebar } from "./Styled";
-import { StringsRoutes } from "../../../StringsRoutes";
 
 
 const Sidebar = () => {
@@ -13,7 +13,7 @@ const Sidebar = () => {
             <MenuBurguer menuisactive={menuisative} setmenuisative={setmenuisative} />
             <div className="redirect-home">
                 <RedirectIcon
-                    href={StringsRoutes.home}
+                    href={Routes.home}
                     icon="/Icons/home.svg"
                     text="Home"
                     alt="icone de redirecionamento"
