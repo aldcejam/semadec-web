@@ -18,7 +18,7 @@ export const StyledBackgroundPage = styled('div')`
         position: absolute;
         width: 100vw;
         height: 100vh;
-        backdrop-filter: blur(1px);
+        backdrop-filter: blur(3px);
         ${props => props.theme.breakpoints.down('sm')}{
             backdrop-filter: blur(6px);
         }
