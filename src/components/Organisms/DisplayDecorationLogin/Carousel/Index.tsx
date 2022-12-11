@@ -11,6 +11,9 @@ const Carousel = () => {
                     arrows: false,
                     gap: '1rem',
                     height: '350px',
+                    autoplay: true,
+                    interval: 5000,
+                    snap: true,
                 }}>
                 <SplideSlide className='item-slide'>
                     <DateIllustration />

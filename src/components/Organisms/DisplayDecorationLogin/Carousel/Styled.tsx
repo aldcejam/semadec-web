@@ -22,8 +22,9 @@ export const StyledCarousel = styled("div")`
       height: 7px;
       &:hover {
         background-color: ${({ theme }) =>
-          theme.palette.secondary.main} !important;
-      }
+          theme.palette.primary.main} !important;
+          filter: grayscale(70%);
+    }
     }
   }
 `;

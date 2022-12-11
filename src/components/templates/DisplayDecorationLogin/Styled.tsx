@@ -10,5 +10,9 @@ export const StyledDisplayDecorationLogin = styled("div")`
     ${({ theme }) => theme.breakpoints.up('lg')} {
         border-radius: ${({ theme }) => theme.shape.borderRadius}px;
     }
+    ${({ theme }) => theme.breakpoints.down('md')} {
+        display: none;
+    }
+
     
 `

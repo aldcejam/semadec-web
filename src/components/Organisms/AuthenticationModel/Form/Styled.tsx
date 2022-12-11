@@ -4,17 +4,26 @@ export const StyledForm = styled("form")`
     
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 20px;
     
     .submit{
         width: 100%;
-        height: 50px;
+        padding: 15px 0;
         background-color: ${({ theme }) => theme.palette.primary.main};
         border: 1px solid ${({ theme }) => theme.palette.primary.dark};
         border-radius: ${({ theme }) => theme.shape.borderRadius}px;
         color: ${({ theme }) => theme.palette.primary.contrastText};
-        font-size: 0.9rem;
-        font-weight: 500;
-
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        box-shadow: 5px 5px 19px -3px ${({ theme }) => theme.palette.primary.dark}30;
+        margin-top: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+        &:hover{
+            filter: grayscale(30%); 
+            border: 1px solid ${({ theme }) => theme.palette.primary.main};
+            box-shadow: 5px 5px 19px -3px ${({ theme }) => theme.palette.primary.dark}30;
+        }
     }
 `

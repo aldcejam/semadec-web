@@ -3,7 +3,7 @@ import { StyledButtonLoginSuap } from "./Styled"
 const ButtonLoginSuap = () => {
     return(
         <StyledButtonLoginSuap>
-            <p>suap</p>
+            <p className="icon">suap</p>
         </StyledButtonLoginSuap>
     )
 }

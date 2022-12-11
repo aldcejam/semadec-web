@@ -4,7 +4,7 @@ import GoogleIcon from '@mui/icons-material/Google';
 const ButtonLoginGoogle = () => {
     return(
         <StyledButtonLoginGoogle>
-            <GoogleIcon/>
+            <GoogleIcon className="icon"/>
         </StyledButtonLoginGoogle>
     )
 

@@ -5,7 +5,7 @@ import { StyledOptionsLogin } from "./Styled"
 const OptionsLogin = () => {
     return (
         <StyledOptionsLogin>
-            <div>
+            <div className="title">
                 <p>Conecte-se com:</p>
             </div>
             <div className="account-options">

@@ -9,6 +9,7 @@ export const StyledAuthenticationTemplate = styled("div")`
         position: absolute;
         width: 100%;
         max-width: 400px;
+        margin-top: 60px;
     }
     
 `

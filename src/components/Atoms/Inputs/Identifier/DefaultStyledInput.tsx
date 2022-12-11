@@ -5,6 +5,7 @@ export const DefaultStyledInput = styled("span")`
     position: relative;
     z-index: 3;
   }
+  box-shadow: 5px 5px 19px -3px ${({ theme }) => theme.palette.primary.dark}30;
   
   /* error */
   .css-137ewq7-MuiInputBase-root-MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline{
