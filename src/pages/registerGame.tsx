@@ -1,14 +1,20 @@
 import { useState } from "react"
+
+import { ContainerContentPage } from "../styles/CustomBackground"
+import { StyledRegisterGame } from "../styles/Pages/StyledRegisterGame"
+
 import { toast } from "react-toastify"
+
 import PageTitle from "../../src/components/Atoms/PageTitle/Index"
 import SubmitButton from "../../src/components/Atoms/SubmitButton.tsx/Index"
 import AvailableSports from "../../src/components/Organisms/RegisterGame/AvailableSports/Index"
 import AvailableTeams from "../../src/components/Organisms/RegisterGame/AvailableTeams/Index"
 import ModalSelectCategorys from "../../src/components/templates/ModalSelectCategorys/Index"
-import { ContainerContentPage } from "../styles/CustomBackground"
-import { StyledRegisterGame } from "../styles/Pages/StyledRegisterGame"
 import ModalToConfigGame from "../../src/components/templates/ModalToConfigGame/Index"
-import {DataForGameRegistrationProps} from "../Types/DataForGameRegistrationProps"
+
+import { DataForGameRegistrationProps } from "../Types/DataForGameRegistrationProps"
+
+
 
 export default function Page() {
 
