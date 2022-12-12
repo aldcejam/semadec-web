@@ -16,7 +16,7 @@ import { DataForGameRegistrationProps } from "../../../Types/DataForGameRegistra
 
 
 
-export default function Register() {
+const Register = ()=> {
 
     const [dataForRegistration, setDataForRegistration] = useState<DataForGameRegistrationProps>({
         teams: [{
@@ -116,3 +116,5 @@ export default function Register() {
         </>
     )
 }
+
+export default Register

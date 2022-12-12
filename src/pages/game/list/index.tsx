@@ -5,7 +5,7 @@ import { StyledGames } from '../../../styles/Pages/StyledGames'
 import GameList from '../../../components/templates/GameList/Index'
 
 
-const list = () => {
+const List = () => {
     const searchParams = useSearchParams()
     const sportSelected = searchParams.get('sportSelected')
     const categoryGenre = searchParams.get('categoryGenre')
@@ -46,4 +46,4 @@ const list = () => {
     )
 }
 
-export default list
+export default List

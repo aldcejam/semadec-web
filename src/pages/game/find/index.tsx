@@ -6,9 +6,9 @@ import { DataForGameResearchProps } from "../../../Types/DataForGameResearchProp
 import { ContainerContentPage } from "../../../styles/CustomBackground";
 import { StyleFindGame } from "../../../styles/Pages/StyledFindGame";
 import { useSearchParams } from 'next/navigation'
+import { Routes } from '../../../Routes';
 
 const Find = () => {
-
     const searchParams = useSearchParams()
     const course = searchParams.get('curso')
 
@@ -32,7 +32,7 @@ const Find = () => {
         const category = dataForSearchBySportCategories.userSelectedCategory
         const categoryGenre = dataForSearchBySportCategories.userSelectedCategoryGenre
         const sportSelected = dataForSearchBySportCategories.sport.sportName
-        const redirectUrl = `/game/list?${category ?`category=${category}&` : ""}${categoryGenre ?`categoryGenre=${categoryGenre}&` : ""}${sportSelected ?`sportSelected=${sportSelected}` : ""}`
+        const redirectUrl = `${Routes.gameList}?${category ?`category=${category}&` : ""}${categoryGenre ?`categoryGenre=${categoryGenre}&` : ""}${sportSelected ?`sportSelected=${sportSelected}` : ""}`
 
         window.location.href = redirectUrl
     }
