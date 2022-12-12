@@ -1,13 +1,13 @@
-import PageTitle from '../../src/components/Atoms/PageTitle/Index'
+import PageTitle from '../../../components/Atoms/PageTitle/Index'
 import { useState } from "react";
-import ListSports from "../../src/components/templates/ListSports/Index";
-import ModalSelectCategorys from "../../src/components/templates/ModalSelectCategorys/Index";
-import { DataForGameResearchProps } from "../Types/DataForGameResearchProps";
-import { ContainerContentPage } from "../styles/CustomBackground";
-import { StyleFindGame } from "../styles/Pages/StyledFindGame";
+import ListSports from "../../../components/templates/ListSports/Index";
+import ModalSelectCategorys from "../../../components/templates/ModalSelectCategorys/Index";
+import { DataForGameResearchProps } from "../../../Types/DataForGameResearchProps";
+import { ContainerContentPage } from "../../../styles/CustomBackground";
+import { StyleFindGame } from "../../../styles/Pages/StyledFindGame";
 import { useSearchParams } from 'next/navigation'
 
-const FindGame = () => {
+const Find = () => {
 
     const searchParams = useSearchParams()
     const course = searchParams.get('curso')
@@ -32,8 +32,7 @@ const FindGame = () => {
         const category = dataForSearchBySportCategories.userSelectedCategory
         const categoryGenre = dataForSearchBySportCategories.userSelectedCategoryGenre
         const sportSelected = dataForSearchBySportCategories.sport.sportName
-        //url with category and categoryGenre and sportSelected if they are not undefined
-        const redirectUrl = `games?${category ?`category=${category}&` : ""}${categoryGenre ?`categoryGenre=${categoryGenre}&` : ""}${sportSelected ?`sportSelected=${sportSelected}` : ""}`
+        const redirectUrl = `/game/list?${category ?`category=${category}&` : ""}${categoryGenre ?`categoryGenre=${categoryGenre}&` : ""}${sportSelected ?`sportSelected=${sportSelected}` : ""}`
 
         window.location.href = redirectUrl
     }
@@ -65,4 +64,4 @@ const FindGame = () => {
     )
 }
 
-export default FindGame
+export default Find

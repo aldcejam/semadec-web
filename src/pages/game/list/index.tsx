@@ -1,11 +1,11 @@
 import { useSearchParams } from 'next/navigation'
-import PageTitle from '../../src/components/Atoms/PageTitle/Index'
-import { ContainerContentPage } from '../styles/CustomBackground'
-import { StyledGames } from '../styles/Pages/StyledGames'
-import GameList from '../../src/components/templates/GameList/Index'
+import PageTitle from '../../../components/Atoms/PageTitle/Index'
+import { ContainerContentPage } from '../../../styles/CustomBackground'
+import { StyledGames } from '../../../styles/Pages/StyledGames'
+import GameList from '../../../components/templates/GameList/Index'
 
 
-const Games = () => {
+const list = () => {
     const searchParams = useSearchParams()
     const sportSelected = searchParams.get('sportSelected')
     const categoryGenre = searchParams.get('categoryGenre')
@@ -46,4 +46,4 @@ const Games = () => {
     )
 }
 
-export default Games
+export default list

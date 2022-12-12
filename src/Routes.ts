@@ -4,12 +4,14 @@ type RoutesProps = {
     findGame: string,
     games: string,
     profile: string
+    register: string
 }
 
 export const Routes:RoutesProps = {
     home: "/",
     login: "/login",
-    findGame: "/findGame",
-    games: "/games",    
+    findGame: "/game/find",
+    games: "/game/list",    
+    register: "/game/register",
     profile: "/profile"
 }
