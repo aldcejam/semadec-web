@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useSidebarStateContext } from "../../../contexts/SidebarStateContext";
 import { Routes } from "../../../Routes";
 import MenuBurguer from "../../Atoms/MenuBurguer/Index";
 import RedirectIcon from "../../Molecules/Sidebar/RedirectIcon/Index";
@@ -7,11 +7,12 @@ import { StyledSidebar } from "./Styled";
 
 
 const Sidebar = () => {
-    const [menuisative, setmenuisative] = useState(false)
+    const { CloseSidebar, sidebarState, ToggleStateSidebar } = useSidebarStateContext()
+
     return (
-        <StyledSidebar menuisactive={menuisative.toString()}>
-            <MenuBurguer menuisactive={menuisative} setmenuisative={setmenuisative} />
-            <div className="redirect-home">
+        <StyledSidebar menuisactive={sidebarState.toString()}>
+            <MenuBurguer/>
+            <div onClick={CloseSidebar} className="redirect-home">
                 <RedirectIcon
                     href={Routes.home}
                     icon="/Icons/home.svg"

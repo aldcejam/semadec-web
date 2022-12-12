@@ -12,6 +12,7 @@ import SettingsButtons from '../components/Molecules/SettingsButtons/Index';
 
 import { ToastContainer } from "react-toastify";
 import { Rajdhani } from '@next/font/google';
+import { SidebarStateProvider } from '../contexts/SidebarStateContext';
 
 const rajdhani = Rajdhani({
   subsets: ['latin'],
@@ -44,13 +45,15 @@ export default function App({ Component, pageProps }: AppProps) {
           </span>
           :
           <>
-            <ContainerGlobal className={rajdhani.className}  >
-              <Sidebar />
-              <SettingsButtons />
-            </ContainerGlobal>
-            <ContainerPage className={rajdhani.className}>
-              <Component {...pageProps} />
-            </ContainerPage>
+            <SidebarStateProvider>
+              <ContainerGlobal className={rajdhani.className}  >
+                <Sidebar />
+                <SettingsButtons />
+              </ContainerGlobal>
+              <ContainerPage className={rajdhani.className}>
+                <Component {...pageProps} />
+              </ContainerPage>
+            </SidebarStateProvider>
           </>
       }
     </ThemeContextProvider>

@@ -1,15 +1,14 @@
+import { useSidebarStateContext } from "../../../contexts/SidebarStateContext"
 import StyledMenuBurguer from "./Styled"
 
-interface TypesMenuBurguer{
-    menuisactive:boolean
-    setmenuisative: any
-}
-
-const MenuBurguer = ({menuisactive, setmenuisative}:TypesMenuBurguer) => {
-    
+const MenuBurguer = () => {
+    const { sidebarState, ToggleStateSidebar } = useSidebarStateContext()
     
     return (
-        <StyledMenuBurguer menuisactive={menuisactive.toString()} onClick={() => menuisactive ? setmenuisative(false) : setmenuisative(true)}>
+        <StyledMenuBurguer 
+        menuisactive={sidebarState.toString()} 
+        onClick={() => ToggleStateSidebar()}
+        >
             <div className="line"></div>
             <div className="line"></div>
             <div className="line"></div>
