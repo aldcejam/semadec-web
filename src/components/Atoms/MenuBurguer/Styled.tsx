@@ -14,6 +14,9 @@ const StyledMenuBurguer = styled('div')<TypesStyledMenuBurguer>(({ menuisactive,
     cursor: pointer;
     ${props.theme.breakpoints.down('xs')}{  
         position: fixed;
+        margin-left: 10px;
+        transition: 0.3s;
+        left: ${menuisactive == 'true' ? '0' : '10px'};
     }
     
     .line{

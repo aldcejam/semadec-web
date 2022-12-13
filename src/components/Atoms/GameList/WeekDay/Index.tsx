@@ -3,7 +3,7 @@ import { StyledWeekDay } from "./Styled"
 type WeekDayProps = {
     date: string
 }
-const WeekDay = ({date}: WeekDayProps)=>{
+const WeekDay:any = ({date}: WeekDayProps)=>{
 
     const translateWeekDays = (day: string) => {
         switch (day) {

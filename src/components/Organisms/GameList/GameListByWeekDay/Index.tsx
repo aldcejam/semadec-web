@@ -10,7 +10,7 @@ const GameListByWeekDay = ({ games, day }: GameListByWeekDayProps) => {
 
 
     return (
-        <StyledGameListByWeekDay className="dasda">
+        <StyledGameListByWeekDay>
             {
                 games.map((game, index) => {
                     return (

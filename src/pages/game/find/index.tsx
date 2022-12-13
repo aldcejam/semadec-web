@@ -7,6 +7,7 @@ import { ContainerContentPage } from "../../../styles/CustomBackground";
 import { StyleFindGame } from "../../../styles/Pages/StyledFindGame";
 import { useSearchParams } from 'next/navigation'
 import { Routes } from '../../../Routes';
+import {Kddk} from './template/kddk'; 
 
 const Find = () => {
     const searchParams = useSearchParams()
@@ -58,6 +59,7 @@ const Find = () => {
                             Submit={Submit}
                         />
                     </div>
+                    <Kddk/>
                 </StyleFindGame>
             </ContainerContentPage>
         </>

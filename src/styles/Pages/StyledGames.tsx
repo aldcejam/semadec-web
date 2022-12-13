@@ -4,6 +4,10 @@ export const StyledGames = styled("div")`
   display: flex;
   width: 100%;
   padding: 0 30px 30px;
+  ${(props) => props.theme.breakpoints.down("xs")} {
+    padding: 0 20px 15px;
+  }
+
   .decoration {
     background-color: ${(props) => props.theme.palette.secondary.main}c5;
     width: clamp(260px, 31vw, 330px);
@@ -15,7 +19,7 @@ export const StyledGames = styled("div")`
   }
   h2 {
     font-weight: 600;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: ${(props) => props.theme.palette.text.primary};
     text-transform: capitalize;
   }
