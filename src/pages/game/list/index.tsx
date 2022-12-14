@@ -1,8 +1,8 @@
 import { useSearchParams } from 'next/navigation'
-import PageTitle from '../../../components/Atoms/PageTitle/Index'
+import PageTitle from '../../../components/common/atoms/PageTitle/Index'
 import { ContainerContentPage } from '../../../styles/CustomBackground'
 import { StyledGames } from '../../../styles/Pages/StyledGames'
-import GameList from '../../../components/templates/GameList/Index'
+import GameList from '../../../components/specificPerPage/game/list/template/GameList/Index'
 
 
 const List = () => {
@@ -10,7 +10,6 @@ const List = () => {
     const sportSelected = searchParams.get('sportSelected')
     const categoryGenre = searchParams.get('categoryGenre')
     const category = searchParams.get('category')
-
 
     const ListWeekday = [
         "Sun",
@@ -33,7 +32,7 @@ const List = () => {
             <ContainerContentPage>
                 <StyledGames className="box-page">
                     <div className="decoration" />
-                    <div className="border" />
+
                     <div className="content">
                         <h2>{categoryGenre}</h2>
                         {ListWeekday.map((day) => (

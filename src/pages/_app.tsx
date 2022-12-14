@@ -6,8 +6,8 @@ import type { AppProps } from 'next/app'
 import { usePathname } from 'next/navigation'
 import { ThemeContextProvider } from '../contexts/ThemeContext'
 
-import Sidebar from '../components/templates/Sidebar/Index';
-import SettingsButtons from '../components/Molecules/SettingsButtons/Index';
+import Sidebar from '../components/common/template/Sidebar/Index';
+import SettingsButtons from '../components/common/molecules/SettingsButtons/Index';
 
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from "react-toastify";

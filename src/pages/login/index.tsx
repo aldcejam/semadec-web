@@ -1,5 +1,5 @@
-import AuthenticationModel from "../../components/templates/AuthenticationModel/Index"
-import LoginPresentation from "../../components/templates/DisplayDecorationLogin/Index"
+import AuthenticationModel from "../../components/specificPerPage/login/template/AuthenticationModel/Index"
+import LoginPresentation from "../../components/specificPerPage/login/template/DisplayDecorationLogin/Index"
 import { StyledLogin, ContainerLogin } from "../../styles/Pages/StyledLogin"
 
 

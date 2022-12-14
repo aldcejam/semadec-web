@@ -1,13 +1,12 @@
-import PageTitle from '../../../components/Atoms/PageTitle/Index'
+import PageTitle from '../../../components/common/atoms/PageTitle/Index'
 import { useState } from "react";
-import ListSports from "../../../components/templates/ListSports/Index";
-import ModalSelectCategorys from "../../../components/templates/ModalSelectCategorys/Index";
+import ListSports from "../../../components/specificPerPage/game/find/template/ListSports/Index";
+import ModalSelectCategorys from "../../../components/common/template/ModalSelectCategorys/Index";
 import { DataForGameResearchProps } from "../../../Types/DataForGameResearchProps";
 import { ContainerContentPage } from "../../../styles/CustomBackground";
 import { StyleFindGame } from "../../../styles/Pages/StyledFindGame";
 import { useSearchParams } from 'next/navigation'
 import { Routes } from '../../../Routes';
-import {Kddk} from './template/kddk'; 
 
 const Find = () => {
     const searchParams = useSearchParams()
@@ -33,7 +32,7 @@ const Find = () => {
         const category = dataForSearchBySportCategories.userSelectedCategory
         const categoryGenre = dataForSearchBySportCategories.userSelectedCategoryGenre
         const sportSelected = dataForSearchBySportCategories.sport.sportName
-        const redirectUrl = `${Routes.gameList}?${category ?`category=${category}&` : ""}${categoryGenre ?`categoryGenre=${categoryGenre}&` : ""}${sportSelected ?`sportSelected=${sportSelected}` : ""}`
+        const redirectUrl = `${Routes.gameList}?${category ? `category=${category}&` : ""}${categoryGenre ? `categoryGenre=${categoryGenre}&` : ""}${sportSelected ? `sportSelected=${sportSelected}` : ""}`
 
         window.location.href = redirectUrl
     }
@@ -45,8 +44,9 @@ const Find = () => {
 
             <ContainerContentPage>
                 <StyleFindGame className="box-page">
+                    <div className="decoration" />
+
                     <div className="container">
-                        <div className="decoration" />
                         <ListSports
                             ToggleModal={ToggleModal}
                             setDataForSearchBySportCategories={setDataForSearchBySportCategories}
@@ -59,7 +59,6 @@ const Find = () => {
                             Submit={Submit}
                         />
                     </div>
-                    <Kddk/>
                 </StyleFindGame>
             </ContainerContentPage>
         </>

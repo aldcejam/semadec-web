@@ -1,8 +1,8 @@
-import PageTitle from '../../components/Atoms/PageTitle/Index'
+import PageTitle from '../../components/common/atoms/PageTitle/Index'
 import { ContainerContentPage } from '../../styles/CustomBackground'
 import { StyledProfile } from '../../styles/Pages/StyledProfile'
-import { ViewProfile } from '../../components/templates/ViewProfile/Index'
-import ModifyUserData from '../../components/templates/ModifyUserData/Index'
+import { ViewProfile } from '../../components/common/template/ViewProfile/Index'
+import ModifyUserData from '../../components/specificPerPage/profile/template/ModifyUserData/Index'
 
 
 const Profile = () => {

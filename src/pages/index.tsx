@@ -1,6 +1,6 @@
-import PageTitle from '../components/Atoms/PageTitle/Index'
+import PageTitle from '../components/common/atoms/PageTitle/Index'
 import { ContainerContentPage } from "../styles/CustomBackground"
-import HomePageCards from '../components/templates/HomePageCards/Index'
+import HomePageCards from '../components/specificPerPage/index/template/HomePageCards/Index'
 /* import { DateSuap } from '../lib/DataSuap'
 import useSWR from 'swr'
 import axios from 'axios' */

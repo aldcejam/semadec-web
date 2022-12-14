@@ -5,19 +5,22 @@ import { StyledRegisterGame } from "../../../styles/Pages/StyledRegisterGame"
 
 import { toast } from "react-toastify"
 
-import PageTitle from "../../../components/Atoms/PageTitle/Index"
-import SubmitButton from "../../../components/Atoms/SubmitButton.tsx/Index"
-import AvailableSports from "../../../components/Organisms/RegisterGame/AvailableSports/Index"
-import AvailableTeams from "../../../components/Organisms/RegisterGame/AvailableTeams/Index"
-import ModalSelectCategorys from "../../../components/templates/ModalSelectCategorys/Index"
-import ModalToConfigGame from "../../../components/templates/ModalToConfigGame/Index"
+import PageTitle from "../../../components/common/atoms/PageTitle/Index"
+import SubmitButton from "../../../components/common/atoms/SubmitButton.tsx/Index"
+import AvailableSports from "../../../components/specificPerPage/game/register/organisms/AvailableSports/Index"
+import AvailableTeams from "../../../components/specificPerPage/game/register/organisms/AvailableTeams/Index"
+import ModalSelectCategorys from "../../../components/common/template/ModalSelectCategorys/Index"
+import ModalToConfigGame from "../../../components/common/template/ModalToConfigGame/Index"
 
 import { DataForGameRegistrationProps } from "../../../Types/DataForGameRegistrationProps"
+import ChooseDispute from "../../../components/specificPerPage/game/register/template/ChooseDispute/Index"
 
 
 
 const Register = ()=> {
-
+    
+    const [modalSelectCategorysOpen, setModalSelectCategorysOpen] = useState(false)
+    const [modalToConfigGame, setModalToConfigGame] = useState(false)
     const [dataForRegistration, setDataForRegistration] = useState<DataForGameRegistrationProps>({
         teams: [{
             teamName: "",
@@ -38,6 +41,9 @@ const Register = ()=> {
     })
 
 
+    const ToggleModalSelectCategorys = () => {
+        modalSelectCategorysOpen ? setModalSelectCategorysOpen(false) : setModalSelectCategorysOpen(true)
+    }
 
     const SubmitOpenSelectCategorys = () => {
         if (dataForRegistration.teams.length > 2) {
@@ -63,17 +69,11 @@ const Register = ()=> {
         }
 
     }
-
     const SubmitOpenModalToConfigGame = () => {
         modalToConfigGame ? setModalToConfigGame(false) : setModalToConfigGame(true)
     }
 
-    const [modalSelectCategorysOpen, setModalSelectCategorysOpen] = useState(false)
-    const ToggleModalSelectCategorys = () => {
-        modalSelectCategorysOpen ? setModalSelectCategorysOpen(false) : setModalSelectCategorysOpen(true)
-    }
-
-    const [modalToConfigGame, setModalToConfigGame] = useState(false)
+    
 
 
     return (
@@ -84,19 +84,11 @@ const Register = ()=> {
                 <StyledRegisterGame className="box-page">
                     <div className="style-background" />
                     <div className="container">
-
-                        <div className="content">
-                            <AvailableTeams
-                                setDataForRegistration={setDataForRegistration}
-                                dataForRegistration={dataForRegistration} />
-                            <AvailableSports
-                                setDataForRegistration={setDataForRegistration}
-                                dataForRegistration={dataForRegistration}
-                            />
-                            <SubmitButton
-                                Submit={SubmitOpenSelectCategorys}
-                                value="Selecionar categorias" />
-                        </div>
+                        <ChooseDispute 
+                            dataForRegistration={dataForRegistration}
+                            setDataForRegistration={setDataForRegistration}
+                            SubmitOpenSelectCategorys={SubmitOpenSelectCategorys}
+                        />
                         <ModalSelectCategorys
                             ToggleModal={ToggleModalSelectCategorys}
                             modalIsOpen={modalSelectCategorysOpen}
