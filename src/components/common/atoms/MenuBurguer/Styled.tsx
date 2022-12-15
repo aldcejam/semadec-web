@@ -16,7 +16,11 @@ const StyledMenuBurguer = styled('div')<TypesStyledMenuBurguer>(({ menuisactive,
         position: fixed;
         margin-left: 10px;
         transition: 0.3s;
-        left: ${menuisactive == 'true' ? '0' : '10px'};
+        left: 0;
+        top: 6px;
+    }
+    ${props.theme.breakpoints.down('sm')}{
+        top: 8px;
     }
     
     .line{
@@ -25,6 +29,9 @@ const StyledMenuBurguer = styled('div')<TypesStyledMenuBurguer>(({ menuisactive,
         height: 3px;
         border-radius: 10px;
         transition: 0.5s;
+        ${props.theme.breakpoints.down('xs')}{
+            background: ${menuisactive == 'true' ? 'auto' : `${props.theme.palette.text.primary}`};
+        }
     }
     .line:nth-of-type(1){
         transform: ${menuisactive == 'true' ? 'rotate(45deg)' : 'rotate(0)'};
@@ -40,8 +47,27 @@ const StyledMenuBurguer = styled('div')<TypesStyledMenuBurguer>(({ menuisactive,
         transform: ${menuisactive == 'true' ? 'rotate(-45deg)' : 'rotate(0)'};
         
     }
+
+    ::before{
+        /* content: '';
+        position: absolute;
+        width: 50px;
+        height: 40px;
+        border-radi
+        border-radius: 10px;
+        top: -10px;
+        left: -12px;
+        box-shadow: ${menuisactive == 'false' ? `0px 0px 60px ${props.theme.palette.primary.dark}90` : ''};
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px; */
+
     
     
 `)
+const ewq = styled('div')`
+background-color: #ffffffa0;
+`
+
+
 
 export default StyledMenuBurguer

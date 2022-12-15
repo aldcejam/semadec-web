@@ -1,26 +1,18 @@
 import PageTitle from '../components/common/atoms/PageTitle/Index'
 import { ContainerContentPage } from "../styles/CustomBackground"
 import HomePageCards from '../components/specificPerPage/index/template/HomePageCards/Index'
-/* import { DateSuap } from '../lib/DataSuap'
-import useSWR from 'swr'
-import axios from 'axios' */
 
-/* const fetcher = (query) =>
-  axios.post('https://rickandmortyapi.com/graphql', { query })
-    .then(res => res.data)
-
-const QUERY = `
-    query {
-      character(id: 1){
-        name
-      }
-    }
-    ` */
+import GetAllFlags from './api/Query/getAllFlags'
+import { useEffect } from 'react'
+import CreateFlag from './api/Mutation/CreateFlag'
 
 
 const Home = () => {
 
-  /* const { data } = useSWR(QUERY, fetcher) */
+  useEffect(() => {
+    CreateFlag("bolsista")
+    GetAllFlags()
+  }, [])
 
   return (
     <>

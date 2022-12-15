@@ -8,9 +8,14 @@ export const StyledPageTitle = styled('h1')`
     color: ${(props) => props.theme.palette.text.primary};
     text-transform: capitalize;
     overflow-x: hidden;
+    ${(props) => props.theme.breakpoints.down('sm')}{
+      top: -8px;
+      margin: 0 0 0px 0;
+    }
     ${(props) => props.theme.breakpoints.down('xs')}{
-    
-  }
+      top: 0px;
+      margin-bottom: -5px;
+    }
 
     .subtitle{
       font-size: 1.1rem;

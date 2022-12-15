@@ -4,12 +4,14 @@ export const ContainerContentPage = styled("div")`
   position: relative;
   width: calc(100% + 20px);
   height: 80vh;
-  max-height: 82.3;
+  max-height: 82.3vh;
   overflow-y: auto;
   overflow-x: hidden;
   border-radius: ${(props) => props.theme.shape.borderRadius}px;
 
   ${(props) => props.theme.breakpoints.down("sm")} {
+    height: calc(88vh);
+    max-height: 88vh;
     width: calc(100% + 0px);
   }
   ${(props) => props.theme.breakpoints.down("xs")} {
