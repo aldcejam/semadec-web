@@ -10,23 +10,22 @@ export const StyledOptionsLogin = styled("div")`
         font-weight: 600;
         color: ${({ theme }) => theme.palette.text.primary};
 
-        &::before{
+        &::before, &::after{
             content: "";
             position: absolute;
             top: 50%;
-            left: 0;
             width: 30%;
             height: 2px;
-            background-color: ${({ theme }) => theme.palette.text.primary};
+            background-color: ${({ theme }) => theme.palette.text.primary}; 
+            ${({ theme }) => theme.breakpoints.down('xs')} {
+                width: 25%;
+            }
+        }
+        &::before{
+            left: 0;
         }
         &::after{
-            content: "";
-            position: absolute;
-            top: 50%;
             right: 0;
-            width: 30%;
-            height: 2px;
-            background-color: ${({ theme }) => theme.palette.text.primary};
         }
 
     }

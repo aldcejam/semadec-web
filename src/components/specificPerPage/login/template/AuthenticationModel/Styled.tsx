@@ -10,6 +10,11 @@ export const StyledAuthenticationTemplate = styled("div")`
         width: 100%;
         max-width: 400px;
         margin-top: 60px;
+
+        ${({ theme }) => theme.breakpoints.down('xs')} {
+            padding: 0 20px;
+        
+        }
     }
     
 `

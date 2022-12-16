@@ -6,10 +6,21 @@ export const StyledCarousel = styled("div")`
     .splide__list {
       background-color: transparent;
       margin-right: 0px !important;
+      position: relative;
+
+      .container-illustration{
+        bottom: 30px;
+      }
       .item-slide {
         display: flex;
         justify-content: center;
         background-color: transparent !important;
+        h3{
+          position: absolute;
+          bottom: -20px;
+          font-weight: 500;
+          color: ${({ theme }) => theme.palette.text.primary};
+        }
       }
     }
     .splide__pagination__page.is-active {

@@ -2,6 +2,7 @@ import { StyledForm } from "./Styled"
 import { SubmitHandler, useForm } from "react-hook-form"
 import InputIdentifier from "../../../../../common/atoms/Inputs/Identifier/Index";
 import InputPassword from "../../../../../common/atoms/Inputs/Password/Index";
+import ForgotPassword from "../../../atoms/ForgotPassword/Index";
 
 
 
@@ -31,6 +32,7 @@ const Form = () => {
                 error={errors.password}
 
             />
+            <ForgotPassword/>
             <input className="submit" type="submit" value={"Entrar"} />
 
         </StyledForm>

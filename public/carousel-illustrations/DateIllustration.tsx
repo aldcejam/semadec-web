@@ -8,7 +8,6 @@ export const DateIllustration = () => {
     max-width: 350px;
     display: flex;
     align-items: center;
-    bottom: 0;
     svg{
         width: 100%;
     }
@@ -33,7 +32,7 @@ export const DateIllustration = () => {
   `;
 
     return (
-        <Style>
+        <Style className="container-illustration">
             <svg viewBox="0 0 866.33 605.74">
                 <g id="Camada_2" data-name="Camada 2">
                     <g id="Camada_1-2" data-name="Camada 1">

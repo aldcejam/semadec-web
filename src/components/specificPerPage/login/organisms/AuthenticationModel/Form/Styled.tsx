@@ -17,7 +17,6 @@ export const StyledForm = styled("form")`
         font-weight: 600;
         letter-spacing: 0.5px;
         box-shadow: 5px 5px 19px -3px ${({ theme }) => theme.palette.primary.dark}30;
-        margin-top: 10px;
         cursor: pointer;
         transition: 0.3s;
         &:hover{
