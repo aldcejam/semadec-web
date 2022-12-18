@@ -6,7 +6,7 @@ import { StyledModalSelectCategorys } from './Styled';
 import { DataForGameResearchProps } from "../../../../Types/DataForGameResearchProps"
 import { DataForGameRegistrationProps } from "../../../../Types/DataForGameRegistrationProps";
 import { toast } from 'react-toastify';
-
+import CloseIcon from '@mui/icons-material/Close';
 import { Rajdhani } from '@next/font/google';
 
 const rajdhani = Rajdhani({
@@ -56,6 +56,7 @@ const ModalSelectCategorys = ({ data, setdata, modalIsOpen, ToggleModal, Submit 
             className={rajdhani.className}
         >
             <StyledModalSelectCategorys>
+                <CloseIcon/>
                 <div className="titles">
                     <h4>Esporte: {data.sport.sportName}</h4>
                     <h5>Selecione as categorias</h5>

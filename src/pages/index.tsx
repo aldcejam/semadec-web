@@ -2,9 +2,9 @@ import PageTitle from '../components/common/atoms/PageTitle/Index'
 import { ContainerContentPage } from "../styles/CustomBackground"
 import HomePageCards from '../components/specificPerPage/index/template/HomePageCards/Index'
 
-import GetAllFlags from './api/Query/GetAllFlags'
+import GetAllFlags from './api/graphql/Query/GetAllFlags'
 import { useEffect } from 'react'
-import CreateFlag from './api/Mutation/CreateFlag'
+import CreateFlag from './api/graphql/Mutation/CreateFlag'
 
 
 const Home = () => {
@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <>
       <PageTitle title={`Bem vindo`} />
-
+      
       <ContainerContentPage>
         <HomePageCards />
       </ContainerContentPage>

@@ -49,10 +49,10 @@ export default function App({ Component, pageProps }: AppProps) {
               <ContainerGlobal className={rajdhani.className}  >
                 <Sidebar />
                 <SettingsButtons />
+                <ContainerPage className="olaaaa">
+                  <Component {...pageProps} />
+                </ContainerPage>
               </ContainerGlobal>
-              <ContainerPage className={rajdhani.className}>
-                <Component {...pageProps} />
-              </ContainerPage>
             </SidebarStateProvider>
           </>
       }

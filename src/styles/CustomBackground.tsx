@@ -2,9 +2,9 @@ import { styled } from "@mui/material/styles";
 
 export const ContainerContentPage = styled("div")`
   position: relative;
-  width: calc(100% + 20px);
-  height: 80vh;
-  max-height: 82.3vh;
+  width: 100%;
+  height: calc(90.2vh - 70px);
+  min-height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
   border-radius: ${(props) => props.theme.shape.borderRadius}px;
@@ -12,7 +12,7 @@ export const ContainerContentPage = styled("div")`
   ${(props) => props.theme.breakpoints.down("sm")} {
     height: calc(88vh);
     max-height: 88vh;
-    width: calc(100% + 0px);
+    width: 100%;
   }
   ${(props) => props.theme.breakpoints.down("xs")} {
     height: calc(82.3vh - 20px);

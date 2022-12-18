@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client";
-import { client } from "../../../../client-graphql";
+import { client } from "../../../../../client-graphql";
 
 const GetAllFlags = ()=>{
   client
