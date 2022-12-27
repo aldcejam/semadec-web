@@ -98,10 +98,10 @@ export const StyledHomePageCards = styled('section')`
     .card:nth-of-type(1) {
       .svg {
         position: absolute;
-        bottom: 0;
-        width: 70%;
-        max-width: 150px;
-        margin-top: 10%;
+        bottom: -7px;
+        width: 100%;
+        height: initial;
+        max-width: 250px;
       }
     }
     .card:nth-of-type(2) {

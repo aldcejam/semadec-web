@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import DefaultBackground from '../../public/Default-background'
-import { ContainerGlobal, ContainerPage } from '../styles/globals';
+import {ContainerGlobal} from "../styles/globals/ContainerGlobal"
+import {ContainerPage } from '../styles/globals/ContainerPage';
 
 import type { AppProps } from 'next/app'
 import { usePathname } from 'next/navigation'

@@ -5,8 +5,7 @@ type TypesStyledInputUpload = {
   dragreject: "true" | "false";
 };
 
-export const StyledInputUpload = styled("div")<TypesStyledInputUpload>(
-  ({ dragaccept, dragreject, ...props }) => `
+export const StyledInputUpload = styled("div")<TypesStyledInputUpload>(({ dragaccept, dragreject, ...props }) => `
   border: 2px solid ${
     dragaccept == "true"
       ? props.theme.palette.success.main
@@ -14,11 +13,11 @@ export const StyledInputUpload = styled("div")<TypesStyledInputUpload>(
       ? props.theme.palette.error.main
       : props.theme.palette.primary.main
   };
-  border-radius: ${props.theme.shape.borderRadius};
+  border-radius: ${props.theme.shape.borderRadius}px;
   outline: none;
   transition: border 0.24s ease-in-out;
   width: 100%;
-  padding: 3px 20px 12px;
+  padding: 3px 20px;
   display: flex;
   align-items: center;
   background: ${props.theme.palette.primary.main}36;

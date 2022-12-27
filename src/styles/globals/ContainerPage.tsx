@@ -1,7 +1,5 @@
 import { styled } from "@mui/material/styles";
 
-
-
 export const ContainerPage = styled("div")`
   position: absolute;
   width: min(90vw, 1000px);
@@ -21,15 +19,3 @@ export const ContainerPage = styled("div")`
   }
 `;
 
-export const ContainerGlobal = styled("div")`
-  position: absolute;
-  width: min(90vw, 1000px);
-  left: 0;
-  right: 0;
-  top: 5vh;
-  margin: auto;
-  ${(props) => props.theme.breakpoints.down("sm")} {
-    width: min(100vw, 1000px);
-    top: 0vh;
-  }
-`;

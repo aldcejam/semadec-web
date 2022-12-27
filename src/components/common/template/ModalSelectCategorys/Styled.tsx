@@ -1,6 +1,21 @@
 import { styled } from "@mui/material/styles";
 
 export const StyledModalSelectCategorys = styled("section")`
+    
+    .close-icon{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        color: ${props => props.theme.palette.text.primary};
+        font-size: 1.8rem;
+        transition: 0.2s;
+        &:hover{
+            color: ${props => props.theme.palette.text.secondary};
+        }
+    }
+    
+    
     position: absolute;
     width: clamp(200px, 100%, 400px);
     max-height: 95vh;

@@ -1,6 +1,6 @@
 import { styled } from "@mui/material/styles";
 
-export const ContainerContentPage = styled("div")`
+const ContentPage = styled("div")`
   position: relative;
   width: 100%;
   height: calc(90.2vh - 70px);
@@ -62,3 +62,5 @@ export const ContainerContentPage = styled("div")`
     }
   }
 `;
+
+export default ContentPage

@@ -4,7 +4,7 @@ export const StyledModifyBio = styled("div")`
   grid-area: bio-message;
   textarea {
     background-color: transparent;
-    border-radius: ${(props) => props.theme.shape.borderRadius};
+    border-radius: ${(props) => props.theme.shape.borderRadius}px;
     width: 100%;
     height: 90px;
     resize: none;

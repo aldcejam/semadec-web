@@ -1,14 +1,12 @@
 import { useState } from "react"
 
-import { ContainerContentPage } from "../../../styles/CustomBackground"
+import PageTitle from "../../../components/common/atoms/PageTitle/Index"
+import ContentPage from "../../../styles/globals/ContentPage"
+
 import { StyledRegisterGame } from "../../../styles/Pages/StyledRegisterGame"
 
 import { toast } from "react-toastify"
 
-import PageTitle from "../../../components/common/atoms/PageTitle/Index"
-import SubmitButton from "../../../components/common/atoms/SubmitButton.tsx/Index"
-import AvailableSports from "../../../components/specificPerPage/game/register/organisms/AvailableSports/Index"
-import AvailableTeams from "../../../components/specificPerPage/game/register/organisms/AvailableTeams/Index"
 import ModalSelectCategorys from "../../../components/common/template/ModalSelectCategorys/Index"
 import ModalToConfigGame from "../../../components/common/template/ModalToConfigGame/Index"
 
@@ -80,7 +78,7 @@ const Register = ()=> {
         <>
             <PageTitle title={`Bem vindo `} />
 
-            <ContainerContentPage>
+            <ContentPage>
                 <StyledRegisterGame className="box-page">
                     <div className="style-background" />
                     <div className="container">
@@ -97,14 +95,14 @@ const Register = ()=> {
                             Submit={SubmitOpenModalToConfigGame}
                         />
                         <ModalToConfigGame
-                            modalIsOpen={modalToConfigGame}
                             ToggleModal={SubmitOpenModalToConfigGame}
+                            modalIsOpen={modalToConfigGame}
                             dataForRegistration={dataForRegistration}
                             setDataForRegistration={setDataForRegistration}
                         />
                     </div>
                 </StyledRegisterGame>
-            </ContainerContentPage>
+            </ContentPage>
         </>
     )
 }

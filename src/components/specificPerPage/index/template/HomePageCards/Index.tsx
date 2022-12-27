@@ -18,12 +18,12 @@ const HomePageCards = () => {
                 <HomePageCard link={`${Routes.findGame}?curso=informatica`} title='jogos do seu curso' illustration={<IllustrationJogosDoSeuCurso />} />
             </div>
             <div className="grid-left">
-                <HomePageCard link='/' title='recordes desta edição' illustration={<IllustrationRecordesDestaEdicao />} />
+                <HomePageCard link='/' title='recordes desta edição' illustration={<IllustrationEdicoesDaSemadec />} />
                 <HomePageCard link='/' title='publicações sobre a semadec' illustration={<IllustrationPublicacoesSobreSemadec />} />
             </div>
             <div className="grid-right">
                 <HomePageCard link='/' title='recordes de todos os anos' illustration={<IllustrationRecordesDestaEdicao />} />
-                <HomePageCard link='/' title='Edições da semadec' illustration={<IllustrationEdicoesDaSemadec />} />
+                <HomePageCard link='/' title='Edições da semadec' illustration={<IllustrationRecordesDestaEdicao />} />
             </div>
         </StyledHomePageCards>
     )

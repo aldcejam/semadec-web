@@ -7,11 +7,11 @@ type SituationsButtonProps = {
 }
 const SituationsButton = ({ Submit, value, selected }: SituationsButtonProps) => {
     return (
-        <StyledSituationsButton 
-        onClick={()=>Submit()}
-        className={`selected-${selected.toString()}`}>
+        <StyledSituationsButton
+            onClick={() => Submit()}
+            className={`selected-${selected.toString()}`}>
             <div className="content">
-                <div className={`ball ${value == "em andamento" ? "blue-ball-illustration" : "blue-green-illustration"}`} />
+                <div className={`ball ${value == "pré-cadestrado" ? "blue-ball-illustration" : "blue-green-illustration"}`} />
                 <p>
                     {value}
                 </p>

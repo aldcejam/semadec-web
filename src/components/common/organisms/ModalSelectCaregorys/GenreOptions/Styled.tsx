@@ -5,7 +5,7 @@ export const StyledGenreOptions = styled("div")`
         flex-wrap: wrap;
         justify-content: center;
         gap: 20px;
-        margin: 0 auto 40px;
+        margin: 0 auto 20px;
         max-width: 300px;
         span.selected{
             background-color: #fff;    

@@ -13,17 +13,27 @@ export const StyledModifyUserData = styled("section")`
   backdrop-filter: blur(40px);
   transition: 0.3s;
 
-  &.is-open-component-false {
-    max-height: 80px;
+  .title{
+    margin-top: 70px;
+    text-align: center;
+    font-size: 1.2rem;
     ${(props) => props.theme.breakpoints.down("md")} {
-      max-height: 120px;
+      margin-top: 90px;
     }
     ${(props) => props.theme.breakpoints.down("sm")} {
+      margin-top: 80px;
       max-height: 80px;
     }
   }
+
   &.is-open-component-true {
     max-height: 100%;
+  }
+  &.is-open-component-false {
+    max-height: 105px;
+    ${(props) => props.theme.breakpoints.down("md")} {
+      max-height: 120px;
+    }
   }
 
 `;

@@ -3,7 +3,7 @@ import { useState } from "react";
 import ListSports from "../../../components/specificPerPage/game/find/template/ListSports/Index";
 import ModalSelectCategorys from "../../../components/common/template/ModalSelectCategorys/Index";
 import { DataForGameResearchProps } from "../../../Types/DataForGameResearchProps";
-import { ContainerContentPage } from "../../../styles/CustomBackground";
+import ContentPage from "../../../styles/globals/ContentPage";
 import { StyleFindGame } from "../../../styles/Pages/StyledFindGame";
 import { useSearchParams } from 'next/navigation'
 import { Routes } from '../../../Routes';
@@ -36,13 +36,12 @@ const Find = () => {
 
         window.location.href = redirectUrl
     }
-    console.log(dataForSearchBySportCategories)
 
     return (
         <>
             <PageTitle title={`Encontrar jogo`} />
 
-            <ContainerContentPage>
+            <ContentPage>
                 <StyleFindGame className="box-page">
                     <div className="decoration" />
 
@@ -60,7 +59,7 @@ const Find = () => {
                         />
                     </div>
                 </StyleFindGame>
-            </ContainerContentPage>
+            </ContentPage>
         </>
     )
 }

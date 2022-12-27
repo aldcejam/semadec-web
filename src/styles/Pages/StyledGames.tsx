@@ -17,10 +17,4 @@ export const StyledGames = styled("div")`
     bottom: -50px;
     right: -50px;
   }
-  h2 {
-    font-weight: 600;
-    font-size: 1.5rem;
-    color: ${(props) => props.theme.palette.text.primary};
-    text-transform: capitalize;
-  }
 `;

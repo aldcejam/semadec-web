@@ -22,9 +22,6 @@ export const StyledModifyIdentity = styled("div")`
         border: solid 2px ${(props) => props.theme.palette.primary.dark};
       }
     }
-    MuiInputLabel-root {
-      padding-bottom: 10px;
-    }
   }
 
 `

@@ -16,6 +16,7 @@ const ModifyUserData = () => {
                 ToggleComponentPersonaData={ToggleComponentPersonaData}
                 isOpenComponentPersonaData={isOpenComponentPersonaData}
             />
+            <h2 className="title">Modifique suas informações</h2>
             <Form />
         </StyledModifyUserData>
     );

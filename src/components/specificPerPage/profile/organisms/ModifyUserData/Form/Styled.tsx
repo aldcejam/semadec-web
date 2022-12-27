@@ -3,7 +3,6 @@ import { styled } from "@mui/material/styles";
 export const StyledForm = styled("form")`
   position: relative;
   z-index: 1;
-  margin-top: 100px;
   display: grid;
   gap: 15px;
   grid-template:
@@ -16,13 +15,7 @@ export const StyledForm = styled("form")`
     / 1fr 1.5fr;
   padding: 0 10%;
 
-  ${(props) => props.theme.breakpoints.down("md")} {
-    margin-top: 22%;
-  }
-  ${(props) => props.theme.breakpoints.down("sm")} {
-    margin-top: 23%;
-    padding: 0 6%;
-  }
+
   .identity{
     grid-area: identity;
   }
@@ -60,4 +53,6 @@ export const StyledForm = styled("form")`
       }
     }
   }
+
+
 `;

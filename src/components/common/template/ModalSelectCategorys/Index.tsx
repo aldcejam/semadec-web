@@ -56,7 +56,7 @@ const ModalSelectCategorys = ({ data, setdata, modalIsOpen, ToggleModal, Submit 
             className={rajdhani.className}
         >
             <StyledModalSelectCategorys>
-                <CloseIcon/>
+                <CloseIcon onClick={()=> ToggleModal()} className='close-icon'/>
                 <div className="titles">
                     <h4>Esporte: {data.sport.sportName}</h4>
                     <h5>Selecione as categorias</h5>

@@ -1,8 +1,8 @@
 import { useSearchParams } from 'next/navigation'
+import ContentPage from '../../../styles/globals/ContentPage'
 import PageTitle from '../../../components/common/atoms/PageTitle/Index'
-import { ContainerContentPage } from '../../../styles/CustomBackground'
-import { StyledGames } from '../../../styles/Pages/StyledGames'
 import GameList from '../../../components/specificPerPage/game/list/template/GameList/Index'
+import { StyledGames } from '../../../styles/Pages/StyledGames'
 
 
 const List = () => {
@@ -29,7 +29,7 @@ const List = () => {
                 `}
             />
 
-            <ContainerContentPage>
+            <ContentPage>
                 <StyledGames className="box-page">
                     <div className="decoration" />
 
@@ -40,7 +40,7 @@ const List = () => {
                         ))}
                     </div>
                 </StyledGames>
-            </ContainerContentPage>
+            </ContentPage>
         </>
     )
 }

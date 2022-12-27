@@ -2,7 +2,9 @@ import { styled } from "@mui/material/styles";
 
 export const StyledPontuation = styled("div")`
   margin-top: 10px;
-  
+  display: flex;
+  justify-content: center;
+  gap: 20px;
   div {
     display: flex;
     gap: 10px;

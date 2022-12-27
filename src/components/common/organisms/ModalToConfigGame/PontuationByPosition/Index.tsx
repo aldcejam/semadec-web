@@ -3,12 +3,12 @@ import { PontuationsGameProps, DataForGameRegistrationProps } from "../../../../
 import SelectPontuations from "../../../atoms/ModalToConfigGame/SelectPontuations/Index"
 import Pontuation from "../../../molecules/ModalToConfigGame/Pontuation/Index"
 
-type SelectPontuationsProps = {
+type SelectPontuationProps = {
     dataForRegistration: DataForGameRegistrationProps;
     setDataForRegistration: React.Dispatch<React.SetStateAction<DataForGameRegistrationProps>>
 }
 
-const PontuationByPosition = ({ dataForRegistration, setDataForRegistration }: SelectPontuationsProps) => {
+const PontuationByPosition = ({ dataForRegistration, setDataForRegistration }: SelectPontuationProps) => {
     const [positionsWithScore, setPositionsWithScore] = useState(2)
 
     const [pontuations, setPontuations] = useState<PontuationsGameProps[]>([
