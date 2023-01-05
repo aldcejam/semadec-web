@@ -21,7 +21,7 @@ const InputPassword = ({ register, label, error }: InputPasswordProps) => {
     return (
         <DefaultStyledInput>
             <FormControl error={error ? true : false} variant="outlined">
-                <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+                <InputLabel htmlFor="outlined-adornment-password">Senha</InputLabel>
                 <OutlinedInput
                     id="outlined-adornment-password"
                     {...register("password", { minLength: 6 })}
@@ -38,7 +38,7 @@ const InputPassword = ({ register, label, error }: InputPasswordProps) => {
                             </IconButton>
                         </InputAdornment>
                     }
-                    label="Password"
+                    label="Senha"
                 />
             </FormControl>
         </DefaultStyledInput>

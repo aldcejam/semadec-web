@@ -169,11 +169,6 @@ export const SuapClient = ({
     return 0;
   };
 
-  // let getCookie = function (name: any) {
-  //   let value = "; " + document.cookie;
-  //   let parts = value.split("; " + name + "=");
-  //   if (parts && parts.length == 2) return parts.pop().split(";").shift();
-  // };
 
   /* Métodos públicos */
 
@@ -230,6 +225,8 @@ export const SuapClient = ({
    * @return {string} A URL de login do SuapClient.
    */
   const getLoginURL = () => {
+
+
     let loginUrl =
       authorizationURL +
       "?response_type=" +
@@ -265,7 +262,6 @@ export const SuapClient = ({
         },
       })
       .then((response) => {
-        /* console.log(response + "ola mundo"); */
         callback(response);
       })
       .catch((response) => {

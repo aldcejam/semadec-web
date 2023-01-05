@@ -1,7 +1,7 @@
 import { useSidebarStateContext } from "../../../../../contexts/SidebarStateContext"
 import ButtonRedirectProfile from "../../../molecules/Sidebar/ButtonRedirectProfile/Index"
-import RedirectIcon from "../../../molecules/Sidebar/RedirectIcon/Index"
 import { StyledNavegation } from "./Styled"
+import ButtonLogOut from "../../../atoms/Buttons/LogOut/Index";
 
 const Navegation = () => {
 
@@ -10,16 +10,9 @@ const Navegation = () => {
         <StyledNavegation>
             <ul className="container">
                 <div onClick={CloseSidebar} className="item">
-                    <ButtonRedirectProfile/>
+                    <ButtonRedirectProfile />
                 </div>
-                <div onClick={CloseSidebar} className="item">
-                    <RedirectIcon
-                        href="/"
-                        text="sair"
-                        alt="icone de redirecionamento"
-                        icon="/Icons/log-out.svg"
-                    />
-                </div>
+                <ButtonLogOut />
             </ul >
         </StyledNavegation>
     )
