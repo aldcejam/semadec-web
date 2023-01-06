@@ -10,7 +10,7 @@ export const SuapAuth = ()=>{
     });
 
     NewSuapClient.init();
-
-
+    const getLoginURL = NewSuapClient.getLoginURL;
+    return {getLoginURL}
     
 }
