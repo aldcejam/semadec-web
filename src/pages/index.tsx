@@ -2,47 +2,24 @@ import PageTitle from '../components/common/atoms/PageTitle/Index'
 import ContentPage from "../styles/globals/ContentPage"
 import HomePageCards from '../components/specificPerPage/index/template/HomePageCards/Index'
 import { useSession } from "next-auth/react";
-import { SuapClient } from '../services/Login-Suap/client';
-import { SuapApiSettings } from '../services/Login-Suap/settings';
-import { useState, useEffect } from "react"
+import { UseSuapUserData } from '../hooks/UseSuapUserData';
+import { UseMainUserData } from '../hooks/UseMainUserData';
 
 const Home = () => {
 
   const { data: session } = useSession();
 
-  const NewSuapClient = SuapClient({
-    authHost: SuapApiSettings.SUAP_URL,
-    clientID: SuapApiSettings.CLIENT_ID,
-    redirectURI: SuapApiSettings.REDIRECT_URI,
-    scope: SuapApiSettings.SCOPE,
-  });
+  const SuapUserData = UseSuapUserData()
+  
+  const MainUserData = UseMainUserData()
 
-  NewSuapClient.init();
-  const [resourceResponse, setResourceResponse] = useState("");
+  console.log(SuapUserData)
 
-  const SaveDataLoginSuap = (response: any) => {
-    setResourceResponse(JSON.parse(JSON.stringify(response.data)));
-  };
-
-
-  useEffect(() => {
-    if (NewSuapClient.isAuthenticated()) {
-      NewSuapClient.getResource(SuapApiSettings.SCOPE, SaveDataLoginSuap);
-    }
-    window.addEventListener(
-      "message",
-      (event) => {
-        if (event.data === "reload") window.location.href = window.location.href;
-      },
-      false
-    );
-  }, []);
-
-  console.log(resourceResponse)
+  const title = `Bem vindo ${MainUserData? MainUserData.name : ""} ${SuapUserData? SuapUserData.resource.nome : ""}`
 
   return (
     <>
-      <PageTitle title={`Bem vindo ${session? session?.user?.name : ""} ${resourceResponse? resourceResponse.nome:""}`} />
+      <PageTitle title={`${title}`} />
 
       <ContentPage>
         <HomePageCards />
@@ -50,6 +27,7 @@ const Home = () => {
     </>
   )
 }
+
 
 export default Home
 

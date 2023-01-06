@@ -1,85 +1,13 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 import { useRef } from "react";
+import { CreateTokenSuap } from "./CreateTokenSuap";
 
-type CreateTokenSuapProps = {
-  value?: string | null;
-  expirationTime: number;
-  scope?: string | null;
-};
-
-const Token = ({ value, expirationTime, scope }: CreateTokenSuapProps) => {
-  const startTime = useRef<number>(new Date().getTime()); // O valor em milissegundos.
-  const finishTime = useRef<Date | null>(
-    new Date(startTime.current + expirationTime * 1000)
-  );
-
-  if (!Cookies.get("suapToken") && value && finishTime.current) {
-    Cookies.set("suapToken", value, { expires: finishTime.current });
-  } else {
-    value = Cookies.get("suapToken");
-  }
-
-  if (!Cookies.get("suapTokenExpirationTime") && finishTime.current) {
-    Cookies.set("suapTokenExpirationTime", finishTime.current + "", {
-      expires: finishTime.current,
-    });
-  } else {
-    finishTime.current = new Date(Cookies.get("suapTokenExpirationTime") || "");
-  }
-  
-  if (!Cookies.get("suapScope") && scope) {
-    Cookies.set("suapScope", scope, { expires: finishTime.current });
-  } else {
-    scope = Cookies.get("suapScope");
-  }
-
-  
-
-  const getValue = () => {
-    return value;
-  };
-
-  const getExpirationTime = () => {
-    return finishTime.current;
-  };
-
-  const getScope = function () {
-    return scope;
-  };
-
-  const IsTokenExist = () => {
-    if (Cookies.get("suapToken") && value != null) {
-      return true;
-    }
-    return false;
-  };
-
-  const revoke = function () {
-    value = null;
-    startTime.current = new Date().getTime();
-    finishTime.current = null;
-
-    if (Cookies.get("suapToken")) {
-      Cookies.remove("suapToken");
-    }
-
-    if (Cookies.get("suapTokenExpirationTime")) {
-      Cookies.remove("suapTokenExpirationTime");
-    }
-
-    if (Cookies.get("suapScope")) {
-      Cookies.remove("suapScope");
-    }
-  };
-  return { getValue, getExpirationTime, getScope, IsTokenExist, revoke };
-};
-
-type clientProps = {
-  authHost: string;
-  clientID: string;
-  redirectURI: string;
-  scope: string;
+type SuapClientProps = {
+  authHost: String;
+  clientID: String;
+  redirectURI: String;
+  scope: String;
 };
 
 export const SuapClient = ({
@@ -87,7 +15,7 @@ export const SuapClient = ({
   clientID,
   redirectURI,
   scope,
-}: clientProps) => {
+}: SuapClientProps) => {
   let resourceURL = authHost + "/api/eu/";
   let authorizationURL = authHost + "/o/authorize/";
   let logoutURL = authHost + "/o/revoke_token/";
@@ -100,13 +28,7 @@ export const SuapClient = ({
   }
 
   let dataJSON: any;
-  let token: {
-    getValue: () => string | null | undefined;
-    getExpirationTime: () => Date | null;
-    getScope: () => string | null | undefined;
-    IsTokenExist: () => boolean;
-    revoke: () => void;
-  };
+  let token: any;
 
   const extractToken = () => {
     let match =
@@ -144,7 +66,7 @@ export const SuapClient = ({
   };
 
   const init = () => {
-    token = Token({
+    token = CreateTokenSuap({
       value: extractToken(),
       expirationTime: extractDuration(),
       scope: extractScope(),
@@ -210,7 +132,7 @@ export const SuapClient = ({
 
   const logout = () => {
     let bodyFormData = new FormData();
-    bodyFormData.append("token", token.getValue()?.toString() || "");
+    bodyFormData.append("token", token.getValue());
     bodyFormData.append("client_id", clientID + "");
     axios
       .post(logoutURL, bodyFormData)

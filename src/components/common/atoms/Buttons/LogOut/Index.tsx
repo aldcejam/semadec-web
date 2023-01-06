@@ -19,13 +19,14 @@ const ButtonLogOut = () => {
         if (status == "authenticated") {
             signOut()
         }
-        else {
+        else if(NewSuapClient.isAuthenticated()) {
             NewSuapClient.logout()
         }
     }
 
+    
     return (
-        <StyledButtonLogOut onClick={() => NewSuapClient.logout()}>
+        <StyledButtonLogOut onClick={() => HanddleLogOut()}>
             <RedirectIcon
                 href="/"
                 text="sair"
