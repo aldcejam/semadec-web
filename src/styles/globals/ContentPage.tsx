@@ -4,6 +4,7 @@ const ContentPage = styled("div")`
   position: relative;
   width: 100%;
   height: calc(90.2vh - 70px);
+  margin-top: 7px;
   min-height: 100%;
   overflow-y: auto;
   overflow-x: hidden;

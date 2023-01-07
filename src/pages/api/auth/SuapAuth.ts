@@ -1,5 +1,5 @@
-import { SuapClient } from "../../../services/Login-Suap/client";
-import { SuapApiSettings } from "../../../services/Login-Suap/settings";
+import { SuapClient } from "../../../services/Login-Suap/SuapClient";
+import { SuapApiSettings } from "../../../services/Login-Suap/SuapApiSettings";
 
 export const SuapAuth = ()=>{
     const NewSuapClient = SuapClient({
@@ -11,6 +11,7 @@ export const SuapAuth = ()=>{
 
     NewSuapClient.init();
     const getLoginURL = NewSuapClient.getLoginURL;
+    
     return {getLoginURL}
     
 }

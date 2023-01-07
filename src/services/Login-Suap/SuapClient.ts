@@ -1,7 +1,8 @@
 import axios from "axios";
 import { TokenSuap } from "./TokenSuap";
+import {SuapApiSettings} from "./SuapApiSettings";
 
-type clientProps = {
+type SuapClientProps = {
   authHost: string;
   clientID: string;
   redirectURI: string;
@@ -13,8 +14,8 @@ export const SuapClient = ({
   clientID,
   redirectURI,
   scope,
-}: clientProps) => {
-  let resourceURL = authHost + "/api/eu/";
+}: SuapClientProps) => {
+  let resourceURL = authHost + SuapApiSettings.Api;
   let authorizationURL = authHost + "/o/authorize/";
   let logoutURL = authHost + "/o/revoke_token/";
 

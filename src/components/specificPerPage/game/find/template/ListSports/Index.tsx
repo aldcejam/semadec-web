@@ -1,5 +1,4 @@
 import { DataForGameResearchProps } from "../../../../../../Types/DataForGameResearchProps";
-import Title from "../../molecules/Title/Index"
 import Sports from "../../organisms/Sports/Index";
 
 import { StyledListSports } from "./Styled";
@@ -13,7 +12,6 @@ const ListSports = ({ course,ToggleModal, setDataForSearchBySportCategories }: L
 
     return (
         <StyledListSports>
-            <Title title={course} />
             <Sports
                 ToggleModal={ToggleModal}
                 setDataForSearchBySportCategories={setDataForSearchBySportCategories}

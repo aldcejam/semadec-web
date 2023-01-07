@@ -11,6 +11,7 @@ export type SpecificationGameProps = {
 };
 
 export type GameProps = {
+  id: number;
   placar: Array<{
     course: string;
     logo: string;

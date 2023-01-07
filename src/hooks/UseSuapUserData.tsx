@@ -1,24 +1,35 @@
 import { useEffect, useState } from "react";
-import { SuapClient } from "../services/Login-Suap/client";
-import { SuapApiSettings } from "../services/Login-Suap/settings";
+import { SuapClient } from "../services/Login-Suap/SuapClient";
+import { SuapApiSettings } from "../services/Login-Suap/SuapApiSettings";
 
 
 export const UseSuapUserData = () => {
-
     type SuapUserContentProps = {
-        campus: string
         cpf: string
-        data_de_nascimento: string
+        data_nascimento: string
         email: string
-        email_academico: string
-        email_google_classroom: string
-        email_preferencial: string
-        email_secundario: string
-        identificacao: string
-        nome: string
-        primeiro_nome: string
-        sexo: string
-        ultimo_nome: string
+        id: number
+        matricula: string
+        naturalidade: string
+        nome_usual: string
+        rg: string
+        tipo_sanguineo: string
+        tipo_vinculo: string
+        url_foto_75x100: string
+        url_foto_150x200: string
+        vinculo: {
+            campus: string
+            cota_mec: string
+            cota_sistec: string
+            curriculo_lattes: string
+            curso: string
+            linha_pesquisa: any
+            matricula: string
+            matricula_regular: boolean
+            nome: string
+            situacao: string
+            situacao_sistemica: string
+        }
     }
 
     const NewSuapClient = SuapClient({
@@ -29,7 +40,7 @@ export const UseSuapUserData = () => {
     });
 
     NewSuapClient.init();
-    const [resourceResponse, setResourceResponse] = useState<SuapUserContentProps>({} as SuapUserContentProps);
+    const [resourceResponse, setResourceResponse] = useState<SuapUserContentProps>({}as SuapUserContentProps);
 
     const SaveDataLoginSuap = (response: any) => {
         setResourceResponse(JSON.parse(JSON.stringify(response.data)));
@@ -41,7 +52,7 @@ export const UseSuapUserData = () => {
         }
     }, []);
 
-    return(
+    return (
         {
             resource: resourceResponse,
             situationLoginSuap: NewSuapClient.isAuthenticated()

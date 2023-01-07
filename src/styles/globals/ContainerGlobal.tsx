@@ -12,6 +12,11 @@ export const ContainerGlobal = styled("div")`
     top: 0vh;
   }
 
+  .header-page{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   /* default styles */
   h2 {
     font-weight: 600;

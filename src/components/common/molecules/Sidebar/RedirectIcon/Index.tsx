@@ -7,14 +7,17 @@ type RedirectIconProps = {
     text: string
     href: string
     alt: string
-} 
+}
 
-const RedirectIcon = ({ href,icon,text, alt }:RedirectIconProps) => {
+const RedirectIcon = ({ href, icon, text, alt }: RedirectIconProps) => {
     return (
         <Link href={href}>
             <RedirecticonStyled>
                 <div className="image">
-                    <Image alt={alt} src={icon} fill />
+                    <Image alt={alt} src={icon} fill sizes="
+                    (max-width: 100px) 100px,
+                    (max-width: 100px) 100px,
+                    100px" />
                 </div>
                 <p>{text}</p>
             </RedirecticonStyled>

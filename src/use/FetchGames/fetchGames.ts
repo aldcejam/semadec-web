@@ -3,6 +3,7 @@ import { GameProps } from "./GameProps"
 type typegames = GameProps[]
 export const games:typegames = [
     {
+        id: 0,
         placar: [
             {
                 course: "eletro",
@@ -22,6 +23,7 @@ export const games:typegames = [
         }
     },
     {
+        id: 1,
         placar: [
             {
                 course: "info",
@@ -55,6 +57,7 @@ export const games:typegames = [
         }
     },
     {
+        id: 2,
         placar: [
             {
                 course: "info",
@@ -73,6 +76,7 @@ export const games:typegames = [
         }
     },
     {
+        id: 3,
         placar: [
             {
                 course: "info",
@@ -91,6 +95,7 @@ export const games:typegames = [
         }
     },
     {
+        id: 4,
         placar: [
             {
                 course: "info",
@@ -109,6 +114,7 @@ export const games:typegames = [
         }
     },
     {
+        id: 5,
         placar: [
             {
                 course: "info",

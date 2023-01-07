@@ -1,4 +1,4 @@
-import { SuapAuth } from "../../../../../../pages/api/auth/authSuap";
+import { SuapAuth } from "../../../../../../pages/api/auth/SuapAuth";
 import { StyledButtonLoginSuap } from "./Styled"
 
 const ButtonLoginSuap = () => {

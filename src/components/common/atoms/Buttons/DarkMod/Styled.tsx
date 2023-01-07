@@ -5,15 +5,15 @@ type themeselected = {
 }
 
 export const StylesButtonDarkMode = styled("div")<themeselected>(({ themeselected, ...props }) => `
-  background: ${props.theme.palette.background.default};
   position: relative;
   z-index: 10;
-  display: flex;
-  align-items: center;
-  border:solid 1px ${props.theme.palette.primary.contrastText};
-  border-radius: 100px;
   width: 57px;
   height: 22px;
+  display: flex;
+  align-items: center;
+  background: ${props.theme.palette.background.default};
+  border:solid 1px ${props.theme.palette.primary.contrastText};
+  border-radius: 100px;
   cursor: pointer;
 
   .icon-moon{
