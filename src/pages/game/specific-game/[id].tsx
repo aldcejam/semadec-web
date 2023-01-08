@@ -1,23 +1,42 @@
-import { GetStaticPaths } from "next"
+import { GetStaticProps } from "next"
 import { games } from "../../../use/FetchGames/fetchGames"
 
-export const getStaticPaths: GetStaticPaths  = async ({params}) => {    
+export async function getStaticPaths() {
+
     const paths = games.map((game) => {
         return {
-            params: { 
-                id: `${game.id}` }
+            params: {
+                id: game.id.toString()
+            }
         }
     })
-    return{
-        paths, fallback: false
+
+    return {
+        paths: paths
+        , fallback: "blocking"
     }
 }
 
-const Game = ({ game }: any) => {
-    const { id } = game
-    return(
+
+export const getStaticProps: GetStaticProps = async (
+    context
+) => {
+
+    const id = context.params?.id
+    /*  const id = params.id */
+    return {
+        props: {
+            pag: id
+        }
+    }
+}
+
+
+
+function Game({ pag }:any) {
+    return (
         <>
-        <h1>{id}</h1>
+            <h1>{pag}</h1>
         </>
     )
 }
