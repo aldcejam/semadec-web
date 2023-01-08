@@ -12,11 +12,17 @@ export const ContainerGlobal = styled("div")`
     top: 0vh;
   }
 
-  .header-page{
+  .header-page {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 13px 0 14px;
+    ${(props) => props.theme.breakpoints.down("sm")} {
+      padding: 0px 0 14px;
+      margin-top: -9px;
+    }
   }
+
   /* default styles */
   h2 {
     font-weight: 600;
@@ -24,5 +30,4 @@ export const ContainerGlobal = styled("div")`
     color: ${(props) => props.theme.palette.text.primary};
     text-transform: capitalize;
   }
-
 `;

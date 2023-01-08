@@ -4,19 +4,18 @@ const ContentPage = styled("div")`
   position: relative;
   width: 100%;
   height: calc(90.2vh - 70px);
-  margin-top: 15px;
   min-height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
   border-radius: ${(props) => props.theme.shape.borderRadius}px;
 
   ${(props) => props.theme.breakpoints.down("sm")} {
-    height: calc(88vh);
-    max-height: 88vh;
+    height: calc(88vh + 6px);
+    max-height: 90vh;
     width: 100%;
   }
   ${(props) => props.theme.breakpoints.down("xs")} {
-    height: calc(82.3vh - 20px);
+    height: calc(82vh);
     width: 100%;
   }
   ::-webkit-scrollbar {
