@@ -2,7 +2,7 @@ import {styled} from "@mui/material/styles";
 
 export const StyledSettingsButtons = styled('div')`
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         gap: 15px;
         margin-top: 20px;
         

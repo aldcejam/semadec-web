@@ -2,11 +2,14 @@ import PageTitle from "../../components/common/atoms/PageTitle/Index"
 import ContentPage from "../../styles/globals/ContentPage"
 import { StyledAssignResponsibilities } from "../../styles/Pages/StyledAssignResponsibilities"
 import { usePageTitleContext } from "../_app"
+import { useEffect } from "react"
 
 const AssignResponsibilities = () => {
 
     const { usePageTitle } = usePageTitleContext()
-    usePageTitle.setPageTitle('Atribuir Responsabilidade')
+    useEffect(() => {
+        usePageTitle.setPageTitle('Atribuir Responsabilidade')
+    }, [])
 
     return (
         <ContentPage>

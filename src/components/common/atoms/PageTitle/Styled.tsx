@@ -4,10 +4,15 @@ export const StyledPageTitle = styled('h1')`
     position: relative;
     display: inline-block;
     font-size: 1.8rem;
-    margin: 14px 0 10px;
+    margin: 14px 0 0px;
     color: ${(props) => props.theme.palette.text.primary};
     text-transform: capitalize;
     overflow-x: hidden;
+   
+    
+
+
+
     ${(props) => props.theme.breakpoints.down('sm')}{
       top: -8px;
       margin: 0;
@@ -20,6 +25,7 @@ export const StyledPageTitle = styled('h1')`
     .subtitle{
       font-size: 1.1rem;
       font-weight: 400;
+      margin: 0px;
       text-transform: capitalize;
     }
     

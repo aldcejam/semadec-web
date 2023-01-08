@@ -1,43 +1,39 @@
-import {styled} from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 
 type themeselected = {
-  themeselected: any
-}
+  themeselected: any;
+};
 
 export const StylesButtonDarkMode = styled("div")<themeselected>(({ themeselected, ...props }) => `
   position: relative;
   z-index: 10;
-  width: 57px;
-  height: 22px;
+  width: 60px;
+  height: 28px;
   display: flex;
-  align-items: center;
-  background: ${props.theme.palette.background.default};
-  border:solid 1px ${props.theme.palette.primary.contrastText};
-  border-radius: 100px;
+  background-color: ${props.theme.palette.background.paper};
+  display: flex;
+  justify-content: ${themeselected == "light" ? "flex-end" : "flex-start"};
+  border-radius: 50px;
+  padding: 2px;
   cursor: pointer;
-
-  .icon-moon{
-    position:absolute;
-    font-size: 1.1rem;
-    z-index:10;
-    left: 6px;
-    color:  ${themeselected == "light" ? "#000;" : "#fff"};
-  }
-  .icon-sun{
-    position:absolute;
-    font-size: 1rem;
-    ${themeselected == "light" ? "right: 6.5px;" : "right: 4px;"}
-    z-index:10;
-  }
-  `);
-export const StylesButtonDarkModeSelect = styled("div")<themeselected>(({ themeselected, ...props }) => `
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  background: ${props.theme.palette.background.paper};
-  border:solid 1px ${props.theme.palette.primary.contrastText};
-  border-radius: 100px; 
-  transform: translate(${themeselected == "light" ? "24px" : "-1px"});
-  transition: 0.3s;
+  border: 1px solid ${themeselected == "light" ? "#00000067" : "#ffffff67"};;
+  box-sizing: content-box;
   
-  `)
+  .handle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 27px;
+    height: 27px;
+    background: ${props.theme.palette.background.default};
+    border: 1px solid ${themeselected == "light" ? "#00000067" : "#ffffff67"};;
+    border-radius: 40px;
+    
+    .icon{
+      font-size: 1rem;
+      color: ${themeselected == "light" ? "#fff" : "#000"};
+
+    }
+}
+  `
+);

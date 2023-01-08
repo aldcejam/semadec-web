@@ -1,26 +1,34 @@
-import { StylesButtonDarkMode, StylesButtonDarkModeSelect } from "./Styled"
+import { StylesButtonDarkMode } from "./Styled"
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import { useThemeContext } from "../../../../../contexts/ThemeContext";
-
+import { motion } from "framer-motion";
 
 const ButtonDarkMode = () => {
 
-    const {themeName,themeModifier} = useThemeContext()
+    const { themeName, themeModifier } = useThemeContext()
 
-    const ToggleTheme = ()=>{
+    const ToggleTheme = () => {
         themeModifier(themeName == 'light' ? 'dark' : 'light')
-        localStorage.setItem('@ThemeSemadec', themeName == 'light'? 'dark' : 'light')
-        
+        localStorage.setItem('@ThemeSemadec', themeName == 'light' ? 'dark' : 'light')
+
     }
+
+    const spring = {
+        type: "spring",
+        stiffness: 700,
+        damping: 30
+    };
 
     return (
         <StylesButtonDarkMode themeselected={themeName} onClick={() => ToggleTheme()}>
-            <DarkModeOutlinedIcon className="icon-moon"/>
-            <LightModeIcon className="icon-sun"/>
-            
-            <StylesButtonDarkModeSelect themeselected={themeName}>
-            </StylesButtonDarkModeSelect>
+            <motion.div className="handle" layout transition={spring} >
+                {themeName == "light" ?
+                    <LightModeIcon className="icon" />
+                    :
+                    <DarkModeOutlinedIcon className="icon" />
+                }
+            </motion.div>
         </StylesButtonDarkMode>
     )
 

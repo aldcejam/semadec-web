@@ -37,7 +37,7 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) =>{
 
   const Page = usePathname()
 
-  const [pageTitle, setPageTitle] = useState<string>('Bem vindo')
+  const [pageTitle, setPageTitle] = useState<string>('')
   
   const usePageTitle = useMemo(() => ({
     pageTitle, setPageTitle
